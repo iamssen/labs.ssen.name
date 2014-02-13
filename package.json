@@ -1,0 +1,28 @@
+{
+  "name": "labs.ssen.name",
+  "dependencies": {
+    "express": "3.4.x",
+    "markdown-binder": "https://github.com/iamssen/markdown-binder/archive/0.3.4.tar.gz",
+    "randomport": "0.1.x",
+    "hogan.js": "2.0.x"
+  },
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "grunt-mocha-test": "0.9.x",
+    "grunt-contrib-clean": "0.5.x",
+    "grunt-contrib-copy": "0.5.x",
+    "grunt-contrib-coffee": "0.10.x",
+    "coffee-script": "1.7.x",
+    "should": "3.1.x",
+    "forever": "~0.10.11",
+    "grunt-shell": "~0.6.4"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:ssen/labs.ssen.name.git"
+  },
+  "author": "SSen (i@ssen.name)"
+}
