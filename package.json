@@ -2,12 +2,18 @@
   "name": "labs.ssen.name",
   "homepage": "https://github.com/iamssen/labs.ssen.name",
   "dependencies": {
+    "async": "0.9.*",
     "done-exec": "0.*",
+    "elasticsearch": "2.2.*",
     "event-stream": "3.*",
     "gulp": "3.*",
+    "gulp-ruby-sass": "0.5.*",
+    "gulp-util": "2.2.*",
     "hogan.js": "2.*",
     "moment": "2.*",
+    "string": "1.8.*",
     "unorm": "1.*",
+    "xml2js": "0.4.*",
     "yamljs": "0.*"
   }
 }

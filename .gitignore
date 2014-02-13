@@ -1,7 +1,13 @@
-.idea
+/.idea
 
-node_modules
-npm-debug.log
+/node_modules
+/npm-debug.log
 
-_site
-_source
+/_source
+/_logs
+/_trash
+/src/main/webapp
+/nginx.conf
+/.sass-cache
+/build
+/.gradle

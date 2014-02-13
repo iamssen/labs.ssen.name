@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Ha",
+				"hash"
+			],
+			[
 				"cap",
 				"captures_directory"
 			],
@@ -79,13 +83,29 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "_contents/Server/NginX/Nginx Proxy Redirect.md",
+			"settings":
+			{
+				"buffer_size": 260,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 375.0,
+		"height": 95.0,
 		"selected_items":
 		[
+			[
+				"gradle",
+				"Set Syntax: Gradle"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"py",
 				"Set Syntax: Python"
@@ -109,10 +129,6 @@
 			[
 				"mar",
 				"Marked"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"preview",
@@ -200,8 +216,41 @@
 	},
 	"file_history":
 	[
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Server/Java/Tomcat 개발 로그.md",
+		"/Users/ssen/Workspace/test-spring/test.gradle",
 		"/Users/ssen/Workspace/labs.ssen.name/contents.sublime-project",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Server/NginX/php-frm 설치.md",
+		"/usr/local/etc/nginx/sites-enabled/labs.ssen.name",
 		"/Users/ssen/Workspace/labs.ssen.name/contents.sublime-workspace",
+		"/usr/local/etc/php/5.4/php-fpm.conf",
+		"/usr/local/Cellar/php54/5.4.28/homebrew.mxcl.php54.plist",
+		"/Users/ssen/.Trash/nginx 오후 4.27.39/sites-enabled/files.ssen.name",
+		"/Users/ssen/Workspace/jekyll-new/_config.yml",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/feed.xml",
+		"/Users/ssen/Workspace/jekyll-new/feed.xml",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/sitemap.xml",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/_plugins/tag.rb",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/_plugins/category.rb",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/index.html",
+		"/Users/ssen/Workspace/labs.ssen.name/_source/Flash/Flex 원론/Display Invalidation.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/_layouts/page.html",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/_plugins/node_renderer.rb",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/_plugins/hash.rb",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/_plugins/tree_tag.rb",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/_plugins/test.rb",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/_layouts/tag_index.html",
+		"/Users/ssen/Workspace/labs.ssen.name/_site/tags/index.html",
+		"/Users/ssen/Workspace/labs.ssen.name/_site/Users/ssen/Workspace/labs.ssen.name/_source/tags/index.html",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/_layout/tag_index.html",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/_layout/category_index.html",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/_layout/test_filter.rb",
+		"/Users/ssen/Workspace/labs.ssen.name/_source/Math/삼각함수.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_site/flash/environments/2014/05/27/2843313d63.html",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/_posts/2014-05-24-test.md",
+		"/Users/ssen/Workspace/labs.ssen.name/contents/Flash/Polygonal Data Structures.md",
+		"/Users/ssen/Workspace/labs.ssen.name/contents/Flash/Search XML.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_source/Flash/Polygonal Data Structures.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_source/_posts/2014-05-26-0c3629b10e.md",
 		"/Users/ssen/Workspace/labs.ssen.name/Environments/Browsers/Chrome에서 URL Protocol이 작동되지 않을때.md",
 		"/Users/ssen/Desktop/Makefile",
 		"/Users/ssen/Workspace/files/nginx.conf",
@@ -215,7 +264,6 @@
 		"/Users/ssen/Workspace/reflow.sample.dependency-inection.simple-singleton-model/_layouts/index.html",
 		"/Users/ssen/Workspace/reflow.sample.dependency-inection.simple-singleton-model/attach/github-markdown.css",
 		"/Users/ssen/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/Users/ssen/Workspace/jekyll-new/_config.yml",
 		"/Users/ssen/Desktop/Untitled.svg",
 		"/Users/ssen/Desktop/omni.svg",
 		"/Users/ssen/Desktop/omni-svgedit-test/output/omni.svg",
@@ -245,7 +293,6 @@
 		"/Users/ssen/Desktop/Jekyll을 이용해서 블로그 만들기 (2).webloc",
 		"/Users/ssen/Desktop/Untitled-1.svg",
 		"/usr/local/Cellar/nginx/1.4.7/homebrew.mxcl.nginx.plist",
-		"/usr/local/etc/nginx/sites-enabled/labs.ssen.name",
 		"/Users/ssen/Workspace/iamssen.github.io/index.html",
 		"/Users/ssen/Downloads/bootstrap-3.1.1/less/variables.less",
 		"/usr/local/etc/nginx/sites-enabled/dev.ssen.name",
@@ -296,38 +343,7 @@
 		"/Users/ssen/data/workspace/webstorm/markdown-binder/node_modules/bbang/src/bbang.coffee",
 		"/Users/ssen/data/workspace/webstorm/flash-build/src/fldoc.coffee",
 		"/Users/ssen/data/workspace/webstorm/flash-build/src/utils.coffee",
-		"/Users/ssen/Workspace/flbuild/test/lib/catalog.xml",
-		"/Users/ssen/Settings/Apache Flex SDK 4.11.0/bin/compc",
-		"/Users/ssen/Settings/Apache Flex SDK 4.11.0/bin/mxmlc",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/pwd.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/which.md",
-		"/Users/ssen/.npmrc",
-		"/Users/ssen/Dropbox/Contents/labs/Html, Css, Javascript/npm.md",
-		"/Users/ssen/data/workspace/webstorm/flash-build/package.json",
-		"/Users/ssen/Links/clear.sh",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/grep.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/scp.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/NginX/NginX를 Jenkins의 Reverse Proxy로 설정하기.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/VCS/git-flow.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/NginX/NginX에 Basic Authenication 적용하기.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/NginX/Install NginX On CentOS.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/SSH Authentication/SSH Key를 통한 Server 접속.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/SSH Authentication/ssh-keygen.md",
-		"/Users/ssen/.ssh/config",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/SSH/ssh-keygen.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Mac/Alfred Workflow를 사용해서 스크린캡쳐하기.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Eclipse/Eclipse Word Wrap.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Eclipse/Eclipse Path Tools.md",
-		"/Users/ssen/Make/Makefile",
-		"/Users/ssen/Downloads/Sherlock.S03E03.His.Last.Vow.1080p.WEB-DL.DD5.1.H.264-BS.smi",
-		"/Users/ssen/Workspace/hello/src/hello.mxml",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/curl.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/zsh.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/tree.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/basic commands.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/fswatch.md",
-		"/Users/ssen/Dropbox/Contents/labs/Flash/Flex 원론/Data Binding.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Browsers/Chrome에서 URL Protocol이 작동되지 않을때.md"
+		"/Users/ssen/Workspace/flbuild/test/lib/catalog.xml"
 	],
 	"find":
 	{
@@ -351,6 +367,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"  ",
 			"키워드태",
 			"키워드",
 			"/files",
@@ -403,6 +420,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"	",
+			"\\t",
 			"http://files.ssen.name",
 			"local_root",
 			"require('flbuild')",
@@ -431,8 +450,36 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "_contents/Server/NginX/Nginx Proxy Redirect.md",
+					"settings":
+					{
+						"buffer_size": 260,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29,
+								29
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -492,6 +539,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 249.0,
+	"side_bar_width": 238.0,
 	"status_bar_visible": true
 }

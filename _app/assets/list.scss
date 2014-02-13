@@ -1,0 +1,37 @@
+---
+---
+
+@import "tree";
+
+#list {
+	padding-top: 40px;
+	padding-bottom: 30px;
+
+	background-color: #F8F8F8;
+	border-top: 1px solid #E7E7E7;
+
+	#list-tags {
+		.btn {
+			.badge {
+				background-color: #e3d2d2;
+				font-weight: normal;
+			}
+		}
+	}
+
+	#list-pages {
+		margin-top: 10px;
+
+		font-size: 13px;
+
+		@include tree;
+
+		#list-pages-tree {
+
+		}
+
+		#list-pages-recents {
+
+		}
+	}
+}

@@ -1,18 +1,38 @@
-jenkins: build
-	sudo -E gulp config-server
+CONTENTS = _contents
+APP = _app
+SOURCE = _source
+SITE = _site
+
+# build with jenkins
+# ---------------------------------
+jenkins: clean create
+	sudo -E gulp before-jekyll
+	jekyll build --source $(SOURCE) --destination $(SITE)
+	sudo -E gulp after-jekyll
+	sudo -E sh gradlew buildAndDeployToWebapps
 	sudo service nginx reload
 
-build: clean copy
-	sudo -E gulp make-source
-	jekyll build --source _source --destination _site
 
+# base
+# ---------------------------------
 clean:
-	rm -rf _source _site
+	rm -rf $(SOURCE) $(SITE)
 
-copy:
-	cp -r contents _source
+create:
+	mkdir -p _logs
+	mkdir -p $(SOURCE)
+	cp -r $(CONTENTS)/* $(SOURCE)
+	cp -r $(APP)/* $(SOURCE)
 
-test: clean copy
-	gulp make-source
-	jekyll build --source _source --destination _site
+
+# test
+# ---------------------------------
+test: clean create
+	echo $(WAS_WEBAPPS)
+
+	gulp before-jekyll
+	jekyll build --source $(SOURCE) --destination $(SITE)
+	gulp after-jekyll
+	sh gradlew buildAndDeployToWebapps
+	nginx -s reload
 

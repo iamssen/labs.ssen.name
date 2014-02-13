@@ -1,0 +1,42 @@
+<div id="list">
+	<div class="container-fluid">
+
+		<div id="list-tags" class="row">
+			<div class="col-md-12">
+				<p class="text-center">
+					{% for tag in site.data['page_tags'] %}
+					<a href="/tags/#{{ tag[0] }}" class="btn btn-default">
+						<i class="fa fa-tags"></i> &nbsp;&nbsp;{{ tag[0] }}
+						<small class="badge">{{ tag[1] | size }}</small>
+					</a>
+					{% endfor %}
+				</p>
+			</div>
+		</div>
+
+		<hr/>
+
+		<div id="list-pages" class="row">
+			<div id="list-pages-tree" class="col-md-6" page-primary-id="{{ page.primary }}">
+				<h3>Documents</h3>
+				<hr/>
+				{{ site.data['page_tree'] }}
+			</div>
+
+			<div id="list-pages-recents" class="col-md-6">
+				<h3>Recently Updates</h3>
+				<hr/>
+				<ul>
+					{% assign sorted_pages = site.pages | sort:"date" %}
+					{% for p in sorted_pages %}
+					{% if p.primary %}
+					<li class="tree-leaf{% if p.primary == page.primary %} highlighted{% endif %}">
+						<a href="{{ p.url }}">{{ p.title }}</a>
+					</li>
+					{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

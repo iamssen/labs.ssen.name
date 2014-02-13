@@ -8,34 +8,73 @@ var gulp = require('gulp')
 	, moment = require('moment')
 	, exec = require('done-exec')
 	, hogan = require('hogan.js')
+	, gutil = require('gulp-util')
+	, sass = require('gulp-ruby-sass')
+	, pushToElasticsearch = require('./push-to-elasticsearch')
 
+// ====================================================
+// config
+// ====================================================
 var envs = {
+	// service environment variables
 	DOMAIN: fs.readFileSync(path.join(__dirname, 'CNAME'), 'utf8').split('\n').join(' '),
+	NFD: os.platform().toLowerCase() == 'darwin',
+	SITE: path.resolve(__dirname, '_site'),
+	LOG_HOME: path.join(__dirname, '_logs'),
+
+	// using system environment variables
 	PORT: process.env.PORT || 9888,
-	ROOT: path.resolve(__dirname, '_site'),
-	NGINX_HOME: process.env.NGINX_HOME || path.join(__dirname, '_nginx'),
+	WAS_PORT: process.env.WAS_PORT,
+	WAS_WEBAPPS: process.env.WAS_WEBAPPS,
+	NGINX_HOME: process.env.NGINX_HOME,
 	PROJECT: process.env.JOB_NAME || 'labs.ssen.name',
-	VERSION: process.env.GIT_COMMIT || '-1',
-	NFD: os.platform().toLowerCase() == 'darwin'
+	VERSION: process.env.GIT_COMMIT || '-1'
 }
 
+// test config
+if (os.platform().toLowerCase() === 'darwin') {
+	envs.DOMAIN = 'localhost'
+}
+
+// ====================================================
+// functions
+// ====================================================
 function nfc(str) {
 	return (envs.NFD) ? unorm.nfc(str) : str;
 }
 
+function makePrimaryHex(length) {
+	var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
+		, result = ''
+	for (var i = 0; i < length; i++) {
+		result += arr[parseInt(Math.random() * arr.length)]
+	}
+	return result
+}
+
+// ====================================================
+// pipe plugins
+// ====================================================
+// auto tagging to markdown file
+// - title
+// - date
+// - layout
+// - categories
 function tagging() {
 	function func(file) {
 		var fpath = file.path
 			, extension = path.extname(fpath).toLowerCase()
 			, stat = fs.statSync(fpath)
 			, mtime = stat.mtime.getTime()
+			, SOURCE_TOP = path.join(__dirname, '_source')
+			, CONTENTS_TOP = path.join(__dirname, '_contents')
 
 		var info = {
 			realpath: fpath,
 			path: nfc(fpath).replace(/\\/g, '/'),
-			// relative_path: nfc(path.relative(@top, fpath)).replace(/\\/g, '/'),
+			relative_path: nfc(path.relative(CONTENTS_TOP, fpath)).replace(/\\/g, '/'),
 			base: nfc(path.dirname(fpath)).replace(/\\/g, '/'),
-			// relative_base: nfc(path.relative(@top, path.dirname(fpath))).replace(/\\/g, '/'),
+			relative_base: nfc(path.relative(CONTENTS_TOP, path.dirname(fpath))).replace(/\\/g, '/'),
 			name: nfc(path.basename(fpath, extension)),
 			extension: extension,
 			atime: stat.atime,
@@ -57,7 +96,13 @@ function tagging() {
 
 		if (frontmatter['title'] == null) frontmatter['title'] = info.name
 		if (frontmatter['date'] == null) frontmatter['date'] = moment(info.mtime).format('YYYY-MM-DD HH:mm:ss')
-		if (frontmatter['layout'] == null) frontmatter['layout'] = 'page'
+		if (frontmatter['layout'] == null) frontmatter['layout'] = 'article'
+
+		// frontmatter['relative_path'] = info.relative_path
+		// frontmatter['relative_base'] = info.relative_base
+		// frontmatter['realpath'] = info.realpath
+		// frontmatter['url'] = '/' + info.relative_base + '/' + info.name + '.html'
+		frontmatter['categories'] = info.relative_base.split('/')
 
 		if (hasFrontmatter) {
 			body = body.replace(results[1], '---\n' + yaml.stringify(frontmatter) + '\n---')
@@ -66,6 +111,7 @@ function tagging() {
 		}
 
 		file.contents = new Buffer(body)
+		// file.path = path.join(SOURCE_TOP, '_posts', moment(info.mtime).format('YYYY-MM-DD-') + frontmatter['primary'] + '.md')
 
 		this.emit('data', file)
 	}
@@ -73,17 +119,11 @@ function tagging() {
 	return es.through(func)
 }
 
-function makePrimaryHex(length) {
-	var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
-		, result = ''
-	for (var i = 0; i < length; i++) {
-		result += arr[parseInt(Math.random() * arr.length)]
-	}
-	return result
-}
-
+// auto primary key tagging to markdown file
+// - primary
 function makePrimaryKeys() {
 	function func(file) {
+		// console.log('# make primary keys', file.path)
 		var body = file.contents.toString('utf8')
 			, reg = /^(-{3}(?:\n|\r)([\w\W]+?)-{3})?([\w\W]*)*/gm
 			, results = reg.exec(body)
@@ -96,17 +136,17 @@ function makePrimaryKeys() {
 			frontmatter = {}
 		}
 
-		if (frontmatter['primary'] == null) {
+		if (!frontmatter['primary']) {
 			frontmatter['primary'] = makePrimaryHex(10)
-		}
 
-		if (hasFrontmatter) {
-			body = body.replace(results[1], '---\n' + yaml.stringify(frontmatter) + '\n---')
-		} else {
-			body = '---\n' + yaml.stringify(frontmatter) + '\n---' + '\n\n' + body
-		}
+			if (hasFrontmatter) {
+				body = body.replace(results[1], '---\n' + yaml.stringify(frontmatter) + '\n---')
+			} else {
+				body = '---\n' + yaml.stringify(frontmatter) + '\n---' + '\n\n' + body
+			}
 
-		file.contents = new Buffer(body)
+			file.contents = new Buffer(body)
+		}
 
 		this.emit('data', file)
 	}
@@ -114,31 +154,37 @@ function makePrimaryKeys() {
 	return es.through(func)
 }
 
-function render(envs) {
+// mustache rendering
+function renderMustache(envs) {
 	function func(file) {
 		file.contents = new Buffer(hogan.compile(file.contents.toString('utf8')).render(envs))
+		file.path = gutil.replaceExtension(file.path, '')
+
 		this.emit('data', file)
 	}
 
 	return es.through(func)
 }
 
+// ====================================================
+// tasks
+// ====================================================
 gulp.task('make-primary-keys', function () {
-	gulp.src('contents/**/*.md')
+	gulp.src('_contents/**/*.md')
 		.pipe(makePrimaryKeys())
-		.pipe(gulp.dest('contents'))
+		.pipe(gulp.dest('_contents'))
 })
 
 gulp.task('tagging-to-documents', function () {
-	gulp.src('_source/**/*.md')
+	gulp.src('_contents/**/*.md')
 		.pipe(tagging())
 		.pipe(gulp.dest('_source'))
 })
 
 gulp.task('make-server-config', function () {
-	gulp.src('_server-templates/*')
-		.pipe(render(envs))
-		.pipe(gulp.dest(__dirname))
+	gulp.src('./**/*.mustache')
+		.pipe(renderMustache(envs))
+		.pipe(gulp.dest('.'))
 })
 
 gulp.task('link-nginx-config', function (done) {
@@ -148,8 +194,37 @@ gulp.task('link-nginx-config', function (done) {
 
 	console.log('[nginx config symlink to]', source, linkto)
 
-	exec('sudo ln -sf "' + source + '" "' + linkto + '"').run(done)
+	var sudo = (os.platform().toLowerCase() === 'darwin') ? '' : 'sudo '
+	exec(sudo + 'ln -sf "' + source + '" "' + linkto + '"').run(done)
 })
 
-gulp.task('make-source', ['make-primary-keys', 'tagging-to-documents'])
-gulp.task('config-server', ['make-server-config', 'link-nginx-config'])
+gulp.task('push-to-elasticsearch', function(done) {
+	pushToElasticsearch(path.join(envs.SITE, 'search.xml'), done)
+})
+
+gulp.task('before-jekyll', ['make-primary-keys', 'tagging-to-documents'])
+gulp.task('after-jekyll', ['push-to-elasticsearch', 'make-server-config', 'link-nginx-config'])
+
+// ------------------------------------
+// develop tasks
+// ------------------------------------
+gulp.task('copy-assets', function () {
+	gulp.src('_contents/assets/**/*')
+		.pipe(gulp.dest('_site/assets/'))
+})
+
+gulp.task('copy-scss', function () {
+	gulp.src('_contents/assets/*.scss')
+		.pipe(sass({ loadPath: '_contents/assets/' }))
+		.pipe(gulp.dest('_site/assets/'))
+})
+
+gulp.task('compile', function (done) {
+	exec('make test-compile').run(done)
+})
+
+gulp.task('watch', function () {
+	gulp.watch('_contents/**/*', ['compile'])
+})
+
+gulp.task('test', ['push-to-elasticsearch', 'timeout-test'])

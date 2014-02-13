@@ -1,0 +1,33 @@
+---
+---
+
+@import "tree";
+
+#tag-index {
+	padding-top: 10px;
+	padding-bottom: 40px;
+
+	#tag-index-list {
+		list-style: none;
+
+		> li {
+			> a {
+				font-size: 32px;
+				color: #000000;
+				text-decoration: none;
+			}
+
+			> ul {
+				li {
+					@include icon-list-item('page.svg');
+
+					margin: 3px 0px 3px 2px;
+
+					> a {
+						color: #000000;
+					}
+				}
+			}
+		}
+	}
+}

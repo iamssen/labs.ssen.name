@@ -1,0 +1,24 @@
+---
+layout: layout
+
+styles:
+- '/assets/nav.css'
+- '/assets/tag-index.css'
+- '/assets/list.css'
+- '/assets/copyright.css'
+
+scripts:
+- '/assets/article.js'
+- '/assets/list.js'
+
+includes:
+  nav: 'nav.html'
+  tag-index: 'tag-index.html'
+  list: 'list.html'
+  copyright: 'copyright.html'
+---
+
+{% include nav.html %}
+{% include tag-index.html %}
+{% include list.html %}
+{% include copyright.html %}

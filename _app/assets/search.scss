@@ -1,0 +1,23 @@
+---
+---
+
+@import "tree";
+
+#search {
+	padding-top: 10px;
+	padding-bottom: 40px;
+
+	#search-list {
+		list-style: none;
+
+		> li {
+			@include icon-list-item('page.svg');
+
+			margin: 3px 0px 3px 2px;
+
+			> a {
+				color: #000000;
+			}
+		}
+	}
+}

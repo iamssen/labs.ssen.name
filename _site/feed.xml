@@ -1,0 +1,1130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>SSen&#39;s Lab</title>
+		<description>SSen의 연구실 입니다.</description>
+		<link>http://labs.ssen.name</link>
+		<atom:link href="http://labs.ssen.name/feed.xml" rel="self" type="application/rss+xml"/>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+		<item>
+			<title>Regular Expressions</title>
+			<description>&lt;h1 id=&quot;정규식-참고&quot;&gt;정규식 참고&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://msdn.microsoft.com/ko-kr/library/yd1hzczs.aspx&quot;&gt;msdn 정규식 flag 소개&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.naver.com/PostView.nhn?blogId=yonga&amp;amp;logNo=150004198246&quot;&gt;정규식 특수문자 소개&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://help.adobe.com/ko_KR/FlashPlatform/reference/actionscript/3/RegExp.html&quot;&gt;as3 RegExp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://help.adobe.com/ko_KR/as3/dev/WS5b3ccc516d4fbf351e63e3d118a9b90204-7ea7.html&quot;&gt;adobe help 정규식&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;정규식-검색&quot;&gt;정규식 검색&lt;/h1&gt;
+
+&lt;h2 id=&quot;flag&quot;&gt;Flag&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;g&lt;/code&gt; 
+
+&lt;ul&gt;
+&lt;li&gt;내려쓰기를 무시&lt;/li&gt;
+&lt;li&gt;검출되는 전체를 replace&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;i&lt;/code&gt;&lt;br&gt;
+
+&lt;ul&gt;
+&lt;li&gt;대소문자 무시&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;m&lt;/code&gt; Multiline
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;^&lt;/code&gt;, &lt;code&gt;$&lt;/code&gt; 옵션이 붙었을때, 내려쓰기를 포함해서 검색&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;aaa\nbbb\nccc&amp;quot;.match(/^bbb/) // null&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;quot;aaa\nbbb\nccc&amp;quot;.match(/^bbb/m) // bbb&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;or&quot;&gt;or&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;var str:String = &amp;quot;강아지는 멍멍멍\n고양이는 깽깽깽\n까마귀는 깍깍깍&amp;quot;;
+trace(str.match(/강아지|까마귀/g));
+
+// 강아지,까마귀
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;특수-문자&quot;&gt;특수 문자&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;띄어쓰기 인접 검색&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\b&lt;/code&gt; 띄어쓰기와 인접한 문자열을 찾는다
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;trace(&amp;quot;macpro&amp;quot;.match(/\bmac/)); // mac&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;trace(&amp;quot;applemacpro&amp;quot;.match(/\bmac/)); // null&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;trace(&amp;quot;never&amp;quot;.match(/er\b/)); // er&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;trace(&amp;quot;verb&amp;quot;.match(/er\b/)); // null&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\B&lt;/code&gt; 띄어쓰기와 인접하지 않은 문자열을 찾는다&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;숫자형 검색&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\d&lt;/code&gt; 숫자로 된 문자열 &lt;code&gt;[0-9]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\D&lt;/code&gt; 숫자가 아닌 문자열 &lt;code&gt;[^0-9]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;공백문자 검색&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\n&lt;/code&gt; 줄바꿈 문자 &lt;code&gt;\x0d&lt;/code&gt;, &lt;code&gt;\cM&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;trace(&amp;quot;aaa\nbbb\nccc&amp;quot;.match(&amp;quot;bb\nc&amp;quot;)); // bb\nc&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\t&lt;/code&gt; 탭 문자 &lt;code&gt;\x09&lt;/code&gt; &lt;code&gt;\cl&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\f&lt;/code&gt; 용지 공급 문자 (정상작동 케이스를 찾지 못함) &lt;code&gt;\x0c&lt;/code&gt; &lt;code&gt;\cL&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\r&lt;/code&gt; 캐리지 리턴 문자 (정상작동 케이스를 찾지 못함) &lt;code&gt;\x0d&lt;/code&gt; &lt;code&gt;\cM&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;개행에 있어서 유닉스는 LF (Line Feed) 를 사용하고, 윈도우는 CR/LF (Carriage Return) 을 사용&lt;/li&gt;
+&lt;li&gt;OS 차이인지 뭔지 확인이 안됨... 왠만한 경우 피할 것&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\v&lt;/code&gt; 세로 탭 문자 (정상작동 케이스를 찾지 못함) &lt;code&gt;\x0b&lt;/code&gt; &lt;code&gt;\cK&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\s&lt;/code&gt; 위에 나열된 모든 공백문자를 찾는다 &lt;code&gt;[\f\n\r\t\v]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\S&lt;/code&gt; 모든 공백이 아닌 문자를 찾는다 &lt;code&gt;[^ \f\n\r\t\v]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;문자 그룹&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\w&lt;/code&gt; 밑줄을 포함한 모든 알파벳 문자를 찾는다 &lt;code&gt;[A-Za-z0-9_]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\W&lt;/code&gt; 알파벳이 아닌 문자를 찾는다 &lt;code&gt;[^A-Za-z0-9_]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[가-힣]&lt;/code&gt; 한글 문자열 범위 (언어 지원에 따라 안될 수 있음, 그럴 경우 &lt;code&gt;\uac00-\ud7a3&lt;/code&gt; 로 시도해 볼 수 있음)
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;trace(&amp;quot;aaa다람쥐bbbccc나나나ddd&amp;quot;.match(/[가-힣]+/g)); // 다람쥐, 나나나&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;수량&quot;&gt;수량&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{n}&lt;/code&gt; 정확하게 n개&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{n,}&lt;/code&gt; n개 이상&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{n,m}&lt;/code&gt; n개 이상, m개 이하&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*&lt;/code&gt; 0개 이상 &lt;code&gt;{0,}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;+&lt;/code&gt; 1개 이상 &lt;code&gt;{1,}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;?&lt;/code&gt; 0 또는 1개 &lt;code&gt;{0,1}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.&lt;/code&gt; &lt;code&gt;\n&lt;/code&gt; 을 제외한 단일 문자&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;+?&lt;/code&gt;, &lt;code&gt;{}?&lt;/code&gt; none-greedy pattern 검색 가능 범위 내에서 최소를 찾음
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;trace(&amp;quot;aaabbbccc&amp;quot;.match(/b+/)); // bbb&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;trace(&amp;quot;aaabbbccc&amp;quot;.match(/b+?/)); // b&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;trace(&amp;quot;aaabbbccc&amp;quot;.match(/b{2,3}/)); // bbb&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;trace(&amp;quot;aaabbbccc&amp;quot;.match(/b{2,3}?/)); // bb&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;캡쳐&quot;&gt;캡쳐&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;()&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;trace(&amp;quot;winxp, win98, winvista, win7, win8&amp;quot;.match(/win(xp|98|vista)/g));&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt; winxp, win98, winvista&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;(?:)&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;trace(&amp;quot;winxp, win98, winvista, win7, win8&amp;quot;.match(/win(?:xp|98|vista)/g));&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt; winxp, win98, winvista&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;(?=)&lt;/code&gt; 캡쳐 그룹 미포함, 캡쳐의 조건이 맞을 경우
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;trace(&amp;quot;winxp, win98, winvista, win7, win8&amp;quot;.match(/win(?=xp|98|vista)/g));&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt; win, win, win&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;(?!)&lt;/code&gt; 캡쳐 그룹 미포함, 캡쳐의 조건이 맞지 않을 경우 
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;trace(&amp;quot;winxp, win98, winvista, win7, win8&amp;quot;.match(/win(?!xp|98|vista)/g));&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt; win, win&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;정규식의-검색-순서&quot;&gt;정규식의 검색 순서&lt;/h1&gt;
+
+&lt;p&gt;정규식에 옵션이 없는 경우 첫번째만 검출된다&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;var str:String=&amp;quot;aaabbbcccaaabbbcccaaabbbccc\naaabbbccc\ndddaaabbbccc&amp;quot;;
+
+trace(str.replace(/aabb/, &amp;quot;####&amp;quot;));
+
+// a####bcccaaabbbcccaaabbbccc
+// aaabbbccc
+// dddaaabbbccc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;정규식에 global 옵션이 있는 경우 전체가 검출된다&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;var str:String=&amp;quot;aaabbbcccaaabbbcccaaabbbccc\naaabbbccc\ndddaaabbbccc&amp;quot;;
+
+trace(str.replace(/aabb/g, &amp;quot;####&amp;quot;));
+
+// a####bccca####bccca####bccc
+// a####bccc
+// ddda####bccc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;match 를 통해 검출을 목록화 시키고, loop 를 통한 처리가 가능하다&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;var str:String=&amp;quot;aaabbbcccaaabbbcccaaabbbccc\naaabbbccc\ndddaaabbbccc&amp;quot;;
+
+// match 를 통해 목록화 시키고, loop + replace 를 통해 순차적 변경이 가능하다
+var matchs:Array=str.match(/aabb/g);
+
+var f:int=-1;
+var fmax:int=matchs.length;
+while (++f &amp;lt; fmax) {
+    str=str.replace(matchs[f], &amp;quot;#&amp;quot; + f + &amp;quot;##&amp;quot;);
+}
+
+trace(str);
+
+// a#0##bccca#1##bccca#2##bccc
+// a#3##bccc
+// ddda#4##bccc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;markdown header 와 같이 라인의 전방 기준으로 라인을 검출할 때는 아래처럼 &lt;code&gt;mg&lt;/code&gt; 옵션을 써서 처리가 가능하다&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;reg = /^\#{1,6}.*/mg
+str = &amp;#39;# A\n## AA\n### AA BB&amp;#39;
+
+console.log(str.match(reg))
+
+// [&amp;quot;# A&amp;quot;, &amp;quot;## AA&amp;quot;, &amp;quot;### AA BB&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+			<pubDate>Tue, 17 Jun 2014 15:11:29 +0900</pubDate>
+			<link>http://labs.ssen.name/</link>
+			<guid isPermaLink="true">http://labs.ssen.name/</guid>
+		</item>
+		
+		
+		
+
+		<item>
+			<title>Data Binding</title>
+			<description>&lt;h1 id=&quot;watch-binding&quot;&gt;Watch Binding&lt;/h1&gt;
+
+&lt;h2 id=&quot;{-}-를-사용하기&quot;&gt;&lt;code&gt;{ }&lt;/code&gt; 를 사용하기&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;s:Label text=&amp;quot;{instance.property}&amp;quot; /&amp;gt;
+&amp;lt;s:Label text=&amp;quot;{instance.method()}&amp;quot; /&amp;gt;
+
+&amp;lt;fx:CurrencyFormatter id=&amp;quot;usdFormatter&amp;quot; precision=&amp;quot;2&amp;quot; currencySymbol=&amp;quot;$&amp;quot; alignSymbol=&amp;quot;left&amp;quot; /&amp;gt;
+&amp;lt;s:Label text=&amp;quot;usdFormatter.format(instance.property)}&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;fx:binding&quot;&gt;fx:Binding&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;fx:Binding source=&amp;quot;source.property&amp;quot; destination=&amp;quot;instance.property&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;bindingutils&quot;&gt;BindingUtils&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// bindProperty() : ChangeWatcher
+// ChangeWatcher.unwatch();
+BindingUtils.bindProperty(instance, &amp;quot;property&amp;quot;, source, &amp;quot;property&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;양방향-링크&quot;&gt;양방향 링크&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;!-- t1, t2 가 동일하게 적용된다 --&amp;gt;
+&amp;lt;s:TextInput id=&amp;quot;t1&amp;quot; text=&amp;quot;@{t2.text}&amp;quot; /&amp;gt;
+&amp;lt;s:TextInput id=&amp;quot;t2&amp;quot; /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;event-dispatch-type-설정&quot;&gt;event dispatch type 설정&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;[Bindable(event=&amp;quot;fooEvent&amp;quot;)]
+private function get foo():String {
+    return &amp;quot;foo&amp;quot;;
+}
+
+private function fooChange():void {
+    dispatchEvent(new Event(&amp;quot;fooEvent&amp;quot;));
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;{this.foo}&lt;/code&gt; 를 통해 바인딩&lt;/p&gt;
+
+&lt;h2 id=&quot;method-연결&quot;&gt;method 연결&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public function update(value:String):void {
+    trace(value);
+}
+&amp;lt;s:TextInput id=&amp;quot;txt&amp;quot; text=&amp;quot;setter&amp;quot; /&amp;gt;
+
+// bindSetter() : ChangeWatcher
+BindingUtils.bindSetter(update, txt, &amp;quot;text&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;id=&amp;quot;txt&amp;quot;&lt;/code&gt; 가 변경될 시에 &lt;code&gt;update()&lt;/code&gt; 가 호출된다.&lt;/p&gt;
+
+&lt;h1 id=&quot;bindsetter-를-통해서-binding-을-event-listener-처럼-활용하기&quot;&gt;bindSetter 를 통해서 Binding 을 Event Listener 처럼 활용하기&lt;/h1&gt;
+
+&lt;p&gt;참고 : &lt;a href=&quot;http://www.codeproject.com/KB/applications/FlexDataBindingTricks.aspx?display=Print&quot;&gt;http://www.codeproject.com/KB/applications/FlexDataBindingTricks.aspx?display=Print&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;도트-경로-사용하기&quot;&gt;도트 경로 사용하기&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;// instance.a.b.c 가 바인딩 설정 된다.
+// 그룹 감지가 아님...
+BindingUtils.bindSetter(method, instance, [&amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;]);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;getter-method-설정&quot;&gt;getter method 설정&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;var reciver:Function = function (host:Object):String {
+    return &amp;quot;hello&amp;quot; + host[&amp;quot;prop1&amp;quot;]+host[&amp;quot;prop2&amp;quot;]+host[&amp;quot;prop3&amp;quot;]+host[&amp;quot;prop4&amp;quot;];
+}
+
+BindingUtils.bindSetter(arrayedSetter, this, {name:&amp;quot;prop1&amp;quot;, getter:reciver});
+BindingUtils.bindSetter(arrayedSetter, this, {name:&amp;quot;prop2&amp;quot;, getter:reciver});
+BindingUtils.bindSetter(arrayedSetter, this, {name:&amp;quot;prop3&amp;quot;, getter:reciver});
+BindingUtils.bindSetter(arrayedSetter, this, {name:&amp;quot;prop4&amp;quot;, getter:reciver});
+
+---
+
+private function arrayedSetter(...values):void
+{
+    trace(&amp;quot;arrayedSetter&amp;quot;, values);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1 id=&quot;[bindable]-이-compiler-에서-해석되는-방식&quot;&gt;&lt;code&gt;[Bindable]&lt;/code&gt; 이 compiler 에서 해석되는 방식&lt;/h1&gt;
+
+&lt;p&gt;기본 &lt;code&gt;[Bindable] public var property:String;&lt;/code&gt; 같이 선언된 variable 은 &lt;code&gt;mxmlc&lt;/code&gt; 나 &lt;code&gt;compc&lt;/code&gt; 같은 compiler 에 의해서 아래와 같은 구조로 재해석된다.&lt;/p&gt;
+
+&lt;p&gt;original&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;[Bindable]
+public var property:String;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;generated&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;private var _property:String;
+
+public function get property():String {
+    return _property;
+}
+
+public function set property(value:String):void {
+    var oldValue:String = _property;
+    _property = value;
+    if (hasEventListener(&amp;quot;propertyChange&amp;quot;)) {
+        dispatchEvent(PropertyChangeEvent.createUpdateEvent(this, &amp;quot;property&amp;quot;, oldValue, value));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여기서 &lt;code&gt;PropertyChangeEvent&lt;/code&gt; 가 매우 중요한데, DataGrid 의 GridItemRenderer 와 같은 특수한 Component 들의 경우, Binding 된 property 의 갱신에 있어서 &lt;code&gt;PropertyChangeEvent&lt;/code&gt; 만을 바라보는 경우가 있다.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;즉, 자주 사용하는 &lt;code&gt;[Bindable(&amp;quot;varChanged&amp;quot;)]&lt;/code&gt; 같은 형태가 있는데,&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;private var _var:String;
+
+[Bindable(&amp;quot;varChanged&amp;quot;)]
+public function get var():String {
+    return _var;
+}
+
+public function set var(value:String):void {
+    _var=value;
+    dispatchEvent(new Event(&amp;quot;varChanged&amp;quot;));
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;이 경우처럼 만들어진 &lt;code&gt;[Bindable(&amp;quot;event&amp;quot;)]&lt;/code&gt; 은 DataGrid 와 같은 몇 몇 Component 들에서 작동이 안되는 경우가 발생한다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;그렇기 때문에 getter / setter 로 만들어야 하는 경우라도&lt;br&gt;
+compiler 의 작동 그대로를 흉내내 주기 위해&lt;br&gt;
+&lt;code&gt;PropertyChangeEvent&lt;/code&gt; 를 사용해 주는 것이 좋다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;코딩-편의성&quot;&gt;코딩 편의성&lt;/h4&gt;
+
+&lt;p&gt;하지만, 위와 같이 코딩을 하려면 상당한 피로도가 발생하게 되는데, 아래와 같은 Code Template 을 Flash Builder 나 기타 IDE 에 등록해 놓고 사용하는 것이 유용하다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;//---------------------------------------------
+// ${name}
+//---------------------------------------------
+private var _${name} : ${type};
+
+/** ${name} */
+[Bindable]
+${public} function get ${name}() : ${type}
+{
+    return _${name};
+}
+${public} function set ${name}(value : ${type}):void
+{
+    var oldValue : ${type} = _${name};
+    _${name} = value;
+    // TODO
+    if (hasEventListener(PropertyChangeEvent.PROPERTY_CHANGE)) {
+        dispatchEvent(PropertyChangeEvent.createUpdateEvent(this, &amp;quot;${name}&amp;quot;, oldValue, _${name}));
+    }
+}${cursor}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+			<pubDate>Tue, 17 Jun 2014 15:11:29 +0900</pubDate>
+			<link>http://labs.ssen.name/</link>
+			<guid isPermaLink="true">http://labs.ssen.name/</guid>
+		</item>
+		
+		
+		
+
+		<item>
+			<title>Data Grid</title>
+			<description>&lt;h1 id=&quot;구성&quot;&gt;구성&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;DataGrid&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GridColumn&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IGridItemRenderer&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IGridItemEditor&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;기능적-속성들&quot;&gt;기능적 속성들&lt;/h1&gt;
+
+&lt;h2 id=&quot;show-/-hide-interaction&quot;&gt;show / hide interaction&lt;/h2&gt;
+
+&lt;h4 id=&quot;datagrid&quot;&gt;DataGrid&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;dataProvider&lt;/code&gt; 에 직접적 데이터를 표현하지 않고, 한 번 Wrapping 시켜서 사용해야 한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;mx.collections.GroupingCollection2&lt;/code&gt;, ``&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;Tree%20%ED%98%95%ED%83%9C%20Data%20Grid%20%EC%9E%91%EC%84%B1.md&quot;&gt;Tree 형태 Data Grid 작성&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;gridcolumn&quot;&gt;GridColumn&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;visible&lt;/code&gt; column 을 보이거나 숨길때 사용. 실시간 작동 가능&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;column-/-row-lock-(틀고정)&quot;&gt;Column / Row lock (틀고정)&lt;/h2&gt;
+
+&lt;h4 id=&quot;datagrid&quot;&gt;DataGrid&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;lockedColumnCount&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lockedRowCount&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;header-text-관련-속성들&quot;&gt;header text 관련 속성들&lt;/h2&gt;
+
+&lt;h4 id=&quot;gridcolumn&quot;&gt;GridColumn&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;headerText&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;headerRenderer&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;datagridskin&quot;&gt;DataGridSkin&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;columnHeaderGroup : GridColumnHeaderGroup&lt;/code&gt; header 부분을 렌더링한다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IDataGridElement&lt;/code&gt; GridColumnHeaderGroup 을 수정해서 처리하기 어려운 부분이라면&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;data-와-column-mapping-및-item-rendering-관련-속성들&quot;&gt;data 와 column mapping 및 item rendering 관련 속성들&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;접근 방식
+
+&lt;ol&gt;
+&lt;li&gt;formatting
+
+&lt;ul&gt;
+&lt;li&gt;text formatting 요소만 있다면 &lt;code&gt;formatter&lt;/code&gt; 로 처리하는게 좋겠다&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;style
+
+&lt;ul&gt;
+&lt;li&gt;기본적으로 스타일만 지정된 &lt;code&gt;itemRenderer&lt;/code&gt; 로 처리하고&lt;/li&gt;
+&lt;li&gt;조건별 스타일이 필요한 경우는 &lt;code&gt;itemRendererFunction&lt;/code&gt; 으로 분기하는게 좋겠다
+
+&lt;ul&gt;
+&lt;li&gt;가능하면 공통 처리에 필요한 function 은 &lt;code&gt;RendererManager.chooseRenderer&lt;/code&gt; 와 같이 global 하게 처리하도록 한다&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;formatting 과 style 이 복합적으로 필요한 경우
+
+&lt;ul&gt;
+&lt;li&gt;위의 두 가지 사항으로 custom renderer 작성의 필요성이 크게 줄어들긴 한다&lt;/li&gt;
+&lt;li&gt;global level 보다는 module level 에서 작성한다&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;datagrid&quot;&gt;DataGrid&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;columns:IList&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dataProvider:IList&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;itemRenderer:IFactory&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;gridcolumn&quot;&gt;GridColumn&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;dataField:String&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;labelFunction:Function&lt;/code&gt; dataField 보다 디테일한 조정 가능
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;function(item:Object, column:GridColumn):String&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;formatter:IFormatter&lt;/code&gt; Cell 내부의 내용을 formatting 한다&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;itemRenderer:IFactory&lt;/code&gt; &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;itemRendererFunction&lt;/code&gt; 조건에 따라 itemRenderer 를 분기하고 싶을 경우 사용한다
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;function(item:Object, column:GridColumn):IFactory&lt;/code&gt; 형식으로 지정한다&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;참조-관계&quot;&gt;참조 관계&lt;/h1&gt;
+
+&lt;h2 id=&quot;gridcolumn-과-itemrenderer-에서의-상호-참조&quot;&gt;GridColumn 과 ItemRenderer 에서의 상호 참조&lt;/h2&gt;
+
+&lt;h4 id=&quot;datagrid&quot;&gt;DataGrid&lt;/h4&gt;
+
+&lt;p&gt;selection 관련 항목들을 통해서 참조 가능 (index 를 알아낸 다음 columns 를 통해 접근)&lt;/p&gt;
+
+&lt;h4 id=&quot;gridcolumn&quot;&gt;GridColumn&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;readonly columnIndex:int&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;readonly grid:DataGrid&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;igriditemrenderer&quot;&gt;IGridItemRenderer&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;column:GridColumn&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;readonly columnIndex:int&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rowIndex:int&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;row,-column-size-관련-속성들&quot;&gt;row, column size 관련 속성들&lt;/h2&gt;
+
+&lt;h4 id=&quot;datagrid&quot;&gt;DataGrid&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;resizeableColumns:Boolean=true&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rowHeight:int&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;variableRowHeight:Boolean&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;typicalItem:Object&lt;/code&gt; 해당 아이템이 column 의 기준 사이즈가 된다&lt;/li&gt;
+&lt;li&gt;width, height 지정 없을 경우, 보여질 column 과 row 를 지정해서 나타내야 할 경우
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;requestedColumnCount&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;requestedMaxRowCount:int&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;requestedMinColumnCount:int&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;requestedMinRowCount:int&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;gridcolumn&quot;&gt;GridColumn&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;width&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;minWidth&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;maxWidth&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;resizeable:Boolean&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;selection-관련-속성들&quot;&gt;selection 관련 속성들&lt;/h2&gt;
+
+&lt;h4 id=&quot;datagrid&quot;&gt;DataGrid&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;selectionMode:String=none|singleRow|singleCell|multipleRows|multipleCells&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;none&lt;/code&gt; selection 되지 않는다&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;singleRow&lt;/code&gt; 한 줄씩만 selection 된다&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;multipleRows&lt;/code&gt; ctrl + click 을 통해 여러 줄이 selection 된다&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;singleCell&lt;/code&gt; 한 cell 만 selection 된다&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;multipleCells&lt;/code&gt; 여러 cell 들이 selection 된다&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;get selection
+
+&lt;ul&gt;
+&lt;li&gt; singleCell, multipleCells 전용 
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;selectedCell:CellPosition&lt;/code&gt; selectionMode cell 전용&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;selectedCells:Vector.&amp;lt;CellPosition&amp;gt;&lt;/code&gt; &lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;singleRow, multipleRows 전용
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;selectedIndex:int&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;selectedIndices:Vector.&amp;lt;int&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;selectedItem:Object&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;selectedItems:Vector.&amp;lt;Object&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;preserveSelection:Boolean=true&lt;/code&gt; sort 시에 selection 표시가 유지되게 한다
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;selectionMode&lt;/code&gt; 가 singleRow, singleCell 일 때만 정상적으로 작동된다&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;requireSelection:Boolean&lt;/code&gt; 반드시 한 개 이상 선택된 항목이 있게 한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;igriditemrenderer&quot;&gt;IGridItemRenderer&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;selected:Boolean&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;datatip-관련-속성들&quot;&gt;dataTip 관련 속성들&lt;/h2&gt;
+
+&lt;h4 id=&quot;datagrid&quot;&gt;DataGrid&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;showDataTips:Boolean&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dataTipField&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dataTipFunction&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;gridcolumn&quot;&gt;GridColumn&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;showDataTips:Boolean&lt;/code&gt; dataTip 을 보여주기 위해서는 활성화가 필수적이다&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dataTipField&lt;/code&gt; showDataTips 필요, 특정 field 를 지정해서 보여준다&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dataTipFormatter&lt;/code&gt; dataTipField 에 영향을 미친다. dataTipFunction 에는 영향을 미치지 않는다 &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dataTipFunction&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;function(item:Object, column:GridColumn):String&lt;/code&gt; 형식으로 지정한다&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;!!! 문제점이 dataTip 을 보여주는 위치가 너무 거지 같다는 것... 조절 가능한지 알아보자&lt;/del&gt;
+
+&lt;ul&gt;
+&lt;li&gt;dataTip 의 생성 로직 및 위치 조절
+
+&lt;ul&gt;
+&lt;li&gt;관여되는 class 는 &lt;code&gt;spark.components.gridClasses.GridItemRenderer&lt;/code&gt; 
+
+&lt;ul&gt;
+&lt;li&gt;dataTip 위치의 조절 
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;GridItemRenderer#constructor&lt;/code&gt; 에서 tooltip event 를 걸게 된다&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;static mx_internal toolTipShowHandler(event:ToolTipEvent):void&lt;/code&gt; 에서 위치 등을 조절&lt;/li&gt;
+&lt;li&gt;이 부분은 상당히 커스텀하기 까다롭게 되어 있다.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;toolTip 의 생성
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;GridItemRenderer#updateDisplayList&lt;/code&gt; 에서 &lt;code&gt;initializeRendererToolTip&lt;/code&gt; 를 매 번 호출&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;GridColumn.showDataTips&lt;/code&gt; 항목을 읽어서 &lt;code&gt;toopTip&lt;/code&gt; 항목을 조절해주게 된다&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;위치 조절이 거지 같이 되어 있다. dataTip 이 필요하다면 그냥 copy 해서 renderer 를 새로 만드는게 좋을듯 싶다&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;sorting-관련-속성들&quot;&gt;sorting 관련 속성들&lt;/h2&gt;
+
+&lt;h4 id=&quot;datagrid&quot;&gt;DataGrid&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sortableColumns:Boolean&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;multiColumnSortingEnabled:Boolean&lt;/code&gt; true 일 경우, ctrl + click 을 통해서 우선 순위 sorting 을 할 수 있게 한다&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;gridcolumn&quot;&gt;GridColumn&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;DataGrid&lt;/code&gt; 상위에서 설정
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sortableColumns:Boolean&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;ArrayCollection&lt;/code&gt; 에서만 작동한다. &lt;code&gt;ArrayList&lt;/code&gt; 에서는 작동하지 않는다&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sortable&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sortCompareFunction&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;기본적으로는 문자 내부의 숫자를 a1, a10, a2 형태로 정렬시킨다&lt;/li&gt;
+&lt;li&gt;하지만, 이 옵션을 사용할 경우 substr 등을 통해서 a1, a2, a10 형태로 정렬이 가능하다&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;function(a:Object, b:Object, column:GridColumn):int&lt;/code&gt; return 값은 array sort 와 같다 (0, 1, -1)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sortDescending:Boolean&lt;/code&gt; header 를 클릭해서 정렬시. 최초 클릭시에 내림차순(높은 값부터 보여주고 싶다면) true 로 설정한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;editable-관련-속성들&quot;&gt;editable 관련 속성들&lt;/h2&gt;
+
+&lt;h4 id=&quot;datagrid&quot;&gt;DataGrid&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;editable:boolean&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;editorColumnIndex:int&lt;/code&gt; ???&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;editorRowIndex:int&lt;/code&gt; ???&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;itemEditor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;imeMode&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;editorActivationMouseEvent:GridItemEditorMouseEvent&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;gridcolumn&quot;&gt;GridColumn&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;editable:Boolean&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;itemEditor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rendererIsEditable:Boolean&lt;/code&gt; editable 로 설정된 DataGrid 내에서 cell 에 focus 가 들어 갔을때, itemEditor 가 뜨지 않게 해준다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;imeMode&lt;/code&gt; 특정 언어권 문자로 타이핑 되도록 설정&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;editorActivationMouseEvent:GridItemEditorMouseEvent&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;시점-특징들&quot;&gt;시점 특징들&lt;/h1&gt;
+
+&lt;h4 id=&quot;datagrid&quot;&gt;DataGrid&lt;/h4&gt;
+
+&lt;h4 id=&quot;igriditemrenderer&quot;&gt;IGridItemRenderer&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;UIComponent&lt;/code&gt; 를 상속받은 경우, &lt;code&gt;updateDisplayList&lt;/code&gt; 는 &lt;code&gt;data&lt;/code&gt; 나 &lt;code&gt;column&lt;/code&gt; 이 바뀔때는 일어나지 않는다&lt;br&gt;
+기본적인 &lt;code&gt;itemRenderer&lt;/code&gt; 가 새로 만들어진 뒤 &lt;code&gt;prepare&lt;/code&gt; 이전 시점 초기화 시나, &lt;code&gt;column&lt;/code&gt; 의 사이즈를 바꿀때 주로 일어난다&lt;br&gt;
+즉, 기본적인 layout 구성의 틀을 바꿀때 이외에는 &lt;code&gt;updateDisplayList&lt;/code&gt; 는 발생되지 않는다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;거의 매 순간 들어오는 항목들
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;set hovered(value:Boolean)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;set selected(value:Boolean)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;set showsCaret(value:Boolean)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;prepare 이전 시점에 추가적으로 들어오는 항목들
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;set rowIndex(value:int)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;set column(value:GridColumn)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;set label(value:String)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;set data(value:Object)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;drawing 시점들
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;discard(willBeRecycled:Boolean):void&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;DataGrid&lt;/code&gt; 의 &lt;code&gt;removeElement&lt;/code&gt; 상황에서는 발생되지 않는다&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Column.itemRenderer&lt;/code&gt; 를 통해 교체 해줄때 true parameter 를 가지고 발생된다&lt;/li&gt;
+&lt;li&gt;즉... 망할 dispose 구간이 없다
+
+&lt;ul&gt;
+&lt;li&gt;그러므로 &lt;code&gt;bitmap&lt;/code&gt; 같은걸 사용해서 성능에 예민한 경우 &lt;code&gt;removeElement&lt;/code&gt; 시점에 &lt;code&gt;column.itemRenderer=null&lt;/code&gt; 을 한 번 쳐주고 가면 좋을듯 싶다.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;prepare(hasBeenRecycled:Boolean):void&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;안정적이다... updateDisplayList 와 각 종, property 에 대한 적용이 다 끝난 뒤에 발생된다&lt;/li&gt;
+&lt;li&gt;겁나 자주 발생된다... 매번 그려대다간 cpu over 는 기본이다&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;discard&lt;/code&gt; 가 딱히 안정적이지는 않은듯 싶다. graphics drawing 시점에 있어서 &lt;code&gt;prepare&lt;/code&gt; 이후에 발생해서 공백을 만들어 버리는 에러도 발생을 한다&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;hr&gt;
+
+&lt;h1 id=&quot;style-편집&quot;&gt;Style 편집&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;color ???
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;borderColor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;caretColor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;symbolColor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;selectionColor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rollOverColor&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;scroll ???
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;horizontalScrollPolicy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;verticalScrollPolicy&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;datagridskin-각-part-들-분석&quot;&gt;&lt;code&gt;DataGridSkin&lt;/code&gt; 각 part 들 분석&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;caretIndicator&lt;/code&gt; mouse 의 마지막 click selection 위치인 caret 을 그린다. 
+
+&lt;ul&gt;
+&lt;li&gt;implement &lt;code&gt;spark.components.gridClasses.IGridVisualElement&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;use style &lt;code&gt;caretColor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;Rect&amp;gt;&amp;lt;SolidColorStroke&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;selectionIndicator&lt;/code&gt; selection 된 cell, row 의 background color 를 그린다. 
+
+&lt;ul&gt;
+&lt;li&gt;implement &lt;code&gt;spark.components.gridClasses.IGridVisualElement&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;use style &lt;code&gt;selectionColor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;Rect&amp;gt;&amp;lt;SolidColor&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hoverIndicator&lt;/code&gt; mouse 의 roll over 를 그린다.
+
+&lt;ul&gt;
+&lt;li&gt;implement &lt;code&gt;spark.components.gridClasses.IGridVisualElement&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;use style &lt;code&gt;rollOverColor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;Rect&amp;gt;&amp;lt;SolidColor&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;??? &lt;code&gt;dropIndicator&lt;/code&gt; 아마도 drag and drop 시에 외곽선을 그려주는 역할일듯
+
+&lt;ul&gt;
+&lt;li&gt;implement &lt;code&gt;flash.display.DisplayObject&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;Rect&amp;gt;&amp;lt;SolidColorStroke&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;editorIndicator&lt;/code&gt; &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;rendererIsEditable&lt;/code&gt; 이 걸린 column 에 edit focus 가 들어갈때 배경색을 그려준다&lt;/li&gt;
+&lt;li&gt;implement &lt;code&gt;mx.core.IVisualElement&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;Rect&amp;gt;&amp;lt;SolidColor&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;alternatingRowColorsBackground&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;headerRenderer&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;columnSeparator&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;headerColumnSeparator&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;lockedColumnsSeparator&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;lockedRowsSeparator&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;rowSeparator&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;datagrid-해킹&quot;&gt;&lt;code&gt;DataGrid&lt;/code&gt; 해킹&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;row, column merge 가능하게 확장해보기&lt;/li&gt;
+&lt;li&gt;renderer 재사용 문제에 대한 분석 및 해결 방안&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+			<pubDate>Tue, 17 Jun 2014 15:11:29 +0900</pubDate>
+			<link>http://labs.ssen.name/</link>
+			<guid isPermaLink="true">http://labs.ssen.name/</guid>
+		</item>
+		
+		
+		
+
+		<item>
+			<title>DataGrid 를 Excel 처럼 Customizing 하기</title>
+			<description>&lt;h1 id=&quot;datagrid.editable-을-통한-편집-기능의-분석&quot;&gt;&lt;code&gt;DataGrid.editable&lt;/code&gt; 을 통한 편집 기능의 분석&lt;/h1&gt;
+
+&lt;p&gt;기본적으로 &lt;code&gt;DataGrid.editable&lt;/code&gt; 을 통해서 Excel 처럼 편집이 가능하지만, 이에 대해서는&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;만들다 말았다...&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;로 정의 할 수 있겠다. &lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;DataGrid&lt;/code&gt; 의 기본 &lt;code&gt;DataGridSkin&lt;/code&gt; 과 편집 기능은 상당한 괴리가 있다.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;DataGrid&lt;/code&gt; 의 편집 기능으로 쓰일 여러 Component 의 기본 Skin 들이 &lt;code&gt;DataGrid&lt;/code&gt; 의 모양과 어울리지 않는다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;즉, &lt;code&gt;DataGrid.editable&lt;/code&gt; 을 실제적으로 사용하기 위해서는 상당한 분량의 &lt;code&gt;Skin&lt;/code&gt; 작업을 요구하게 된다.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;DataGrid&lt;/code&gt; 의 Cell 에 들어가서도 어울릴만한 여러 Component Skin 들과 그에 걸맞는 형태의 새로운 &lt;code&gt;DataGridSkin&lt;/code&gt; 의 구성이 가장 우선시 되고, 이는 상당한 분량의 작업을 요구하게 된다.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&quot;igriditemeditor-와-rendereriseditable&quot;&gt;&lt;code&gt;IGridItemEditor&lt;/code&gt; 와 &lt;code&gt;rendererIsEditable&lt;/code&gt;&lt;/h1&gt;
+
+&lt;h3 id=&quot;rendereriseditable-을-위한-model&quot;&gt;&lt;code&gt;rendererIsEditable&lt;/code&gt; 을 위한 Model&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;rendererIsEditable&lt;/code&gt; 에 &lt;code&gt;[Bindable]&lt;/code&gt; 이 걸린 Model 을 Binding 시키면 상당한 문제를 만들어내게 된다.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Renderer 에서 편집&lt;/li&gt;
+&lt;li&gt;Model 에서 &lt;code&gt;PropertyChangeEvent&lt;/code&gt; 발생 시킴&lt;/li&gt;
+&lt;li&gt;DataGrid 에서 Event 수신 후에 갱신&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;갱신 과정에서 focus 없어짐&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;즉, &lt;strong&gt;Keyboard 를 통한 편집 상황에서 focus 가 날라가버리는 문제가 발생&lt;/strong&gt;하게 되고, 이건 사용성에 꽤나 심각한 악영향을 미치게 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;GridEditor&lt;/code&gt; 나 여러 내부적인 구조들을 뜯어고쳐서 패치할 수도 있겠지만, 보다 간단하게 해결이 가능하다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public var property:String;
+
+public function setProperty(value:String):void {
+    var oldValue:String=property;
+    property=value;
+    if (hasEventListener(PropertyChangeEvent.PROPERTY_CHANGE)) {
+        dispatchEvent(PropertyChangeEvent.createUpdateEvent(this, &amp;quot;property&amp;quot;, oldValue, property));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;[Bindable]&lt;/code&gt; 을 걸지 않는 대신, &lt;code&gt;setter method&lt;/code&gt; 를 통해서 접근하면, &lt;code&gt;rendererIsEditable&lt;/code&gt; 에서 발생되는 이벤트 순환 문제도 없고, 외부에서 property 를 갱신할 때도 문제가 없다.&lt;/p&gt;
+</description>
+			<pubDate>Tue, 17 Jun 2014 15:11:29 +0900</pubDate>
+			<link>http://labs.ssen.name/</link>
+			<guid isPermaLink="true">http://labs.ssen.name/</guid>
+		</item>
+		
+		
+		
+
+		<item>
+			<title>DataGrid 에 확장 요소 넣기</title>
+			<description></description>
+			<pubDate>Tue, 17 Jun 2014 15:11:29 +0900</pubDate>
+			<link>http://labs.ssen.name/</link>
+			<guid isPermaLink="true">http://labs.ssen.name/</guid>
+		</item>
+		
+		
+		
+
+		<item>
+			<title>DataGrid 의 Style 및 layout 을 결정하는 요소들</title>
+			<description>&lt;h1 id=&quot;datagridskin-의-색상과-같은-style-적-요소들&quot;&gt;&lt;code&gt;DataGridSkin&lt;/code&gt; 의 색상과 같은 style 적 요소들&lt;/h1&gt;
+
+&lt;p&gt;기본적인 모양새는 &lt;code&gt;DataGridSkin&lt;/code&gt; 이 결정하게 된다.&lt;/p&gt;
+
+&lt;p&gt;특이점은 &lt;code&gt;Skin&lt;/code&gt; 시스템이 가지는 형태라기 보다는, 일종의 형태를 그려내는데 필요한 여러 &lt;code&gt;part&lt;/code&gt; 들의 집합체적 성격을 가진다. 그렇기에 내부적으로 &lt;code&gt;IFactory&lt;/code&gt; 형태의 &lt;code&gt;[SkinPart]&lt;/code&gt; 들이 많은 편이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;ifactory-형태의-[skinpart]-들-분석&quot;&gt;&lt;code&gt;IFactory&lt;/code&gt; 형태의 &lt;code&gt;[SkinPart]&lt;/code&gt; 들 분석&lt;/h3&gt;
+
+&lt;p&gt;Factory 형태의 &lt;code&gt;[SkinPart]&lt;/code&gt; 들은 &lt;code&gt;headerRenderer&lt;/code&gt; 를 제외하고는 모두 &lt;code&gt;GraphicElement&lt;/code&gt; 형태를 가지게 된다. 화면을 그려내기 위한 작은 &lt;code&gt;GraphicElement&lt;/code&gt; 의 집합이라고 볼 수 있다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Header 렌더링
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;headerRenderer&lt;/code&gt; 말그대로 Renderer 이다. Header 를 그려내는데 사용된다.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Cell 을 그려내는데 필요한 요소들
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;alternatingRowColorsBackground&lt;/code&gt; cell 의 background 를 그린다.
+
+&lt;ul&gt;
+&lt;li&gt;use style &lt;code&gt;alternatingRowColors&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;default &lt;code&gt;&amp;lt;Rect&amp;gt;&amp;lt;SolidColor&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Indicator (selection, hover, caret 등 사용자 반응의 표현) 들을 그리는 요소들
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;caretIndicator&lt;/code&gt; mouse 의 마지막 click selection 위치인 caret 을 그린다. 
+
+&lt;ul&gt;
+&lt;li&gt;use style &lt;code&gt;caretColor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;default &lt;code&gt;&amp;lt;Rect&amp;gt;&amp;lt;SolidColorStroke&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;selectionIndicator&lt;/code&gt; selection 된 cell, row 의 background color 를 그린다. 
+
+&lt;ul&gt;
+&lt;li&gt;use style &lt;code&gt;selectionColor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;default &lt;code&gt;&amp;lt;Rect&amp;gt;&amp;lt;SolidColor&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hoverIndicator&lt;/code&gt; mouse 의 roll over 를 그린다.
+
+&lt;ul&gt;
+&lt;li&gt;use style &lt;code&gt;rollOverColor&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;default &lt;code&gt;&amp;lt;Rect&amp;gt;&amp;lt;SolidColor&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dropIndicator&lt;/code&gt; 아마도 drag and drop 시에 외곽선을 그려주는 역할일듯 (테스트 안해봤음)
+
+&lt;ul&gt;
+&lt;li&gt;default &lt;code&gt;&amp;lt;Rect&amp;gt;&amp;lt;SolidColorStroke&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;editorIndicator&lt;/code&gt; rendererIsEditable 이 걸린 column 에 edit focus 가 들어갈때 배경색을 그려준다
+
+&lt;ul&gt;
+&lt;li&gt;default &lt;code&gt;&amp;lt;Rect&amp;gt;&amp;lt;SolidColor&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Separator (구분선) 을 그려내는 요소들. 모두 &lt;code&gt;Stroke&lt;/code&gt; 요소들이다.
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;headerColumnSeparator&lt;/code&gt; header 내부의 column 간 구분선&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;columnSeparator&lt;/code&gt; column 간 구분선&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rowSeparator&lt;/code&gt; row 간 구분선&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lockedColumnsSeparator&lt;/code&gt; column 잠금선&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lockedRowsSeparator&lt;/code&gt; row 잠금선&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;igridvisualelement&quot;&gt;&lt;code&gt;IGridVisualElement&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;기본적으로 &lt;code&gt;alternatingRowColorsBackground&lt;/code&gt; 나 여러 &lt;code&gt;indicator&lt;/code&gt; 와 같은 구성 요소들은 &lt;code&gt;IVisualElement&lt;/code&gt; 만 구현해내도 된다.&lt;/p&gt;
+
+&lt;p&gt;추가적으로 part 가 &lt;code&gt;DataGrid&lt;/code&gt; 의 속성을 읽어서 어떤 작동을 하길 원한다면 (ex. style 처리와 같은...) &lt;code&gt;IGridVisualElement&lt;/code&gt; 를 구현하면 된다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;public function prepareGridVisualElement(grid:Grid, rowIndex:int, columnIndex:int):void {
+    // TODO
+    // grid.dataGrid
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;IGridVisualElement&lt;/code&gt; 를 구현하면 위와 같은 method 를 구현하게 되는데, &lt;code&gt;grid.DataGrid&lt;/code&gt; 로 참조를 읽어서 여러 &lt;code&gt;DataGrid&lt;/code&gt; 의 속성을 구현해낼 수 있다.&lt;/p&gt;
+
+&lt;h3 id=&quot;css-style-요소의-테마를-포함시킬-것인가?&quot;&gt;css style 요소의 테마를 포함시킬 것인가?&lt;/h3&gt;
+
+&lt;p&gt;기본 &lt;code&gt;DataGridSkin&lt;/code&gt; 은 spark theme 의 편의성을 위해서 각 part 들에 &lt;code&gt;IGridVisualElement&lt;/code&gt; 를 구현시켜서 &lt;code&gt;DataGrid&lt;/code&gt; 의 style 요소들을 받아들여 렌더링 하게 된다.&lt;/p&gt;
+
+&lt;p&gt;하지만, custom 한 &lt;code&gt;DataGridSkin&lt;/code&gt; 을 작성하고자 한다면 딱히 이 부분까지는 고려할 필요는 없다. 주의할 것은 &lt;code&gt;IGridVisualElement&lt;/code&gt; 를 구현하지 않은 &lt;code&gt;DataGridSkin&lt;/code&gt; 을 만든다면, &lt;code&gt;DataGrid&lt;/code&gt; 의 여러 style 속성들 (예를 들어 &lt;code&gt;backgroundColor&lt;/code&gt;) 같은 것들은 모두 무효화 되게 된다.&lt;/p&gt;
+
+&lt;h1 id=&quot;datagridskin-의-layout-구성적-요소들&quot;&gt;&lt;code&gt;DataGridSkin&lt;/code&gt; 의 layout 구성적 요소들&lt;/h1&gt;
+
+&lt;p&gt;각 종, &lt;code&gt;part&lt;/code&gt; 들을 배제하고 나면 남는 것은 아래와 같은 구성이다.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;lt;VGroup&amp;gt;
+    &amp;lt;GridColumnHeaderGroup id=&amp;quot;columnHeaderGroup&amp;quot; /&amp;gt;
+    &amp;lt;Group&amp;gt;
+        &amp;lt;Rect&amp;gt;
+            &amp;lt;fill/&amp;gt;
+        &amp;lt;/Rect&amp;gt;
+        &amp;lt;VGroup&amp;gt;
+            &amp;lt;Line id=&amp;quot;headerSeparator&amp;quot; /&amp;gt;
+            &amp;lt;Scroller&amp;gt;
+                &amp;lt;Grid id=&amp;quot;grid&amp;quot;&amp;gt;
+                    &amp;lt;gridView&amp;gt;
+                        &amp;lt;Component&amp;gt;
+                            &amp;lt;GridView&amp;gt;
+                                &amp;lt;GridLayer name=&amp;quot;backgroundLayer&amp;quot;/&amp;gt;
+                                &amp;lt;GridLayer name=&amp;quot;selectionLayer&amp;quot;/&amp;gt;
+                                &amp;lt;GridLayer name=&amp;quot;editorIndicatorLayer&amp;quot;/&amp;gt;
+                                &amp;lt;GridLayer name=&amp;quot;rendererLayer&amp;quot;/&amp;gt;
+                                &amp;lt;GridLayer name=&amp;quot;overlayLayer&amp;quot;/&amp;gt;
+                            &amp;lt;/GridView&amp;gt;
+                        &amp;lt;/Component&amp;gt;
+                    &amp;lt;/gridView&amp;gt;
+                &amp;lt;/Grid&amp;gt;
+            &amp;lt;/Scroller&amp;gt;
+        &amp;lt;/VGroup&amp;gt;
+    &amp;lt;/Group&amp;gt;
+&amp;lt;/VGroup&amp;gt;
+&amp;lt;Rect id=&amp;quot;border&amp;quot;&amp;gt;
+    &amp;lt;stroke /&amp;gt;
+&amp;lt;/Rect&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code&gt;id&lt;/code&gt; 를 기재한 요소들이 중요한 기능적 요소들이고, 나머지들은 그냥 layout 을 구성하는 것 들인데, 사용자의 요구에 따라 &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;if &lt;code&gt;DataGrid&lt;/code&gt; 외곽선 바깥에 scrollbar 를 배치하고 싶다거나&lt;/li&gt;
+&lt;li&gt;if 각 종, &lt;code&gt;GridLayer&lt;/code&gt; 들의 순서를 바꿀 필요가 있다거나&lt;/li&gt;
+&lt;li&gt;if 하단에 cell 들의 합산을 추가하고 싶다거나...&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;뭐 이런 각 종, Custom 처리를 하고 싶으면 그냥 layout 자체를 바꿔버리면 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;igridvisualelement&quot;&gt;&lt;code&gt;IGridVisualElement&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;내부적으로 &lt;code&gt;IGridVisualElement&lt;/code&gt; 를 구현한 요소를 추가할 경우, &lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;function prepareGridVisualElement(grid:Grid, rowIndex:int, columnIndex:int):void {
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;해당 요소는 위와 같은 코드를 통해 초기하 되게 된다.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;하단에 합산 처리를 넣고 싶다거나...&lt;/li&gt;
+&lt;li&gt;뭔가 DataGrid 에 추가적인 요소들을 낑궈넣고 싶다면&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이 interface 를 구현한 요소를 추가시킨 component 를 layout 에 넣어주면 된다.&lt;/p&gt;
+
+&lt;p&gt;이와 관련된 문서는 &lt;a href=&quot;DataGrid%20%EC%97%90%20%ED%99%95%EC%9E%A5%20%EC%9A%94%EC%86%8C%20%EB%84%A3%EA%B8%B0.md&quot;&gt;DataGrid 에 확장 요소 넣기&lt;/a&gt; 에서 이어가도록 하겠다.&lt;/p&gt;
+</description>
+			<pubDate>Tue, 17 Jun 2014 15:11:29 +0900</pubDate>
+			<link>http://labs.ssen.name/</link>
+			<guid isPermaLink="true">http://labs.ssen.name/</guid>
+		</item>
+		
+		
+		
+
+		<item>
+			<title>DataGrid 의 구성 요소들</title>
+			<description>&lt;h1 id=&quot;datagridskin&quot;&gt;DataGridSkin&lt;/h1&gt;
+</description>
+			<pubDate>Tue, 17 Jun 2014 15:11:29 +0900</pubDate>
+			<link>http://labs.ssen.name/</link>
+			<guid isPermaLink="true">http://labs.ssen.name/</guid>
+		</item>
+		
+		
+		
+
+		<item>
+			<title>Develop Npm Module</title>
+			<description>&lt;h1 id=&quot;구성도&quot;&gt;구성도&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;작업 흐름 관리, 버전 관리 : &lt;a href=&quot;https://github.com&quot;&gt;Git&lt;/a&gt; + &lt;a href=&quot;VCS/git-flow.md&quot;&gt;Git-flow&lt;/a&gt; + &lt;a href=&quot;http://www.sourcetreeapp.com&quot;&gt;SourceTree&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;개발툴 : [Webstorm]&lt;/li&gt;
+&lt;li&gt;저장소 : &lt;a href=&quot;https://github.com&quot;&gt;Github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;통합 서버 : &lt;a href=&quot;https://travis-ci.org&quot;&gt;Travis-ci&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;travis-npm-api_key-설정&quot;&gt;Travis Npm api_key 설정&lt;/h1&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;brew install ruby
+subl ~/.config/fish/config.fish # $PATH에 /usr/local/opt/ruby 추가
+gem install travis-lint
+gem install travis
+travis encrypt --add
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://docs.travis-ci.com/user/deployment/npm/&quot;&gt;http://docs.travis-ci.com/user/deployment/npm/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/travis-ci/travis#readme&quot;&gt;https://github.com/travis-ci/travis#readme&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.travis-ci.com/2013-10-02-continuous-deployment-pypi-npm-and-more/&quot;&gt;http://blog.travis-ci.com/2013-10-02-continuous-deployment-pypi-npm-and-more/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+			<pubDate>Tue, 17 Jun 2014 15:11:29 +0900</pubDate>
+			<link>http://labs.ssen.name/</link>
+			<guid isPermaLink="true">http://labs.ssen.name/</guid>
+		</item>
+		
+		
+	</channel>
+</rss>

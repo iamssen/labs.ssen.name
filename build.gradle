@@ -1,0 +1,77 @@
+// build script
+// -----------------------------------
+buildscript {
+	repositories {
+		maven { url "http://repo.spring.io/libs-release" }
+		mavenLocal()
+		mavenCentral()
+		// maven { url "http://download.java.net/maven/2" }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.1.RELEASE")
+	}
+}
+
+
+// plugins
+// -----------------------------------
+apply plugin: "java"
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: "war"
+apply plugin: "spring-boot"
+
+
+// make war package
+// -----------------------------------
+war {
+	def projectName = (System.env.PROJECT) ? System.env.PROJECT : "labs.ssen.name"
+	baseName = projectName
+}
+
+configurations {
+	providedRuntime
+}
+
+repositories {
+	mavenLocal()
+    mavenCentral()
+    maven { url "http://repo.spring.io/libs-release" }
+}
+
+dependencies {
+	// compile("org.springframework:spring-context")
+	// compile("org.springframework:spring-webmvc")
+	// compile("org.springframework.boot:spring-boot-starter-parent")
+	compile("org.springframework.boot:spring-boot-starter-web")
+	//compile("com.github.sps.mustache:mustache-spring-view")
+	//compile("com.samskivert:jmustache")
+	//compile("com.github.spullara.mustache.java:compiler")
+	// compile("org.thymeleaf:thymeleaf")
+	// compile("org.thymeleaf:thymeleaf-spring4")
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+	compile("com.fasterxml.jackson.core:jackson-databind")
+	// compile("org.springframework.boot:spring-boot-starter-jetty")
+	// compile("org.springframework:spring-context:4.0.5.RELEASE")
+	// compile("javax.servlet:javax.servlet-api:3.0.1")
+	// compile("com.fasterxml.jackson.core:jackson-databind")
+}
+
+
+
+task buildAndDeployToWebapps(type:Copy) {
+	from war
+	into System.env.WAS_WEBAPPS
+}
+
+buildAndDeployToWebapps.dependsOn clean, build
+buildAndDeployToWebapps.mustRunAfter build
+build.mustRunAfter clean
+
+
+
+// make wrapper
+// -----------------------------------
+task wrapper(type: Wrapper) {
+	gradleVersion = "1.11"
+}

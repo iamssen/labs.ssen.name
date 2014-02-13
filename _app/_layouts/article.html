@@ -1,0 +1,25 @@
+---
+layout: layout
+
+styles:
+- '/assets/nav.css'
+- '/assets/article.css'
+- '/assets/pygments.css'
+- '/assets/list.css'
+- '/assets/copyright.css'
+
+scripts:
+- '/assets/article.js'
+- '/assets/list.js'
+
+includes:
+  nav: 'nav.html'
+  article: 'article.html'
+  list: 'list.html'
+  copyright: 'copyright.html'
+---
+
+{% include nav.html %}
+{% include article.html %}
+{% include list.html %}
+{% include copyright.html %}

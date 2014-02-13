@@ -1,0 +1,30 @@
+---
+---
+
+@import "markdown";
+
+#article {
+	padding-top: 10px;
+	padding-bottom: 20px;
+
+	#article-title {
+		h1 {
+			small {
+				font-size: 0.45em;
+			}
+		}
+	}
+
+	#article-content {
+		font-size: 13px;
+		@include markdown;
+	}
+
+	#article-tags {
+		margin-top: 30px;
+	}
+
+	#article-disqus {
+		margin-top: 50px;
+	}
+}

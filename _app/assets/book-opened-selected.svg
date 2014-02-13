@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="42px" height="52px" viewBox="0 0 42 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.2 (7799) - http://www.bohemiancoding.com/sketch -->
+    <title>book-opened-selected</title>
+    <description>Created with Sketch.</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M2.15943891,7.74292165 C2.92169086,3.74374231 6.27006907,2 9,2 L36,2 C38.209,2 40,3.791 40,6 L40,36 C40,38.209 38.209,40 36,40 C36,40 35.25,42.75 32.417,44.75 C30.5645495,46.0573045 27.1457591,47.222331 24.9997925,47.8725196 C24.9834788,50.010589 24.0067311,51.3939496 22.559,50.798 L4.581,43.461 C3.122,42.861 2,40.642 2,38.473 L2,9.023 C2,8.55156364 2.0563123,8.12136943 2.15943891,7.74292165 Z M6.37982408,6.86630814 C6.79057533,5.81557933 7.77004854,5 10.047,5 L33.329,5 C35.234,5 37,7.011 37,8.895 L37,34.479 C37,37 36.238,37.5 34.333,37.5 C34.333,37.5 34.667,40.25 30.721,42.75 C28.7577133,43.9938461 26.6362456,44.7539903 25,45.2038459 L25,18.368 C25,16.199 24.019,14.095 22.559,13.495 L6.37982408,6.86630814 Z" id="Fill-4" fill="#5484FF" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>
