@@ -141,6 +141,7 @@ module.exports = (grunt) ->
 	grunt.registerTask 'trace', ->
 		console.log($('<%= CONTAINER %>/<%= PROJECT %>/nginx.conf'))
 		console.log(grunt.file.exists($('<%= CONTAINER %>/<%= PROJECT %>/nginx.conf')))
+		console.log(grunt.config.get('BRANCH'))
 
 
 	# ====================================================
@@ -165,19 +166,24 @@ module.exports = (grunt) ->
 		tasks = []
 		tasks.push('get-envs:jenkins')
 		tasks.push('mochaTest')
-
-		if grunt.config.get('BRANCH').lastIndexOf('/master') > -1
-			tasks.push('kill')
-			tasks.push('clean:current-build')
-			#tasks.push('coffee:compile-lib')
-			tasks.push('copy:to-container')
-			tasks.push('link-node-modules')
-			tasks.push('start')
-			tasks.push('create-nginx-conf')
-			tasks.push('link-nginx-conf')
-			tasks.push('shell:reload-nginx-server')
-
+		tasks.push('jenkins-release')
 		grunt.task.run(tasks)
+
+	grunt.registerTask 'jenkins-release', ->
+		if grunt.config.get('BRANCH').lastIndexOf('/master') > -1
+			tasks = [
+				'kill'
+				'clean:current-build'
+				#'coffee:compile-lib'
+				'copy:to-container'
+				'link-node-modules'
+				'start'
+				'create-nginx-conf'
+				'link-nginx-conf'
+				'shell:reload-nginx-server'
+			]
+
+			grunt.task.run(tasks)
 
 	# local task
 	grunt.registerTask 'default', ->
