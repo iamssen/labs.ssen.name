@@ -42,6 +42,7 @@ module.exports = (grunt) ->
 				options:
 					force: true
 				src: [
+					'<%= NGINX_HOME %>/sites-enabled/<%= PROJECT %>'
 					'<%= CONTAINER %>/<%= PROJECT %>/<%= BUILD %>'
 				]
 
@@ -51,8 +52,10 @@ module.exports = (grunt) ->
 			src: ['test/**/*.coffee']
 
 		shell:
-			'reload-nginx':
+			'reload-nginx-server':
 				command: 'sudo service nginx reload'
+			'reload-nginx-local':
+				command: 'nginx -s reload'
 
 
 	# ------------------------------------
@@ -64,19 +67,22 @@ module.exports = (grunt) ->
 		grunt.config.set('NGINX_HOME', process.env.NGINX_HOME)
 		grunt.config.set('CONTAINER', process.env.CONTAINER)
 		grunt.config.set('DROPBOX', process.env.DROPBOX)
-		grunt.config.set('DOMAIN', 'labs.ssen.name')
 
 		if subtask is 'local'
+			grunt.config.set('DOMAIN', 'localhost')
 			grunt.config.set('PROJECT', 'labs.ssen.name')
 			grunt.config.set('BRANCH', 'origin/master')
 			grunt.config.set('BUILD', '1')
+			grunt.config.set('PORT', 9888)
 		else if subtask is 'jenkins'
+			grunt.config.set('DOMAIN', 'labs.ssen.name')
 			grunt.config.set('PROJECT', process.env.JOB_NAME)
 			grunt.config.set('BRANCH', process.env.GIT_BRANCH)
 			grunt.config.set('BUILD', process.env.BUILD_NUMBER)
+			grunt.config.set('PORT', 80)
 
 		randomport 13000, 18000, (port) ->
-			grunt.config.set('PORT', port)
+			grunt.config.set('NODE_PORT', port)
 			done()
 
 	# kill server
@@ -106,7 +112,7 @@ module.exports = (grunt) ->
 			command: 'coffee'
 			pidFile: $('<%= CONTAINER %>/<%= PROJECT %>/pid')
 			logFile: $('<%= CONTAINER %>/<%= PROJECT %>/<%= BUILD %>.log')
-			options: [ $('port=<%= PORT %>') ]
+			options: [ $('port=<%= NODE_PORT %>') ]
 
 		forever.startDaemon($('<%= CONTAINER %>/<%= PROJECT %>/<%= BUILD %>/lib/main.coffee'), options)
 		console.log($('<%= CONTAINER %>/<%= PROJECT %>/<%= BUILD %>/lib/main.coffee'), options)
@@ -116,15 +122,18 @@ module.exports = (grunt) ->
 		data =
 			DOMAIN: grunt.config.get('DOMAIN')
 			DROPBOX: grunt.config.get('DROPBOX')
+			NODE_PORT: grunt.config.get('NODE_PORT')
 			PORT: grunt.config.get('PORT')
 
 		template = Hogan.compile(grunt.file.read('deploy/nginx.conf.template', {encoding:'utf8'}))
-		grunt.file.write($('<%= CONTAINER %>/<%= PROJECT %>/nginx.conf'), template.render(data), {encoding:'utf8'})
+		conf = $('<%= CONTAINER %>/<%= PROJECT %>/nginx.conf')
+		grunt.file.write(conf, template.render(data), {encoding:'utf8'})
+		console.log('exists', grunt.file.exists(conf))
 
 	# link nginx.conf
 	grunt.registerTask 'link-nginx-conf', ->
 		srcpath = $('<%= CONTAINER %>/<%= PROJECT %>/nginx.conf')
-		dstpath = $('<%= NGINX_HOME %>/site-enabled/<%= PROJECT %>')
+		dstpath = $('<%= NGINX_HOME %>/sites-enabled/<%= PROJECT %>')
 		fs.linkSync(srcpath, dstpath)
 
 	# link node_modules
@@ -173,7 +182,7 @@ module.exports = (grunt) ->
 			tasks.push('start')
 			tasks.push('create-nginx-conf')
 			tasks.push('link-nginx-conf')
-			tasks.push('shell:reload-nginx')
+			tasks.push('shell:reload-nginx-server')
 
 		grunt.task.run(tasks)
 
@@ -190,6 +199,8 @@ module.exports = (grunt) ->
 			'link-node-modules'
 			'start'
 			'create-nginx-conf'
+			'link-nginx-conf'
+			'shell:reload-nginx-local'
 		]
 
 		grunt.task.run(tasks)
