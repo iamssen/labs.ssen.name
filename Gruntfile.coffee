@@ -154,20 +154,6 @@ module.exports = (grunt) ->
 	# ====================================================
 	# jenkins task
 	grunt.registerTask 'jenkins', ->
-		# [x] get-envs:jenkins
-		# [-] build:test
-		# [x] mochaTest
-		# [-] clean:test
-		# [x] if BRANCH is master
-		# [-] build:release
-		# [x] kill   ---> process.kill(pid) if exists .pid
-		# [x] clean:depository
-		# [x] copy:release
-		# start
-		# [x] mustache DEPOSITORY/PROJECT/nginx.conf
-		# sudo ln -s DEPOSITORY/PROJECT/nginx.conf NGINX_HOME/site-enabled/$PROJECT
-		# sudo service nginx reload
-
 		tasks = [
 			'get-envs:jenkins'
 			'trace'
