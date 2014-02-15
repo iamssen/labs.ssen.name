@@ -1,3 +1,3 @@
 jenkins:
-	npm install
+	sudo npm install
 	sudo grunt jenkins
