@@ -141,7 +141,14 @@ module.exports = (grunt) ->
 	grunt.registerTask 'trace', ->
 		console.log($('<%= CONTAINER %>/<%= PROJECT %>/nginx.conf'))
 		console.log(grunt.file.exists($('<%= CONTAINER %>/<%= PROJECT %>/nginx.conf')))
-
+		console.log(grunt.config.get('NGINX_HOME'))
+		console.log(grunt.config.get('CONTAINER'))
+		console.log(grunt.config.get('DROPBOX'))
+		console.log(grunt.config.get('DOMAIN'))
+		console.log(grunt.config.get('PROJECT'))
+		console.log(grunt.config.get('BRANCH'))
+		console.log(grunt.config.get('VERSION'))
+		console.log(grunt.config.get('PORT'))
 
 	# ====================================================
 	# tasks
@@ -162,29 +169,37 @@ module.exports = (grunt) ->
 		# sudo ln -s DEPOSITORY/PROJECT/nginx.conf NGINX_HOME/site-enabled/$PROJECT
 		# sudo service nginx reload
 
-		tasks = []
-		tasks.push('get-envs:jenkins')
-		tasks.push('mochaTest')
-
-		if grunt.config.get('BRANCH').lastIndexOf('/master') > -1
-			tasks.push('kill')
-			tasks.push('clean:current-build')
-			#tasks.push('coffee:compile-lib')
-			tasks.push('copy:to-container')
-			tasks.push('link-node-modules')
-			tasks.push('start')
-			tasks.push('create-nginx-conf')
-			tasks.push('link-nginx-conf')
-			tasks.push('shell:reload-nginx-server')
+		tasks = [
+			'get-envs:jenkins'
+			'trace'
+			'mochaTest'
+			'jenkins-release'
+		]
 
 		grunt.task.run(tasks)
+
+	grunt.registerTask 'jenkins-release', ->
+		if grunt.config.get('BRANCH').lastIndexOf('/master') > -1
+			tasks = [
+				'kill'
+				'clean:current-build'
+				#'coffee:compile-lib'
+				'copy:to-container'
+				'link-node-modules'
+				'start'
+				'create-nginx-conf'
+				'link-nginx-conf'
+				'shell:reload-nginx-server'
+			]
+
+			grunt.task.run(tasks)
 
 	# local task
 	grunt.registerTask 'default', ->
 		tasks = [
 			'get-envs:local'
-			'mochaTest'
 			'trace'
+			'mochaTest'
 			'kill'
 			'clean:current-build'
 			#'coffee:compile-lib'
