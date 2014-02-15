@@ -50,13 +50,13 @@ module.exports = (grunt) ->
 			'reload-nginx-local':
 				command: 'nginx -s reload'
 
-
 	# ------------------------------------
 	# get environment variables
 	# ------------------------------------
 	grunt.registerTask 'get-envs', (subtask) ->
 		done = @async()
 
+		grunt.config.set('WORKSPACE', __dirname)
 		grunt.config.set('NGINX_HOME', process.env.NGINX_HOME)
 		grunt.config.set('CONTAINER', process.env.CONTAINER)
 		grunt.config.set('DROPBOX', process.env.DROPBOX)
@@ -127,13 +127,13 @@ module.exports = (grunt) ->
 	grunt.registerTask 'link-nginx-conf', ->
 		srcpath = $('<%= CONTAINER %>/<%= PROJECT %>/nginx.conf')
 		dstpath = $('<%= NGINX_HOME %>/sites-enabled/<%= PROJECT %>')
-		fs.linkSync(srcpath, dstpath)
+		fs.symlinkSync(srcpath, dstpath)
 
 	# link node_modules
 	grunt.registerTask 'link-node-modules', ->
-		srcpath = 'node_modules'
+		srcpath = $('<%= WORKSPACE %>/node_modules')
 		dstpath = $('<%= CONTAINER %>/<%= PROJECT %>/<%= VERSION %>/node_modules')
-		fs.linkSync(srcpath, dstpath)
+		fs.symlinkSync(srcpath, dstpath)
 
 	# ====================================================
 	# test
@@ -141,6 +141,7 @@ module.exports = (grunt) ->
 	grunt.registerTask 'trace', ->
 		console.log($('<%= CONTAINER %>/<%= PROJECT %>/nginx.conf'))
 		console.log(grunt.file.exists($('<%= CONTAINER %>/<%= PROJECT %>/nginx.conf')))
+		console.log(grunt.config.get('WORKSPACE'))
 		console.log(grunt.config.get('NGINX_HOME'))
 		console.log(grunt.config.get('CONTAINER'))
 		console.log(grunt.config.get('DROPBOX'))

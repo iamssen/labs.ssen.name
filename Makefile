@@ -1,3 +1,3 @@
 jenkins:
 	sudo npm install
-	sudo -E grunt jenkins --force
+	sudo -E grunt jenkins
