@@ -139,8 +139,7 @@ module.exports = (grunt) ->
 	# test
 	# ====================================================
 	grunt.registerTask 'trace', ->
-		console.log($('<%= CONTAINER %>/<%= PROJECT %>/nginx.conf'))
-		console.log(grunt.file.exists($('<%= CONTAINER %>/<%= PROJECT %>/nginx.conf')))
+		console.log(grunt.config.get('WORKSPACE'))
 		console.log(grunt.config.get('NGINX_HOME'))
 		console.log(grunt.config.get('CONTAINER'))
 		console.log(grunt.config.get('DROPBOX'))
