@@ -13,7 +13,6 @@ module.exports = (grunt) ->
 	# ====================================================
 	grunt.loadNpmTasks('grunt-contrib-copy')
 	grunt.loadNpmTasks('grunt-contrib-clean')
-	grunt.loadNpmTasks('grunt-contrib-coffee')
 	grunt.loadNpmTasks('grunt-mocha-test')
 	grunt.loadNpmTasks('grunt-shell')
 
@@ -21,19 +20,13 @@ module.exports = (grunt) ->
 	# config npm tasks
 	# ====================================================
 	grunt.initConfig
-		coffee:
-			'compile-lib':
-				options:
-					sourceMap: true
-				files:
-					'lib/main.js': 'lib/main.coffee'
 		copy:
 			'to-container':
 				files: [
 					{
 						expand: true,
 						src: ['lib/*'],
-						dest: '<%= CONTAINER %>/<%= PROJECT %>/<%= BUILD %>',
+						dest: '<%= CONTAINER %>/<%= PROJECT %>/<%= VERSION %>',
 						filter: 'isFile'
 					}
 				]
@@ -43,7 +36,7 @@ module.exports = (grunt) ->
 					force: true
 				src: [
 					'<%= NGINX_HOME %>/sites-enabled/<%= PROJECT %>'
-					'<%= CONTAINER %>/<%= PROJECT %>/<%= BUILD %>'
+					'<%= CONTAINER %>/<%= PROJECT %>/<%= VERSION %>'
 				]
 
 		mochaTest:
@@ -72,13 +65,13 @@ module.exports = (grunt) ->
 			grunt.config.set('DOMAIN', 'localhost')
 			grunt.config.set('PROJECT', 'labs.ssen.name')
 			grunt.config.set('BRANCH', 'origin/master')
-			grunt.config.set('BUILD', '1')
+			grunt.config.set('VERSION', '1')
 			grunt.config.set('PORT', 9888)
 		else if subtask is 'jenkins'
 			grunt.config.set('DOMAIN', 'labs.ssen.name')
 			grunt.config.set('PROJECT', process.env.JOB_NAME)
 			grunt.config.set('BRANCH', process.env.GIT_BRANCH)
-			grunt.config.set('BUILD', process.env.BUILD_NUMBER)
+			grunt.config.set('VERSION', process.env.GIT_COMMIT)
 			grunt.config.set('PORT', 80)
 
 		randomport 13000, 18000, (port) ->
@@ -111,11 +104,11 @@ module.exports = (grunt) ->
 		options =
 			command: 'coffee'
 			pidFile: $('<%= CONTAINER %>/<%= PROJECT %>/pid')
-			logFile: $('<%= CONTAINER %>/<%= PROJECT %>/<%= BUILD %>.log')
+			logFile: $('<%= CONTAINER %>/<%= PROJECT %>/<%= VERSION %>.log')
 			options: [ $('port=<%= NODE_PORT %>') ]
 
-		forever.startDaemon($('<%= CONTAINER %>/<%= PROJECT %>/<%= BUILD %>/lib/main.coffee'), options)
-		console.log($('<%= CONTAINER %>/<%= PROJECT %>/<%= BUILD %>/lib/main.coffee'), options)
+		forever.startDaemon($('<%= CONTAINER %>/<%= PROJECT %>/<%= VERSION %>/lib/main.coffee'), options)
+		console.log($('<%= CONTAINER %>/<%= PROJECT %>/<%= VERSION %>/lib/main.coffee'), options)
 
 	# make nginx.conf
 	grunt.registerTask 'create-nginx-conf', ->
@@ -139,7 +132,7 @@ module.exports = (grunt) ->
 	# link node_modules
 	grunt.registerTask 'link-node-modules', ->
 		srcpath = 'node_modules'
-		dstpath = $('<%= CONTAINER %>/<%= PROJECT %>/<%= BUILD %>/node_modules')
+		dstpath = $('<%= CONTAINER %>/<%= PROJECT %>/<%= VERSION %>/node_modules')
 		fs.linkSync(srcpath, dstpath)
 
 	# ====================================================
