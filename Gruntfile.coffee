@@ -87,6 +87,7 @@ module.exports = (grunt) ->
 			pid = grunt.file.read((pidFile), {encoding:'utf8'})
 
 			forever.list false, (error, list) ->
+				# merge
 				if error?
 					throw new Error('kill failed')
 				else if not list? or list.length is 0
