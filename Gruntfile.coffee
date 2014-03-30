@@ -87,9 +87,10 @@ module.exports = (grunt) ->
 			pid = grunt.file.read((pidFile), {encoding:'utf8'})
 
 			forever.list false, (error, list) ->
+				# merge
 				if error?
-  					throw new Error('kill failed')
-				else if not list? or not list.length? or list.length is 0
+					throw new Error('kill failed')
+				else if not list? or list.length is 0
 					grunt.file.delete(pidFile, {force:true})
 
 				for index in [0..list.length-1]

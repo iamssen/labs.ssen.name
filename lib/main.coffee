@@ -4,6 +4,7 @@
 os =require('os')
 path = require('path')
 express = require('express')
+http = require('http')
 
 {Source, MarkdownBinder, DataPublisher, JadeTemplatePublisher} = require('markdown-binder')
 
@@ -63,7 +64,11 @@ app.get '*', (req, res, next) ->
 # ====================================================
 # app start
 # ====================================================
-app.listen(port)
+startServer = () ->
+	server = http.createServer(app)
+	server.listen(port)
+
+startServer()
 
 task = ->
 	labs.loadSourceDirectory() 
@@ -72,3 +77,10 @@ setInterval task, 1000 * 60 * 15
 
 process.on 'uncaughtException', (err) ->
 	console.log('Caught exception: ' + err)
+
+	if server?
+		server.close () ->
+			startServer()
+	else
+		startServer()
+
