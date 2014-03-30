@@ -92,15 +92,16 @@ module.exports = (grunt) ->
 					throw new Error('kill failed')
 				else if not list? or list.length is 0
 					grunt.file.delete(pidFile, {force:true})
-
-				for index in [0..list.length-1]
-					proc = list[index]
-					if pid is proc.pid.toString()
-						emitter = forever.stop(index)
-						emitter.on 'stop', (proc) ->
-							done()
-							console.log("kill process #{index}")
-							console.log(proc)
+				
+				if list? and list.length > 0
+					for index in [0..list.length-1]
+						proc = list[index]
+						if pid is proc.pid.toString()
+							emitter = forever.stop(index)
+							emitter.on 'stop', (proc) ->
+								done()
+								console.log("kill process #{index}")
+								console.log(proc)
 
 	# start server
 	grunt.registerTask 'start', ->
