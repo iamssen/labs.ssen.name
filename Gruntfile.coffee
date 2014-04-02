@@ -102,6 +102,8 @@ module.exports = (grunt) ->
 								done()
 								console.log("kill process #{index}")
 								console.log(proc)
+				else
+					done()
 
 	# start server
 	grunt.registerTask 'start', ->
