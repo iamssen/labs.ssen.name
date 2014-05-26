@@ -8,10 +8,9 @@ build: clean copy
 
 clean:
 	rm -rf _source _site
-	mkdir -p _source
 
 copy:
-	cp -r _docs _source
+	cp -r contents _source
 
 test: clean copy
 	gulp make-source

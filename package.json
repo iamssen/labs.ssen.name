@@ -1,28 +1,13 @@
 {
   "name": "labs.ssen.name",
-  "version": "0.0.0",
-  "description": "",
-  "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/iamssen/labs.ssen.name.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/iamssen/labs.ssen.name/issues"
-  },
   "homepage": "https://github.com/iamssen/labs.ssen.name",
-  "devDependencies": {
-    "gulp": "^3.6.2"
-  },
   "dependencies": {
-    "done-exec": "^0.1.0",
-    "hogan.js": "^2.0.0",
-    "moment": "^2.6.0",
-    "yamljs": "^0.1.5"
+    "done-exec": "0.*",
+    "event-stream": "3.*",
+    "gulp": "3.*",
+    "hogan.js": "2.*",
+    "moment": "2.*",
+    "unorm": "1.*",
+    "yamljs": "0.*"
   }
 }

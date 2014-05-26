@@ -1,0 +1,497 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cap",
+				"captures_directory"
+			],
+			[
+				"content",
+				"contents"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"style",
+				"styleString"
+			],
+			[
+				"impo",
+				"imports"
+			],
+			[
+				"fontfa",
+				"fontFamilyAttr"
+			],
+			[
+				"font",
+				"fontFamily"
+			],
+			[
+				"fontRe",
+				"fontReplaceInfo"
+			],
+			[
+				"fontRef",
+				"fontReplaceInfos"
+			],
+			[
+				"fontFa",
+				"fontFamilyMap"
+			],
+			[
+				"text",
+				"textList"
+			],
+			[
+				"svg",
+				"svgString"
+			],
+			[
+				"remote",
+				"remote_root"
+			],
+			[
+				"b",
+				"BIN"
+			],
+			[
+				"make",
+				"make-repositories"
+			],
+			[
+				"repo",
+				"make-repositories"
+			],
+			[
+				"hell",
+				"helloService"
+			],
+			[
+				"port",
+				"portfolioService"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+			[
+				"py",
+				"Set Syntax: Python"
+			],
+			[
+				"ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				"pytho",
+				"Set Syntax: Python"
+			],
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"markdown",
+				"Set Syntax: Markdown"
+			],
+			[
+				"mar",
+				"Marked"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"preview",
+				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
+			],
+			[
+				"open mark",
+				"Markdown Preview: Python Markdown: Preview in Browser"
+			],
+			[
+				"upgra",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"mark",
+				"Marked"
+			],
+			[
+				"shell",
+				"Set Syntax: Shell Script (fish)"
+			],
+			[
+				"up",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"fish",
+				"Set Syntax: Shell Script (fish)"
+			],
+			[
+				"achi",
+				"Tasks: Archive"
+			],
+			[
+				"upd",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"package",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"tasks:",
+				"Tasks: Archive"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"package cont",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 633.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/ssen/Workspace/labs.ssen.name/contents.sublime-project",
+		"/Users/ssen/Workspace/labs.ssen.name/contents.sublime-workspace",
+		"/Users/ssen/Workspace/labs.ssen.name/Environments/Browsers/Chrome에서 URL Protocol이 작동되지 않을때.md",
+		"/Users/ssen/Desktop/Makefile",
+		"/Users/ssen/Workspace/files/nginx.conf",
+		"/Users/ssen/Workspace/files/attach/gulp-svgedit/index.html",
+		"/Users/ssen/Workspace/reflow.gh-pages/_config.yml",
+		"/Users/ssen/Workspace/files/attach/reflow/sample.js",
+		"/Users/ssen/Workspace/files/attach/reflow/contents.css",
+		"/Users/ssen/Downloads/swfobject/index.html",
+		"/Users/ssen/Workspace/reflow.sample.dependency-inection.simple-singleton-model/_config.yml",
+		"/Users/ssen/Workspace/reflow.sample.dependency-inection.simple-singleton-model/.gitignore",
+		"/Users/ssen/Workspace/reflow.sample.dependency-inection.simple-singleton-model/_layouts/index.html",
+		"/Users/ssen/Workspace/reflow.sample.dependency-inection.simple-singleton-model/attach/github-markdown.css",
+		"/Users/ssen/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/ssen/Workspace/jekyll-new/_config.yml",
+		"/Users/ssen/Desktop/Untitled.svg",
+		"/Users/ssen/Desktop/omni.svg",
+		"/Users/ssen/Desktop/omni-svgedit-test/output/omni.svg",
+		"/Users/ssen/Desktop/omni-svgedit-test/test.svg",
+		"/Users/ssen/Desktop/lato/test.js",
+		"/Users/ssen/Desktop/lato/lato 2.svg",
+		"/Users/ssen/Desktop/lato/lato.svg",
+		"/Users/ssen/Dropbox/Contents/Contents.sublime-project",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/dependency-injection-about-dependency.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/assets.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/dependency-injection-polymorphism.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/dependency-injection-singleton.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/dependency-injection-trouble-of-dependency-on-display-tree.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/dependency-injection-trouble-of-dependency-on-singleton-by-multi-instance.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/dependency-injection.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/eventbus-event-new-event-model.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/eventbus-event-on-display-model.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/eventbus.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.command.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.connect.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.eventbus.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.injector.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.model.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.service.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.view.display.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.view.input.svg",
+		"/Users/ssen/Desktop/Jekyll을 이용해서 블로그 만들기 (2).webloc",
+		"/Users/ssen/Desktop/Untitled-1.svg",
+		"/usr/local/Cellar/nginx/1.4.7/homebrew.mxcl.nginx.plist",
+		"/usr/local/etc/nginx/sites-enabled/labs.ssen.name",
+		"/Users/ssen/Workspace/iamssen.github.io/index.html",
+		"/Users/ssen/Downloads/bootstrap-3.1.1/less/variables.less",
+		"/usr/local/etc/nginx/sites-enabled/dev.ssen.name",
+		"/Users/ssen/Downloads/bootstrap-3.1.1/less/theme.less",
+		"/Users/ssen/Downloads/bootstrap-3.1.1/less/navbar.less",
+		"/Users/ssen/Downloads/bootstrap-3.1.1/Gruntfile.js",
+		"/Users/ssen/Desktop/assets.svg",
+		"/Users/ssen/Desktop/dependency-injection.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/view.input.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/Oval 39.svg",
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/시작하기.md",
+		"/Volumes/backup/어플리케이션/Adobe Photoshop CC 14.0.0/Adobe CC crack kit 1.0/Reset HOSTS file to defaults.app/Contents/Resources/Scripts/main.scpt",
+		"/private/etc/hosts",
+		"/Users/ssen/Downloads/달빛조각사 43.txt",
+		"/Users/ssen/Dropbox/Contents/labs/Flash/Flex 원론/Metadata Tags 기반의 Dependency Injection을 위한 describeType 분석.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/system info commands.md",
+		"/Users/ssen/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/ssen/Dropbox/Contents/labs/Flash/Flex 원론/Metadata 기반의 Dependency Injection을 위한 describeType 분석.md",
+		"/Users/ssen/Dropbox/Contents/labs/Flash/Flex 원론/Metadata 기반의 Dependency Injection을 위한 describeType 분석 (유니코드 인코딩 충돌).md",
+		"/Users/ssen/Dropbox/Contents/labs/Flash/Flex 원론/Dependency Injection을 위한 describeType 분석.md",
+		"/Users/ssen/Workspace/git-flow-test/xxx.md",
+		"/Users/ssen/Workspace/git-flow-test/test.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/user, group, permission management.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/user, group management.md",
+		"/Users/ssen/Desktop/temp/sta-smart3-workspaces/smart3-workspace-4.7/test_restore_data/src/test_restore_data.mxml",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Jenkins/Jenkins 계정으로 접속하기.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/mdfind.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Mac/Finder 검색에서 원본질의(Row Query) 사용하기.md",
+		"/Users/ssen/Library/Saved Searches/GTD.savedSearch",
+		"/Users/ssen/Workspace/ssen.name/install.coffee",
+		"/Users/ssen/Downloads/initializr/css/normalize.min.css",
+		"/Users/ssen/Workspace/jenkins-test/Gruntfile.js",
+		"/Users/ssen/Workspace/jenkins-test/Makefile",
+		"/Users/ssen/Workspace/jenkins-test/.gitignore",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/netstat.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/fish.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Jenkins/Jenkins에서 sudo 권한을 실행시키기.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/htpasswd.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Jenkins/Install Jenkins On Ubuntu.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Jenkins/Install Jenkins On CentOS.md",
+		"/Users/ssen/.config/fish/config.fish",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Travis/Start Travis.md",
+		"/Users/ssen/Workspace/flbuild/README.md",
+		"/Users/ssen/Workspace/grunt-flbuild/Gruntfile.js",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Develop Npm Module.md",
+		"/Users/ssen/Desktop/temp/sta-smart3-workspaces/smart3-workspace-4.7/smart3_flex/build.xml",
+		"/Users/ssen/data/workspace/webstorm/flash-build/src/fllib.coffee",
+		"/Users/ssen/data/workspace/webstorm/markdown-binder/node_modules/bbang/src/bbang.coffee",
+		"/Users/ssen/data/workspace/webstorm/flash-build/src/fldoc.coffee",
+		"/Users/ssen/data/workspace/webstorm/flash-build/src/utils.coffee",
+		"/Users/ssen/Workspace/flbuild/test/lib/catalog.xml",
+		"/Users/ssen/Settings/Apache Flex SDK 4.11.0/bin/compc",
+		"/Users/ssen/Settings/Apache Flex SDK 4.11.0/bin/mxmlc",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/pwd.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/which.md",
+		"/Users/ssen/.npmrc",
+		"/Users/ssen/Dropbox/Contents/labs/Html, Css, Javascript/npm.md",
+		"/Users/ssen/data/workspace/webstorm/flash-build/package.json",
+		"/Users/ssen/Links/clear.sh",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/grep.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/scp.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/NginX/NginX를 Jenkins의 Reverse Proxy로 설정하기.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/VCS/git-flow.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/NginX/NginX에 Basic Authenication 적용하기.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/NginX/Install NginX On CentOS.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/SSH Authentication/SSH Key를 통한 Server 접속.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/SSH Authentication/ssh-keygen.md",
+		"/Users/ssen/.ssh/config",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/SSH/ssh-keygen.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Mac/Alfred Workflow를 사용해서 스크린캡쳐하기.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Eclipse/Eclipse Word Wrap.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Eclipse/Eclipse Path Tools.md",
+		"/Users/ssen/Make/Makefile",
+		"/Users/ssen/Downloads/Sherlock.S03E03.His.Last.Vow.1080p.WEB-DL.DD5.1.H.264-BS.smi",
+		"/Users/ssen/Workspace/hello/src/hello.mxml",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/curl.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/zsh.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/tree.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/basic commands.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/fswatch.md",
+		"/Users/ssen/Dropbox/Contents/labs/Flash/Flex 원론/Data Binding.md",
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Browsers/Chrome에서 URL Protocol이 작동되지 않을때.md"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/ssen/Workspace/jekyll-new",
+			"/Users/ssen/Dropbox/Contents",
+			"/Users/ssen/Dropbox/Contents/devlog",
+			"/Users/ssen/Dropbox/Contents/devlog/Flash/",
+			"/Users/ssen/Data/settings/Apache Flex SDK 4.9.0",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"키워드태",
+			"키워드",
+			"/files",
+			"github-icon.svg",
+			"service_root",
+			"require('./libs/flbuild')",
+			"/Users/ssen/Workspace/flbuild/test/project",
+			"/Users/ssen/Settings/Apache Flex SDK 4.11.0",
+			"➜ flbuild git:(develop) ✗",
+			"curl",
+			"ssen/",
+			"$DROPBOX_USERS",
+			"Command",
+			"cmd([0-9])",
+			"\\$\\$([a-zA-Z]+)",
+			"rendererIsEditable",
+			"TTT.swf",
+			"<arg line='",
+			"택시 ",
+			"editorIndicator",
+			"- ",
+			" : ",
+			"callback",
+			"dav                ",
+			"                ",
+			"                 ",
+			"                 \"",
+			"command",
+			"font",
+			"\n",
+			">14",
+			"11.1",
+			"14",
+			"version",
+			"14",
+			"11.1",
+			".stutter .prettyprint ",
+			"Include",
+			"VirtualHost",
+			"/Users",
+			"Include /Applications/MAMP/conf/apache/extra/httpd-dav",
+			"/Users",
+			"Include conf/extra",
+			"Include conf/extra/",
+			"DAV On"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"http://files.ssen.name",
+			"local_root",
+			"require('flbuild')",
+			"/Users/you/project",
+			"/usr/lib/flex-sdk-4.11.0",
+			"$",
+			"you/",
+			"Task",
+			"task$1",
+			"\\$\\($1\\)",
+			"- `",
+			"",
+			":",
+			"complete",
+			"complete\n\ncomplete",
+			"\n\ncomplete",
+			"\n\n",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 249.0,
+	"status_bar_visible": true
+}

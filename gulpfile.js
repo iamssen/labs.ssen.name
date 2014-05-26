@@ -60,9 +60,9 @@ function tagging() {
 		if (frontmatter['layout'] == null) frontmatter['layout'] = 'page'
 
 		if (hasFrontmatter) {
-			body = body.replace(results[1], '----\n' + yaml.stringify(frontmatter) + '\n----')
+			body = body.replace(results[1], '---\n' + yaml.stringify(frontmatter) + '\n---')
 		} else {
-			body = '----\n' + yaml.stringify(frontmatter) + '\n----' + '\n\n' + body
+			body = '---\n' + yaml.stringify(frontmatter) + '\n---' + '\n\n' + body
 		}
 
 		file.contents = new Buffer(body)
@@ -90,8 +90,6 @@ function makePrimaryKeys() {
 			, frontmatter
 			, hasFrontmatter = results[2] != null
 
-		console.log(results)
-
 		if (hasFrontmatter) {
 			frontmatter = yaml.parse(results[2])
 		} else {
@@ -110,18 +108,11 @@ function makePrimaryKeys() {
 
 		file.contents = new Buffer(body)
 
-		console.log(body)
-
 		this.emit('data', file)
 	}
 
 	return es.through(func)
 }
-
-gulp.task('test', function() {
-	gulp.src('./_docs/Server/Java/*.md')
-		.pipe(makePrimaryKeys())
-});
 
 function render(envs) {
 	function func(file) {
@@ -132,20 +123,20 @@ function render(envs) {
 	return es.through(func)
 }
 
-gulp.task('make-primary-keys', function() {
-	gulp.src('./_docs/**/*.md')
+gulp.task('make-primary-keys', function () {
+	gulp.src('contents/**/*.md')
 		.pipe(makePrimaryKeys())
-		.pipe(gulp.dest('_docs'))
+		.pipe(gulp.dest('contents'))
 })
 
-gulp.task('clone-to-source', function(){
-	gulp.src('./_docs/**/*.md')
+gulp.task('tagging-to-documents', function () {
+	gulp.src('_source/**/*.md')
 		.pipe(tagging())
 		.pipe(gulp.dest('_source'))
 })
 
 gulp.task('make-server-config', function () {
-	gulp.src('./_server-templates/*')
+	gulp.src('_server-templates/*')
 		.pipe(render(envs))
 		.pipe(gulp.dest(__dirname))
 })
@@ -160,5 +151,5 @@ gulp.task('link-nginx-config', function (done) {
 	exec('sudo ln -sf "' + source + '" "' + linkto + '"').run(done)
 })
 
-gulp.task('make-source', ['make-primary-keys', 'clone-to-source'])
+gulp.task('make-source', ['make-primary-keys', 'tagging-to-documents'])
 gulp.task('config-server', ['make-server-config', 'link-nginx-config'])
