@@ -169,25 +169,25 @@ function renderMustache(envs) {
 // ====================================================
 // tasks
 // ====================================================
-gulp.task('make-primary-keys', function () {
+gulp.task('add-primary-key-to-markdown-if-not-exists', function () {
 	gulp.src('_contents/**/*.md')
 		.pipe(makePrimaryKeys())
 		.pipe(gulp.dest('_contents'))
 })
 
-gulp.task('tagging-to-documents', function () {
+gulp.task('copy-markdown-to-jekyll-source-directory-with-tagging', function () {
 	gulp.src('_contents/**/*.md')
 		.pipe(tagging())
 		.pipe(gulp.dest('_source'))
 })
 
-gulp.task('make-server-config', function () {
+gulp.task('build-mustache-templates', function () {
 	gulp.src('./**/*.mustache')
 		.pipe(renderMustache(envs))
 		.pipe(gulp.dest('.'))
 })
 
-gulp.task('link-nginx-config', function (done) {
+gulp.task('symlink-nginx-config', function (done) {
 	var SITE_ENABLED = path.join(envs.NGINX_HOME, 'sites-enabled')
 		, source = path.join(__dirname, 'nginx.conf')
 		, linkto = path.join(SITE_ENABLED, envs.PROJECT)
@@ -198,12 +198,12 @@ gulp.task('link-nginx-config', function (done) {
 	exec(sudo + 'ln -sf "' + source + '" "' + linkto + '"').run(done)
 })
 
-gulp.task('push-to-elasticsearch', function(done) {
+gulp.task('insert-data-to-elasticsearch', function(done) {
 	pushToElasticsearch(path.join(envs.SITE, 'search.xml'), done)
 })
 
-gulp.task('before-jekyll', ['make-primary-keys', 'tagging-to-documents'])
-gulp.task('after-jekyll', ['push-to-elasticsearch', 'make-server-config', 'link-nginx-config'])
+gulp.task('make-jekyll-source', ['add-primary-key-to-markdown-if-not-exists', 'copy-markdown-to-jekyll-source-directory-with-tagging'])
+gulp.task('config-site', ['insert-data-to-elasticsearch', 'build-mustache-templates', 'symlink-nginx-config'])
 
 // ------------------------------------
 // develop tasks

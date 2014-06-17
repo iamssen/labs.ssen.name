@@ -3,15 +3,6 @@ APP = _app
 SOURCE = _source
 SITE = _site
 
-# build with jenkins
-# ---------------------------------
-jenkins: clean create
-	sudo -E gulp before-jekyll
-	jekyll build --source $(SOURCE) --destination $(SITE)
-	sudo -E gulp after-jekyll
-	sudo -E sh gradlew buildAndDeployToWebapps
-	sudo service nginx reload
-
 
 # base
 # ---------------------------------
@@ -25,14 +16,36 @@ create:
 	cp -r $(APP)/* $(SOURCE)
 
 
+# build with jenkins
+# ---------------------------------
+jenkins: clean create
+	# build static site
+	sudo -E gulp make-jekyll-source
+	jekyll build --source $(SOURCE) --destination $(SITE)
+	sudo -E gulp config-site
+	rm -rf $(SOURCE)
+
+	# build java webapp
+	sudo -E sh gradlew buildAndDeployToWebapps
+
+	# server reload
+	sudo service nginx reload
+
+
 # test
 # ---------------------------------
 test: clean create
-	echo $(WAS_WEBAPPS)
-
-	gulp before-jekyll
+	# build static site
+	gulp make-jekyll-source
 	jekyll build --source $(SOURCE) --destination $(SITE)
-	gulp after-jekyll
+	gulp config-site
+	rm -rf $(SOURCE)
+
+	# build java webapp
 	sh gradlew buildAndDeployToWebapps
+
+	# server reload
 	nginx -s reload
+
+
 
