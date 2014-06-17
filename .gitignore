@@ -6,8 +6,12 @@
 /_source
 /_logs
 /_trash
-/src/main/webapp
+/_site
 /nginx.conf
 /.sass-cache
 /build
 /.gradle
+/bin/
+/.settings
+/.classpath
+/.project

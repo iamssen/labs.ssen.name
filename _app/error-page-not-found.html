@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
-404
-</body>
-</html>
+---
+layout: layout
+
+styles:
+- '/assets/nav.css'
+- '/assets/error.css'
+- '/assets/list.css'
+- '/assets/copyright.css'
+
+includes:
+  nav: 'nav.html'
+  error: 'error.html'
+  list: 'list.html'
+  copyright: 'copyright.html'
+
+error:
+  status: 404
+  description: 'Page Not Found.'
+---
+
+{% include nav.html %}
+{% include error.html %}
+{% include list.html %}
+{% include copyright.html %}

@@ -1,0 +1,73 @@
+<div id="search">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+<?php
+require '../vendor/autoload.php';
+
+if (isset($_GET['q'])) {
+	// query string
+	$qo = htmlspecialchars($_GET['q']);
+	echo '<p>'.$qo.'</p>';
+
+	$words = explode(' ', $qo);
+	echo '<pre>'.print_r($words).'</pre>';
+
+	/*foreach ($words as $i => $word) {
+		if (strtolower($word) == 'and') {
+			$words[$i] = 'AND';
+		} else if (strtolower($word) == 'or') {
+			$words[$i] = 'OR';
+		} else {
+			$words[$i] = '*' + $word + '*';
+		}
+	}*/
+
+	$q = join(' ', $words);
+
+	// elastic search request
+	$params['index'] = 'labs';
+	$params['type'] = 'pages';
+	// $params['body']['query']['query_string']['default_operator'] = 'AND';
+	// $params['body']['query']['query_string']['fields'] = ['title', 'content'];
+	// $params['body']['query']['query_string']['query'] = $q;
+
+	$params['body']['query']['fields'] = ['title', 'content'];
+	$params['body']['query']['query']['match']['text']['query'] = $q;
+	$params['body']['query']['query']['match']['text']['operator'] = 'and';
+
+	$ec = new Elasticsearch\Client();
+	$hits = $ec->search($params)['hits']['hits'];
+
+	if (count($hits) > 0) {
+?>
+				<h1>Search Result for "<?php echo $qo; ?>"</h1>
+				<hr />
+				<ul id="search-list">
+<?php
+		foreach ($hits as $hit) {
+			$title = $hit['_source']['title'];
+			$url = $hit['_source']['url'];
+
+			echo '<li><a href="'.$url.'">'.$title.'</a></li>';
+		}
+?>
+				</ul>
+<?php
+	} else {
+?>
+				<h1>No Search Results for "<?php echo $qo; ?>"</h1>
+<?php
+	}
+?>
+<?php
+} else {
+?>
+				<h1>Undefined Keyword "?q="<br/><small>“I don’t know who you are. I don’t know what you want. I will find you, and I will kill you.</small></h1>
+<?php
+}
+?>
+			</div>
+		</div>
+	</div>
+</div>
