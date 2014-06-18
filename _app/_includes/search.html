@@ -1,16 +1,18 @@
 <div id="search">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12" th:if="${result.hasPages}">
 				<h1 th:text='|Search Result for "${result.query}"|'>Search Result for "QUERY"</h1>
 				<hr />
-				<ul id="search-list" th:if="${#arrays.length(result.pages)} > 0">
-					<li th:each="page : ${result.pages}"><a href="/" th:href="@{${page.url}}" th:text="${page.title}">Page Title.</a></li>
+				<ul id="search-list">
+					<li th:each="page : ${result.pages}"><a href="/" th:attr="href=${page.url}" th:text="${page.title}">Page Title.</a></li>
 				</ul>
 
-				<h1 th:text='|No Search Results for "${result.query}"|' th:if="${#arrays.length(result.pages)} <= 0">No Search Results for "QUERY"</h1>
-
 				<!--<h1>Undefined Keyword "?q="<br/><small>“I don’t know who you are. I don’t know what you want. I will find you, and I will kill you.</small></h1>-->
+			</div>
+			<div class="col-md-12" th:if="!${result.hasPages}">
+				<h1 th:text='|No Search Results for "${result.query}"|'>No Search Results for "QUERY"</h1>
+				<hr />
 			</div>
 		</div>
 	</div>

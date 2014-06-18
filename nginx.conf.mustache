@@ -11,19 +11,9 @@ server {
 	error_page				404 /error-page-not-found.html;
 	error_page				500 502 503 504 /error-server-error.html;
 
-	location ~ ^/search/(.*)$ {
-		proxy_pass			http://localhost:{{WAS_PORT}}/{{PROJECT}}/search/$1;
+	location ^~ /search {
+		proxy_pass			http://localhost:{{WAS_PORT}}/{{PROJECT}}/search;
 		proxy_redirect		off;
-		proxy_set_header	X-Real-IP $remote_addr;
-		proxy_set_header	X-Forwarded-For $proxy_add_x_forwarded_for;
-		proxy_set_header	Host $http_host;
-	}
-
-	location ~ ^/(.*)\.(jsp|do)$ {
-		#proxy_pass			http://$repo_url$fwd_path$is_args$args;
-		proxy_pass			http://localhost:{{WAS_PORT}}/{{PROJECT}}/$1.$2;
-		proxy_redirect		off;
-		#proxy_redirect		http://localhost:{{WAS_PORT}}/{{PROJECT}}/ /;
 		proxy_set_header	X-Real-IP $remote_addr;
 		proxy_set_header	X-Forwarded-For $proxy_add_x_forwarded_for;
 		proxy_set_header	Host $http_host;

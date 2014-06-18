@@ -2,7 +2,7 @@ CONTENTS = _contents
 APP = _app
 SOURCE = _source
 SITE = _site
-
+TEMPLATES = src/main/resources/templates
 
 # base
 # ---------------------------------
@@ -23,6 +23,7 @@ jenkins: clean create
 	sudo -E gulp make-jekyll-source
 	jekyll build --source $(SOURCE) --destination $(SITE)
 	sudo -E gulp config-site
+	cp $(SITE)/search.html $(TEMPLATES)/search.html
 	rm -rf $(SOURCE)
 
 	# build java webapp
@@ -39,6 +40,7 @@ test: clean create
 	gulp make-jekyll-source
 	jekyll build --source $(SOURCE) --destination $(SITE)
 	gulp config-site
+	cp $(SITE)/search.html $(TEMPLATES)/search.html
 	rm -rf $(SOURCE)
 
 	# build java webapp

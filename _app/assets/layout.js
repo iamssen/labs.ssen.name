@@ -4,3 +4,14 @@ function moveto(id) {
 	var destination = $('#' + id).offset().top - topoffset
 	$('html:not(:animated),body:not(:animated)').animate({ scrollTop: destination }, speed)
 }
+
+function validateSearchParameters(form) {
+	var q = form.q.value.replace(/(^\s*)|(\s*$)/, '')
+
+	if (q == "") {
+		alert('Please input your search keyword.')
+		return false
+	}
+
+	return true
+}

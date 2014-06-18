@@ -27,8 +27,7 @@ public class Application {
 
 	@Bean
 	public StringHttpMessageConverter stringHttpMessageConverter() {
-		final StringHttpMessageConverter stringHttpMessageConverter = new StringHttpMessageConverter(
-				Charset.forName("UTF-8"));
+		final StringHttpMessageConverter stringHttpMessageConverter = new StringHttpMessageConverter(Charset.forName("UTF-8"));
 		List<MediaType> mediaTypes = new ArrayList<MediaType>();
 		mediaTypes.add(MediaType.TEXT_HTML);
 		stringHttpMessageConverter.setSupportedMediaTypes(mediaTypes);
