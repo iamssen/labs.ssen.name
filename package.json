@@ -11,6 +11,7 @@
     "gulp-util": "2.2.*",
     "hogan.js": "2.*",
     "moment": "2.*",
+    "redis": "0.10.*",
     "string": "1.8.*",
     "unorm": "1.*",
     "xml2js": "0.4.*",

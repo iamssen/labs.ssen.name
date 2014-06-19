@@ -10,7 +10,6 @@ var gulp = require('gulp')
 	, hogan = require('hogan.js')
 	, gutil = require('gulp-util')
 	, sass = require('gulp-ruby-sass')
-	, pushToElasticsearch = require('./push-to-elasticsearch')
 
 // ====================================================
 // config
@@ -64,8 +63,8 @@ function tagging() {
 	function func(file) {
 		var fpath = file.path
 			, extension = path.extname(fpath).toLowerCase()
-			, stat = fs.statSync(fpath)
-			, mtime = stat.mtime.getTime()
+		// , stat = fs.statSync(fpath)
+		// , mtime = stat.mtime.getTime()
 			, SOURCE_TOP = path.join(__dirname, '_source')
 			, CONTENTS_TOP = path.join(__dirname, '_contents')
 
@@ -76,10 +75,10 @@ function tagging() {
 			base: nfc(path.dirname(fpath)).replace(/\\/g, '/'),
 			relative_base: nfc(path.relative(CONTENTS_TOP, path.dirname(fpath))).replace(/\\/g, '/'),
 			name: nfc(path.basename(fpath, extension)),
-			extension: extension,
-			atime: stat.atime,
-			mtime: stat.mtime,
-			ctime: stat.ctime
+			extension: extension
+//			atime: stat.atime,
+//			mtime: stat.mtime,
+//			ctime: stat.ctime
 		}
 
 		var body = file.contents.toString('utf8')
@@ -95,7 +94,7 @@ function tagging() {
 		}
 
 		if (frontmatter['title'] == null) frontmatter['title'] = info.name
-		if (frontmatter['date'] == null) frontmatter['date'] = moment(info.mtime).format('YYYY-MM-DD HH:mm:ss')
+		if (frontmatter['date'] == null) frontmatter['date'] = moment(info.ctime).format('YYYY-MM-DD HH:mm:ss')
 		if (frontmatter['layout'] == null) frontmatter['layout'] = 'article'
 
 		// frontmatter['relative_path'] = info.relative_path
@@ -129,6 +128,8 @@ function makePrimaryKeys() {
 			, results = reg.exec(body)
 			, frontmatter
 			, hasFrontmatter = results[2] != null
+			, fpath = file.path
+			, stat = fs.statSync(fpath)
 
 		if (hasFrontmatter) {
 			frontmatter = yaml.parse(results[2])
@@ -136,8 +137,14 @@ function makePrimaryKeys() {
 			frontmatter = {}
 		}
 
-		if (!frontmatter['primary']) {
-			frontmatter['primary'] = makePrimaryHex(10)
+		if (!frontmatter['primary'] || !frontmatter['date']) {
+			if (!frontmatter['primary']) {
+				frontmatter['primary'] = makePrimaryHex(10)
+			}
+
+			if (!frontmatter['date']) {
+				frontmatter['date'] = moment(stat.mtime).format('YYYY-MM-DD HH:mm:ss')
+			}
 
 			if (hasFrontmatter) {
 				body = body.replace(results[1], '---\n' + yaml.stringify(frontmatter) + '\n---')
@@ -198,12 +205,17 @@ gulp.task('symlink-nginx-config', function (done) {
 	exec(sudo + 'ln -sf "' + source + '" "' + linkto + '"').run(done)
 })
 
-gulp.task('insert-data-to-elasticsearch', function(done) {
-	pushToElasticsearch(path.join(envs.SITE, 'search.xml'), done)
+gulp.task('push-data-to-search-engine', function (done) {
+	require('./push-to-redis')(path.join(envs.SITE, 'search.xml'), done)
+	// require('./push-to-elasticsearch')(path.join(envs.SITE, 'search.xml'), done)
+	// done()
 })
 
+// ------------------------------------
+// runnable tasks
+// ------------------------------------
 gulp.task('make-jekyll-source', ['add-primary-key-to-markdown-if-not-exists', 'copy-markdown-to-jekyll-source-directory-with-tagging'])
-gulp.task('config-site', ['insert-data-to-elasticsearch', 'build-mustache-templates', 'symlink-nginx-config'])
+gulp.task('config-site', ['push-data-to-search-engine', 'build-mustache-templates', 'symlink-nginx-config'])
 
 // ------------------------------------
 // develop tasks

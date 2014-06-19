@@ -1,31 +1,29 @@
 ---
-primary: 79eabde1bb
-tags:
-  - a
-  - b
+primary: 7bfe378568
+date: '2013-03-28 12:00:02'
 
 ---
 
 # 구조들 간 속도 차이
 
-|test				|ds_fp9_debug.swc	|ds_fp9.swc	|
-|---				|---				|---		|
-|queue enqueue		|34					|23			|
-|stack push			|39					|16			|
-|deque pushBack		|27					|14			|
-|deque pushFront	|27					|15			|
-|array push			|7					|7			|
-|array unshift		|1176				|1183		|
-|dll append			|63					|32			|
-|dll prepend		|61					|32			|
-|queue dequeue		|29					|14			|
-|stack pop			|21					|12			|
-|deque popBack		|22					|13			|
-|deque popFront		|22					|14			|
-|array pop			|6					|7			|
-|array shift		|442				|435		|
-|dll removeTail		|38					|21			|
-|dll removeHead		|39					|22			|
+|test			|ds_fp9_debug.swc	|ds_fp9.swc	|
+|----			|----------------	|----------	|
+|queue enqueue	|34					|23			|
+|stack push		|39					|16			|
+|deque pushBack	|27					|14			|
+|deque pushFront|27					|15			|
+|array push		|7					|7			|
+|array unshift	|1176				|1183		|
+|dll append		|63					|32			|
+|dll prepend	|61					|32			|
+|queue dequeue	|29					|14			|
+|stack pop		|21					|12			|
+|deque popBack	|22					|13			|
+|deque popFront	|22					|14			|
+|array pop		|6					|7			|
+|array shift	|442				|435		|
+|dll removeTail	|38					|21			|
+|dll removeHead	|39					|22			|
 
 - 전방 입출력이 필요한 경우 Array 보다는 Linked List 가 효율적일 수 있다
 - 큰 차이는 아니지만, 일반적인 Linked List 보다는 Queue, Stack, Deque 등이 좀 더 빠르다. 유형이 맞다면 사용 하는 것이 좋다.

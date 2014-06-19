@@ -7,8 +7,6 @@
 				<ul id="search-list">
 					<li th:each="page : ${result.pages}"><a href="/" th:attr="href=${page.url}" th:text="${page.title}">Page Title.</a></li>
 				</ul>
-
-				<!--<h1>Undefined Keyword "?q="<br/><small>“I don’t know who you are. I don’t know what you want. I will find you, and I will kill you.</small></h1>-->
 			</div>
 			<div class="col-md-12" th:if="!${result.hasPages}">
 				<h1 th:text='|No Search Results for "${result.query}"|'>No Search Results for "QUERY"</h1>

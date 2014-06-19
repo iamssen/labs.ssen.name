@@ -51,6 +51,8 @@ dependencies {
 	// compile("org.thymeleaf:thymeleaf-spring4")
 	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
 	compile("com.fasterxml.jackson.core:jackson-databind")
+	compile("org.springframework.data:spring-data-redis")
+	compile("redis.clients:jedis")
 	// compile("org.springframework.boot:spring-boot-starter-jetty")
 	// compile("org.springframework:spring-context:4.0.5.RELEASE")
 	// compile("javax.servlet:javax.servlet-api:3.0.1")

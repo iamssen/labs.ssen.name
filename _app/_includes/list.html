@@ -28,7 +28,7 @@
 				<hr/>
 				<ul>
 					{% assign sorted_pages = site.pages | sort:"date" %}
-					{% for p in sorted_pages %}
+					{% for p in sorted_pages reversed %}
 					{% if p.primary %}
 					<li class="tree-leaf{% if p.primary == page.primary %} highlighted{% endif %}">
 						<a href="{{ p.url }}">{{ p.title }}</a>

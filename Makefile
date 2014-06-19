@@ -51,3 +51,11 @@ test: clean create
 
 
 
+
+# dev test
+devtest:
+	echo $(TEST_VAR)
+	node sample.js
+	echo $(TEST_VAR)
+
+

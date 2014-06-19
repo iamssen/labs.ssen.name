@@ -1,7 +1,6 @@
 ---
-primary: 3ed30052a2
-tags:
-  - a
+primary: acb0d87de9
+date: '2013-07-30 10:45:07'
 
 ---
 
@@ -32,32 +31,30 @@ tags:
 
 node 의 name 을 가져오는 `name()` 을 정규식 검사를 통해 필터링 한다
 
-```actionscript
-var xlist:XMLList=xml..*;
+	var xlist:XMLList=xml..*;
+	
+	trace(xlist.(name()=="bb").toXMLString());
+	// 
 
-trace(xlist.(name()=="bb").toXMLString());
-// 
-
-trace(xlist.(/bb/.test(name())).toXMLString());
-// <bb>35</bb>
-// <bb cc="125">Schall</bb>
-// <bb>Schala</bb>
-// <bb>66</bb>
-
-trace(xlist.(/a+/.test(name())).toXMLString());
-// <a bbb="123"/>
-// <a ccc="223"/>
-// <a>
-//   <bb>35</bb>
-//   <bb cc="125">Schall</bb>
-//   <aa>Smith</aa>
-//   <bb>Schala</bb>
-//   <cc aa="123">55</cc>
-// </a>
-// <aa>Smith</aa>
-// <a bbb="145"/>
-// <a bbb="1234"/>
-```
+	trace(xlist.(/bb/.test(name())).toXMLString());
+	// <bb>35</bb>
+	// <bb cc="125">Schall</bb>
+	// <bb>Schala</bb>
+	// <bb>66</bb>
+	
+	trace(xlist.(/a+/.test(name())).toXMLString());
+	// <a bbb="123"/>
+	// <a ccc="223"/>
+	// <a>
+	//   <bb>35</bb>
+	//   <bb cc="125">Schall</bb>
+	//   <aa>Smith</aa>
+	//   <bb>Schala</bb>
+	//   <cc aa="123">55</cc>
+	// </a>
+	// <aa>Smith</aa>
+	// <a bbb="145"/>
+	// <a bbb="1234"/>
 
 <del>문제는 `xlist.(boolean)` 을 기초로 하는듯 보이는데도 불구하고, `name()==="bb"` 는 제대로 작동되지 않는다는 것이다.</del> `name()=="bb"` 처럼 type 정합성을 배제한 테스트를 해줘야 한다. <sub>`name() : String` 이기에 이해는 잘 안된다만...</sub>
 
