@@ -19,6 +19,10 @@ create:
 # build with jenkins
 # ---------------------------------
 jenkins: clean create
+	# npm dependency
+	sudo npm install
+	sudo npm update
+
 	# build static site
 	sudo -E gulp make-jekyll-source
 	jekyll build --source $(SOURCE) --destination $(SITE)

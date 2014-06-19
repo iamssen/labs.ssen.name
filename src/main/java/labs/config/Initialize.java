@@ -9,6 +9,7 @@ import labs.Application;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -19,6 +20,7 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.scripting.support.ResourceScriptSource;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
+@Configuration
 public class Initialize extends SpringBootServletInitializer {
 	@Bean
 	public CharacterEncodingFilter characterEncodingFilter() {
