@@ -20,7 +20,7 @@ create:
 # ---------------------------------
 jenkins: clean create
 	# fucking rvm load
-	source $(HOME)/.rvm/scripts/rvm
+	bin/sh -c "source $(HOME)/.rvm/scripts/rvm"
 
 	# npm dependency
 	sudo npm install
