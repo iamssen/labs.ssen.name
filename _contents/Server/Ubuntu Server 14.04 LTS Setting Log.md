@@ -234,6 +234,14 @@ $ npm --version
 $ npm install -g gulp
 ```
 
+# Gradle 설치
+
+```sh
+$ sudo add-apt-repository ppa:cwchien/gradle
+$ sudo aptitude update
+$ sudo aptitude install gradle
+```
+
 # Ruby 설치
 
 ```sh

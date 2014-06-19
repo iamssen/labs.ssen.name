@@ -19,6 +19,9 @@ create:
 # build with jenkins
 # ---------------------------------
 jenkins: clean create
+	# fucking rvm load
+	source $(HOME)/.rvm/scripts/rvm
+
 	# npm dependency
 	sudo npm install
 	sudo npm update
@@ -31,7 +34,7 @@ jenkins: clean create
 	rm -rf $(SOURCE)
 
 	# build java webapp
-	sudo -E sh gradlew buildAndDeployToWebapps
+	sudo -E gradle buildAndDeployToWebapps
 
 	# server reload
 	sudo service nginx reload
