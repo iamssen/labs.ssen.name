@@ -30,6 +30,7 @@ war {
 }
 
 configurations {
+	provided
 	providedRuntime
 }
 
@@ -43,19 +44,24 @@ dependencies {
 	// compile("org.springframework:spring-context")
 	// compile("org.springframework:spring-webmvc")
 	// compile("org.springframework.boot:spring-boot-starter-parent")
-	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("org.springframework.boot:spring-boot-starter-web") {
+		exclude module: "spring-boot-starter-tomcat"
+	}
+	//provided("org.springframework.boot:spring-boot-starter-tomcat")
 	//compile("com.github.sps.mustache:mustache-spring-view")
 	//compile("com.samskivert:jmustache")
 	//compile("com.github.spullara.mustache.java:compiler")
 	// compile("org.thymeleaf:thymeleaf")
 	// compile("org.thymeleaf:thymeleaf-spring4")
-	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+	compile("org.springframework.boot:spring-boot-starter-thymeleaf") {
+		exclude module: "spring-boot-starter-tomcat"
+	}
 	compile("com.fasterxml.jackson.core:jackson-databind")
 	compile("org.springframework.data:spring-data-redis")
 	compile("redis.clients:jedis")
 	// compile("org.springframework.boot:spring-boot-starter-jetty")
 	// compile("org.springframework:spring-context:4.0.5.RELEASE")
-	// compile("javax.servlet:javax.servlet-api:3.0.1")
+	compile("javax.servlet:javax.servlet-api")
 	// compile("com.fasterxml.jackson.core:jackson-databind")
 }
 
