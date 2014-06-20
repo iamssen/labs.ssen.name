@@ -84,10 +84,34 @@
 	"buffers":
 	[
 		{
-			"file": "_contents/Server/NginX/Nginx Proxy Redirect.md",
+			"file": "Makefile",
 			"settings":
 			{
-				"buffer_size": 260,
+				"buffer_size": 1219,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_contents/Shell/TestSample.md",
+			"settings":
+			{
+				"buffer_size": 7,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_source/Shell/TestSample.md",
+			"settings":
+			{
+				"buffer_size": 101,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "gulpfile.js",
+			"settings":
+			{
+				"buffer_size": 7233,
 				"line_ending": "Unix"
 			}
 		}
@@ -216,6 +240,18 @@
 	},
 	"file_history":
 	[
+		"/Users/ssen/Workspace/labs.ssen.name/_site/Shell/TestSample.html",
+		"/Users/ssen/Workspace/labs.ssen.name/_source/Server/Ubuntu Server 13.04 Setting Log.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Server/Ubuntu Server 14.04 LTS Setting Log.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_source/Server/Ubuntu Server 14.04 LTS Setting Log.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_app/_includes/list.html",
+		"/Users/ssen/Workspace/labs.ssen.name/Makefile",
+		"/Users/ssen/.config/fish/config.fish",
+		"/usr/local/Cellar/tomcat/7.0.54/libexec/conf/server.xml",
+		"/Users/ssen/Workspace/labs.ssen.name/README.md",
+		"/Users/ssen/Workspace/files/Makefile",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Server/Ruby/rvm.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Server/NginX/Nginx Proxy Redirect.md",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Server/Java/Tomcat 개발 로그.md",
 		"/Users/ssen/Workspace/test-spring/test.gradle",
 		"/Users/ssen/Workspace/labs.ssen.name/contents.sublime-project",
@@ -331,19 +367,7 @@
 		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/fish.md",
 		"/Users/ssen/Dropbox/Contents/labs/Environments/Jenkins/Jenkins에서 sudo 권한을 실행시키기.md",
 		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/htpasswd.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Jenkins/Install Jenkins On Ubuntu.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Jenkins/Install Jenkins On CentOS.md",
-		"/Users/ssen/.config/fish/config.fish",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Travis/Start Travis.md",
-		"/Users/ssen/Workspace/flbuild/README.md",
-		"/Users/ssen/Workspace/grunt-flbuild/Gruntfile.js",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Develop Npm Module.md",
-		"/Users/ssen/Desktop/temp/sta-smart3-workspaces/smart3-workspace-4.7/smart3_flex/build.xml",
-		"/Users/ssen/data/workspace/webstorm/flash-build/src/fllib.coffee",
-		"/Users/ssen/data/workspace/webstorm/markdown-binder/node_modules/bbang/src/bbang.coffee",
-		"/Users/ssen/data/workspace/webstorm/flash-build/src/fldoc.coffee",
-		"/Users/ssen/data/workspace/webstorm/flash-build/src/utils.coffee",
-		"/Users/ssen/Workspace/flbuild/test/lib/catalog.xml"
+		"/Users/ssen/Dropbox/Contents/labs/Environments/Jenkins/Install Jenkins On Ubuntu.md"
 	],
 	"find":
 	{
@@ -367,6 +391,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"export",
+			"HOME",
+			"export",
 			"  ",
 			"키워드태",
 			"키워드",
@@ -450,23 +477,76 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "_contents/Server/NginX/Nginx Proxy Redirect.md",
+					"file": "Makefile",
 					"settings":
 					{
-						"buffer_size": 260,
+						"buffer_size": 1219,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								29,
-								29
+								541,
+								541
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Makefile/Makefile.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_contents/Shell/TestSample.md",
+					"settings":
+					{
+						"buffer_size": 7,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7,
+								7
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "_source/Shell/TestSample.md",
+					"settings":
+					{
+						"buffer_size": 101,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								101,
+								101
 							]
 						],
 						"settings":
@@ -476,6 +556,34 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "gulpfile.js",
+					"settings":
+					{
+						"buffer_size": 7233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3071.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

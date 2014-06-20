@@ -93,6 +93,8 @@ function tagging() {
 			frontmatter = {}
 		}
 
+		console.log('[tagging]', frontmatter['primary'], info.relative_path)
+
 		if (frontmatter['title'] == null) frontmatter['title'] = info.name
 		if (frontmatter['date'] == null) frontmatter['date'] = moment(info.ctime).format('YYYY-MM-DD HH:mm:ss')
 		if (frontmatter['layout'] == null) frontmatter['layout'] = 'article'
@@ -152,6 +154,9 @@ function makePrimaryKeys() {
 				body = '---\n' + yaml.stringify(frontmatter) + '\n---' + '\n\n' + body
 			}
 
+			// save file directly
+			fs.writeFileSync(fpath, body, {encoding:'utf8'})
+
 			file.contents = new Buffer(body)
 		}
 
@@ -176,17 +181,17 @@ function renderMustache(envs) {
 // ====================================================
 // tasks
 // ====================================================
-gulp.task('add-primary-key-to-markdown-if-not-exists', function () {
-	gulp.src('_contents/**/*.md')
-		.pipe(makePrimaryKeys())
-		.pipe(gulp.dest('_contents'))
-})
-
-gulp.task('copy-markdown-to-jekyll-source-directory-with-tagging', function () {
-	gulp.src('_contents/**/*.md')
-		.pipe(tagging())
-		.pipe(gulp.dest('_source'))
-})
+//gulp.task('add-primary-key-to-markdown-if-not-exists', function () {
+//	gulp.src('_contents/**/*.md')
+//		.pipe(makePrimaryKeys())
+//		.pipe(gulp.dest('_contents'))
+//})
+//
+//gulp.task('copy-markdown-to-jekyll-source-directory-with-tagging', function () {
+//	gulp.src('_contents/**/*.md')
+//		.pipe(tagging())
+//		.pipe(gulp.dest('_source'))
+//})
 
 gulp.task('build-mustache-templates', function () {
 	gulp.src('./**/*.mustache')
@@ -214,7 +219,13 @@ gulp.task('push-data-to-search-engine', function (done) {
 // ------------------------------------
 // runnable tasks
 // ------------------------------------
-gulp.task('make-jekyll-source', ['add-primary-key-to-markdown-if-not-exists', 'copy-markdown-to-jekyll-source-directory-with-tagging'])
+gulp.task('make-jekyll-source', function() {
+	gulp.src('_contents/**/*.md')
+		.pipe(makePrimaryKeys())
+		.pipe(tagging())
+		.pipe(gulp.dest('_source'))
+})
+//gulp.task('make-jekyll-source', ['add-primary-key-to-markdown-if-not-exists', 'copy-markdown-to-jekyll-source-directory-with-tagging'])
 gulp.task('config-site', ['push-data-to-search-engine', 'build-mustache-templates', 'symlink-nginx-config'])
 
 // ------------------------------------

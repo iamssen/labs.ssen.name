@@ -48,7 +48,7 @@ test: clean create
 	jekyll build --source $(SOURCE) --destination $(SITE)
 	gulp config-site
 	cp $(SITE)/search.html $(TEMPLATES)/search.html
-	rm -rf $(SOURCE)
+	#rm -rf $(SOURCE)
 
 	# build java webapp
 	sh gradlew buildAndDeployToWebapps

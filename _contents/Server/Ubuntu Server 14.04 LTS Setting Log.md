@@ -1,3 +1,9 @@
+---
+primary: 4de7e594bb
+date: '2014-06-20 05:21:40'
+
+---
+
 # Azure Instance 생성
 
 # ssh public key 올리기

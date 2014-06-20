@@ -9,6 +9,14 @@ module Jekyll
 			root = Hash.new()
 
 			site.pages.each do |page|
+				if page.data['title'] == 'Test'
+					puts '[category.rb]'
+					puts page.data['title']
+					puts page.data['date']
+					puts page.data['primary']
+					puts '[/category.rb]'
+				end
+
 				if not page.data['categories'].nil?
 					current = root
 					page.data['categories'].each do |category|
