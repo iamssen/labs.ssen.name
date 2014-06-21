@@ -83,38 +83,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "Makefile",
-			"settings":
-			{
-				"buffer_size": 1219,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_contents/Shell/TestSample.md",
-			"settings":
-			{
-				"buffer_size": 7,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_source/Shell/TestSample.md",
-			"settings":
-			{
-				"buffer_size": 101,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "gulpfile.js",
-			"settings":
-			{
-				"buffer_size": 7233,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":

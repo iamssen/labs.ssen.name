@@ -2,14 +2,15 @@
 	"folders":
 	[
 		{
-			"path": "_contents",
-			"folder_exclude_patterns": ["_*"],
-			"file_include_patterns": ["*.md"]
-		},
-		{
-			"path": ".",
-			"folder_exclude_patterns": [".idea", ".sass_cache"],
-			"file_exclude_patterns": ["*.md"]
+			"file_include_patterns":
+			[
+				"*.md"
+			],
+			"folder_exclude_patterns":
+			[
+				"_*"
+			],
+			"path": "_contents"
 		}
 	]
 }
