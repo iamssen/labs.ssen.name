@@ -55,6 +55,8 @@
       margin-bottom: 0.3em; }
     #article #article-content .center > embed {
       border: 1px solid #000000; }
+    #article #article-content em {
+      color: #bbbbbb; }
   #article #article-tags {
     margin-top: 30px; }
   #article #article-disqus {
