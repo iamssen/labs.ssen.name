@@ -3,6 +3,8 @@
   padding-bottom: 30px;
   background-color: #F8F8F8;
   border-top: 1px solid #E7E7E7; }
+  #list #list-tags p {
+    line-height: 300%; }
   #list #list-tags .btn .badge {
     background-color: #e3d2d2;
     font-weight: normal; }

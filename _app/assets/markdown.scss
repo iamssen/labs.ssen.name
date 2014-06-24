@@ -2,6 +2,9 @@
 	/* Override Bootstrap Markdown */
 	line-height: 150%;
 
+	word-wrap: break-word;
+	word-break: break-all;
+
 	img {
 		max-width: 100%;
 	}

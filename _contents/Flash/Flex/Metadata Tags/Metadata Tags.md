@@ -4,11 +4,14 @@ date: '2013-08-30 14:53:12'
 
 ---
 
-# 참고
+참고
+================================================
 
 - [Flex Metadata Tags](http://help.adobe.com/en_US/flex/using/WS2db454920e96a9e51e63e3d11c0bf680e1-7ffe.html)
 
-# property 에 추가 가능한 metadata tags
+
+property 에 추가 가능한 metadata tags
+================================================
 
 - Flash Builder 에서 코드 편집시에 도움
     - `[Deprecated]` 더 이상 사용되지 않는 (삭제 예정인) api 에 표시
@@ -31,7 +34,9 @@ date: '2013-08-30 14:53:12'
 - `[NonCommittingChangeEvent]`
 - `[Transient]`
 
-# class 에 선언 가능한 녀석들
+
+class 에 선언 가능한 녀석들
+================================================
 
 - Flash Builder 에서 코드 편집시에 도움
     - `[Deprecated]` 더 이상 사용되지 않는 (삭제 예정인) api 에 표시
@@ -50,7 +55,9 @@ date: '2013-08-30 14:53:12'
 - `[RemoteClass]` 직렬화를 위해 사용
 - `[ResourceBundle]`
 
-# interface 에 선언 가능한 녀석들
+
+interface 에 선언 가능한 녀석들
+================================================
 
 - `[ArrayElementType]`
 - `[Bindable]`

@@ -7,6 +7,8 @@
     font-size: 13px;
     /* Override Bootstrap Markdown */
     line-height: 150%;
+    word-wrap: break-word;
+    word-break: break-all;
     /* Custom */ }
     #article #article-content img {
       max-width: 100%; }
@@ -59,5 +61,7 @@
       color: #bbbbbb; }
   #article #article-tags {
     margin-top: 30px; }
+    #article #article-tags p {
+      line-height: 300%; }
   #article #article-disqus {
     margin-top: 50px; }

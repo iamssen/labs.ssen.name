@@ -4,30 +4,32 @@ date: '2013-09-03 14:13:56'
 
 ---
 
-# Flex 의 주요 Display Models
+Flex 의 주요 Display Models
+================================================
 
-### `IVisualElement`, `IVisualElementContainer` 
+### `IVisualElement` 구현체들 
 
-Flex4 의 display 최하 단위
+|Implementation			|Display Invalidation	|
+|------					|------					|
+|`GraphicElement`		|Yes					|
+|`SpriteVisualElement`	|No						|
+|`UIComponent`			|Yes					|
 
-- `GraphicElement` container 에 graphics drawing 을 할 때 사용되어 지는 element. display object 가 아니기 때문에 가볍다.
-- `SpriteVisualElement` sprite 를 상속 받았다. 기본 제공되는 display object 기반의 element 중에서 가장 가볍다.
-- `UIComponent` display invalidation 이 지원되는 가장 최하위 단위의 element
+`GraphicsElement`는 `Container`에 `Graphics` Drawing을 할 때 사용되어 지는 `Element`. `DisplayObject`가 아니기 때문에 가볍다.
+
+`SpriteVisualElement`는 `Sprite`를 상속 받았다. 기본 제공되는 `DisplayObject` 기반의 Element 중에서 가장 가볍다.
+
+`UIComponent`는 Display Invalidation이 지원되는 가장 최하위 단위의 `Element`.
 
 ### `SkinnableComponent` 과 `Skin` 
 
-Flex4 spark component 의 기본 구조가 된다. Skin 구조를 이룬다.
+Flex4 `Spark Component`의 기본 구조가 된다. `Skin` 구조를 이룬다.
 
-- `SkinnableComponent` 스킨 처리가 가능한 최하 단위 display object
-- `SparkSkin --> Skin --> Group --> UIComponent` spark theme 에 편승하는 구조라면 SparkSkin 을 상속 받는게 편하다.
-
-
-# Display Invalidation 구조
-
-[Display Invalidation](Display Invalidation.md)
+- `SkinnableComponent` 스킨 처리가 가능한 최하 단위 DisplayObject
+- `SparkSkin --> Skin --> Group --> UIComponent` Spark Theme에 편승하는 구조라면 `SparkSkin`을 상속 받는게 편하다.
 
 
-# Skinnable Component 에서 [SkinPart] 들이 모두 들어오는 시점
+`SkinnableComponent`에서 `[SkinPart]` 들이 모두 들어오는 시점은 아래와 같다.
 
 1. `FlexEvent.PREINITIALIZE` 
 1. `getStyle("skinStyle")`
