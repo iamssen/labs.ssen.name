@@ -74,13 +74,13 @@ VM 페이지에서 간단하게 정보들을 확인 한 다음
 
 
 
-[make-vm-with-gallery]: ../../../files/captures/20130927/082749.png
-[select-ubuntu]: ../../../files/captures/20130927/082802.png
-[vm-setting-1]: ../../../files/captures/20130927/082911.png
-[vm-setting-2]: ../../../files/captures/20130927/082946.png
-[vm-setting-3]: ../../../files/captures/20130927/083009.png
-[set-cloud]: ../../../files/captures/20130927/083028.png
-[set-endpoint]: ../../../files/captures/20130927/083438.png
-[cloud-list]: ../../../files/captures/20130927/083551.png
-[change-endpoint]: ../../../files/captures/20130927/084213.png
-[define-ssh-info]: ../../../files/captures/20130927/084229.png
+[make-vm-with-gallery]: http://files.ssen.name/captures/20130927/082749.png
+[select-ubuntu]: http://files.ssen.name/captures/20130927/082802.png
+[vm-setting-1]: http://files.ssen.name/captures/20130927/082911.png
+[vm-setting-2]: http://files.ssen.name/captures/20130927/082946.png
+[vm-setting-3]: http://files.ssen.name/captures/20130927/083009.png
+[set-cloud]: http://files.ssen.name/captures/20130927/083028.png
+[set-endpoint]: http://files.ssen.name/captures/20130927/083438.png
+[cloud-list]: http://files.ssen.name/captures/20130927/083551.png
+[change-endpoint]: http://files.ssen.name/captures/20130927/084213.png
+[define-ssh-info]: http://files.ssen.name/captures/20130927/084229.png

@@ -98,4 +98,4 @@ SSH Key의 관리 차원에서 Key들을 Dropbox 같은데 놔두고 사용하�
 
 
 
-[register-public-key]: ../../../files/captures/20140115/145014.png
+[register-public-key]: http://files.ssen.name/captures/20140115/145014.png

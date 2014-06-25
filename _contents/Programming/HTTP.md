@@ -4,22 +4,23 @@ date: '2013-05-22 02:12:14'
 
 ---
 
-# REST - Representational State Transfer
+REST - Representational State Transfer
+==================================================
 
-- URI 는 정보의 자원 위치를 표현해야 한다
-- 자원에 대해 어떤 행동을 할지는 HTTP Method (GET, POST, PATCH, DELETE) 로 표현한다
+- URI는 정보의 자원 위치를 표현해야 한다
+- 자원에 대해 어떤 행동을 할지는 HTTP Method (GET, POST, PATCH, DELETE)로 표현한다
 
-URI 의 자원은 Collection 과 Element 로 구성될 수 있으며, 그에 대한 Method 규칙은 아래와 같이 적용될 수 있다
+URI의 자원은 Collection과 Element로 구성될 수 있으며, 그에 대한 Method 규칙은 아래와 같이 적용될 수 있다
 
-|URI			|POST							|GET							|PATCH							|DELETE						|
-|---			|-----							|-----							|-----							|-----						|
-|/users			|user 들을 저장할 collection을 만든다	|user collection 의 리스트를 가져온다	|user collection 의 목록을 수정한다 	|user collection 을 삭제한다	|
-|/users/ssen	|새로운 user ssen 을 생성한다		|user ssen 의 정보를 가져온다		|user ssen 의 정보를 수정한다		|user ssen 을 삭제한다			|
+|URI			|POST								|GET								|PATCH								|DELETE						|
+|---			|-----								|-----								|-----								|-----						|
+|`/users`		|User 들을 저장할 Collection을 만든다	|User Collection의 리스트를 가져온다		|User Collection의 목록을 수정한다 		|User collection을 삭제한다	|
+|`/users/ssen`	|새로운 User `ssen`을 생성한다			|User `ssen`의 정보를 가져온다			|User `ssen`의 정보를 수정한다			|User `ssen`을 삭제한다		|
 
-REST API 설계 상 주요하게 사용될 수 있는 HTTP Request header 들은 아래와 같다
+REST API 설계 상 주요하게 사용될 수 있는 HTTP Request Header들은 아래와 같다
 
-- `User-Agent` 사용자의 Device 를 분석해서 그에 맞는 Contents 를 구성할 여지가 된다
-- `Accept` 사용자가 원하는 정보를 지정할 수 있는 여지가 된다 (ex. html 을 원할때와 단순 api 로서 작동할 때)
+- `User-Agent` 사용자의 Device를 분석해서 그에 맞는 Contents를 구성할 여지가 된다.
+- `Accept` 사용자가 원하는 정보를 지정할 수 있는 여지가 된다. (ex. HTML을 원할때와 단순 API 로서 작동할 때)
 - `Accept-Language` 다국어 처리에 대한 여지가 된다
 
 ## 참고 RESTful API 설계의 5가지 확인 사항

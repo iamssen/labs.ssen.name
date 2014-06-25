@@ -81,5 +81,5 @@ Ubuntu의 경우에는 CentOS에 비하면 `/etc/sudoers` 파일이 굉장히 �
 
 
 
-[execute-shell]: ../../../files/captures/20140120/154921.png
+[execute-shell]: http://files.ssen.name/captures/20140120/154921.png
 

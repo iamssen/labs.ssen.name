@@ -29,7 +29,7 @@ public class SearchController {
 	private RedisScript<Object> script;
 
 	@ResponseBody
-	@RequestMapping(consumes = { "application/json", "text/json" })
+	@RequestMapping(produces = { "application/json", "text/json" })
 	public SearchResult getJson(@RequestParam("q") String q) {
 		return new SearchResult(q, getSearchResult(q));
 	}

@@ -87,16 +87,16 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 95.0,
+		"height": 51.0,
 		"selected_items":
 		[
 			[
-				"gradle",
-				"Set Syntax: Gradle"
-			],
-			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"gradle",
+				"Set Syntax: Gradle"
 			],
 			[
 				"py",
@@ -208,6 +208,38 @@
 	},
 	"file_history":
 	[
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Polygonal Data Structures.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Flex/Components/Flex Component 분류.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Tools/Browsers/Chrome에서 URL Protocol이 작동되지 않을때.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Flex/Data Binding.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Search XML.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Sort Compare Functions.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Graphics/Bitmap Drawing 할 때의 Matrix 계산.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Graphics/3D Plan 형태의 Triangle Vertex Drawing.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Flex/Metadata Tags/Metadata Tags 기반의 Dependency Injection을 위한 describeType 분석.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Flex/Metadata Tags/Metadata Tags.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Graphics/Easing And Tween.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Flex/Flex Display Models.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Graphics/Drawing 가능한 Graphics Container 들의 종류와 특성.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Flex/Display Invalidation.md",
+		"/Users/ssen/Workspace/reflow.gh-pages/_config.yml",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Flex/IFactory 형태의 Property가 해석되는 방식.md",
+		"/Users/ssen/data/workspace/ssen.name/ssen.name/node_modules/markdown-binder/template/asset/layout.css",
+		"/Users/ssen/data/workspace/ssen.name/ssen.name/node_modules/markdown-binder/template/asset/content.less",
+		"/Users/ssen/data/workspace/ssen.name/ssen.name/node_modules/markdown-binder/template/asset/content.css",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Environments/mxmlc, compc.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Environments/fibuild.md",
+		"/Users/ssen/Workspace/labs.ssen.name/contents.sublime-project",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Plan.txt",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Server/Java/Tomcat 개발 로그.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Environments/ASDoc 문서를 Jenkins에서 생성시키기.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Environments/ASDoc.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Environments/Flash Builder 성능 튜닝.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Environments/Flash Builder 에서 Theme Style 속성이 나오지 않을때.md",
+		"/Users/ssen/Desktop/자료 정리/과거 개발 프로젝트들/vicin1/build.properties",
+		"/Users/ssen/Desktop/자료 정리/연구 목적용 소스코드들/framework/build.ant",
+		"/Users/ssen/data/workspace/flash/SCXML2SSenLogicExporter/build.ant",
+		"/Users/ssen/Desktop/자료 정리/과거 개발 프로젝트들/vicin1/build.ant",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Tools/Test.md",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Server/Test.md",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Test.md",
@@ -233,9 +265,7 @@
 		"/Users/ssen/Workspace/files/Makefile",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Server/Ruby/rvm.md",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Server/NginX/Nginx Proxy Redirect.md",
-		"/Users/ssen/Workspace/labs.ssen.name/_contents/Server/Java/Tomcat 개발 로그.md",
 		"/Users/ssen/Workspace/test-spring/test.gradle",
-		"/Users/ssen/Workspace/labs.ssen.name/contents.sublime-project",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Server/NginX/php-frm 설치.md",
 		"/usr/local/etc/nginx/sites-enabled/labs.ssen.name",
 		"/Users/ssen/Workspace/labs.ssen.name/contents.sublime-workspace",
@@ -272,7 +302,6 @@
 		"/Users/ssen/Desktop/Makefile",
 		"/Users/ssen/Workspace/files/nginx.conf",
 		"/Users/ssen/Workspace/files/attach/gulp-svgedit/index.html",
-		"/Users/ssen/Workspace/reflow.gh-pages/_config.yml",
 		"/Users/ssen/Workspace/files/attach/reflow/sample.js",
 		"/Users/ssen/Workspace/files/attach/reflow/contents.css",
 		"/Users/ssen/Downloads/swfobject/index.html",
@@ -306,36 +335,7 @@
 		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.model.svg",
 		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.service.svg",
 		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.view.display.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.view.input.svg",
-		"/Users/ssen/Desktop/Jekyll을 이용해서 블로그 만들기 (2).webloc",
-		"/Users/ssen/Desktop/Untitled-1.svg",
-		"/usr/local/Cellar/nginx/1.4.7/homebrew.mxcl.nginx.plist",
-		"/Users/ssen/Workspace/iamssen.github.io/index.html",
-		"/Users/ssen/Downloads/bootstrap-3.1.1/less/variables.less",
-		"/usr/local/etc/nginx/sites-enabled/dev.ssen.name",
-		"/Users/ssen/Downloads/bootstrap-3.1.1/less/theme.less",
-		"/Users/ssen/Downloads/bootstrap-3.1.1/less/navbar.less",
-		"/Users/ssen/Downloads/bootstrap-3.1.1/Gruntfile.js",
-		"/Users/ssen/Desktop/assets.svg",
-		"/Users/ssen/Desktop/dependency-injection.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/view.input.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/Oval 39.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/시작하기.md",
-		"/Volumes/backup/어플리케이션/Adobe Photoshop CC 14.0.0/Adobe CC crack kit 1.0/Reset HOSTS file to defaults.app/Contents/Resources/Scripts/main.scpt",
-		"/private/etc/hosts",
-		"/Users/ssen/Downloads/달빛조각사 43.txt",
-		"/Users/ssen/Dropbox/Contents/labs/Flash/Flex 원론/Metadata Tags 기반의 Dependency Injection을 위한 describeType 분석.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/system info commands.md",
-		"/Users/ssen/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/Users/ssen/Dropbox/Contents/labs/Flash/Flex 원론/Metadata 기반의 Dependency Injection을 위한 describeType 분석.md",
-		"/Users/ssen/Dropbox/Contents/labs/Flash/Flex 원론/Metadata 기반의 Dependency Injection을 위한 describeType 분석 (유니코드 인코딩 충돌).md",
-		"/Users/ssen/Dropbox/Contents/labs/Flash/Flex 원론/Dependency Injection을 위한 describeType 분석.md",
-		"/Users/ssen/Workspace/git-flow-test/xxx.md",
-		"/Users/ssen/Workspace/git-flow-test/test.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/user, group, permission management.md",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Shell/user, group management.md",
-		"/Users/ssen/Desktop/temp/sta-smart3-workspaces/smart3-workspace-4.7/test_restore_data/src/test_restore_data.mxml",
-		"/Users/ssen/Dropbox/Contents/labs/Environments/Jenkins/Jenkins 계정으로 접속하기.md"
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.view.input.svg"
 	],
 	"find":
 	{
@@ -343,9 +343,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 95.0,
 		"where_history":
 		[
+			"/Users/ssen/Workspace/labs.ssen.name/_contents",
 			"/Users/ssen/Workspace/jekyll-new",
 			"/Users/ssen/Dropbox/Contents",
 			"/Users/ssen/Dropbox/Contents/devlog",
@@ -359,6 +360,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"|----",
 			"Test",
 			"export",
 			"HOME",

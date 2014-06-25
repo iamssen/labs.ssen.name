@@ -85,13 +85,13 @@ Workflow 이름은 아무렇게나 지정하면 되고...
 위와 같이 해놓으면 이제 기존 스크린캡쳐 작업과 동일한 방식으로 **내가 원하는 위치에 원하는 이름으로** 스크린캡쳐를 생성시킬 수 있게 된다.
 
 
-[disable-screencapture-hotkey]: ../../../files/captures/20130927/081034.png
-[alfred-preferences-workflows]: ../../../files/captures/20130927/080135.png
-[make-new-blank-workflow]: ../../../files/captures/20130927/080157.png
-[workflow-name]: ../../../files/captures/20130927/080213.png
-[add-hotkey]: ../../../files/captures/20130927/080249.png
-[set-hotkey]: ../../../files/captures/20130927/080303.png
-[change-hotkey-type]: ../../../files/captures/20130927/080321.png
-[add-run-script]: ../../../files/captures/20130927/080341.png
-[set-bash-script]: ../../../files/captures/20130927/080425.png
-[wire-hotkey-and-script]: ../../../files/captures/20130927/080509.png
+[disable-screencapture-hotkey]: http://files.ssen.name/captures/20130927/081034.png
+[alfred-preferences-workflows]: http://files.ssen.name/captures/20130927/080135.png
+[make-new-blank-workflow]: http://files.ssen.name/captures/20130927/080157.png
+[workflow-name]: http://files.ssen.name/captures/20130927/080213.png
+[add-hotkey]: http://files.ssen.name/captures/20130927/080249.png
+[set-hotkey]: http://files.ssen.name/captures/20130927/080303.png
+[change-hotkey-type]: http://files.ssen.name/captures/20130927/080321.png
+[add-run-script]: http://files.ssen.name/captures/20130927/080341.png
+[set-bash-script]: http://files.ssen.name/captures/20130927/080425.png
+[wire-hotkey-and-script]: http://files.ssen.name/captures/20130927/080509.png

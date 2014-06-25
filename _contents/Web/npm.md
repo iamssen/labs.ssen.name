@@ -12,7 +12,7 @@ Node.js의 package들을 관리해준다. 사실 `npm` 모르면서 Node.js를 �
 
 `npm`을 사용하면서 상당히 중요한 사이트이다. 키워드 별로 인기있는 Module을 소개해준다.
 
-![Module Ranking](../../files/captures/20140121/174542.png)
+![Module Ranking](http://files.ssen.name/captures/20140121/174542.png)
 
 
 # `npm ls --depth=0`
