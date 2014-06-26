@@ -4,18 +4,19 @@ date: '2013-08-30 16:22:28'
 
 ---
 
-# Category Key가 있는 Object List 를 Tree 형태로 변환
+Category Key가 있는 Object List 를 Tree 형태로 변환
+========================================================
 
 `{cate1:"a", cate2:"b", cate3:"c", value:123}` 과 같은 형태의 데이터를
 
 ```json
-a : {
-	b : {
-		c : {
-			cate1 : "a", 
-			cate2 : "b", 
-			cate3 : "c", 
-			value : 123
+"a" : {
+	"b" : {
+		"c" : {
+			"cate1" : "a", 
+			"cate2" : "b", 
+			"cate3" : "c", 
+			"value" : 123
 		}
 	}
 }

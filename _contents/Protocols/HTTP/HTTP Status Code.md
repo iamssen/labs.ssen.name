@@ -1,8 +1,10 @@
 ---
 tags:
-- 'Protocol'
-- 'REST'
-- 'HTTP'
+  - Protocol
+  - REST
+  - HTTP
+primary: a8858ee31d
+date: '2014-06-25 17:57:23'
 
 ---
 

@@ -83,6 +83,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "_contents/Programming/Category Key가 있는 Object List 를 Tree 형태로 변환.md",
+			"settings":
+			{
+				"buffer_size": 1130,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -208,6 +216,23 @@
 	},
 	"file_history":
 	[
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Programming/Regular Expressions.md",
+		"/Users/ssen/Library/Application Support/Steam/SteamApps/common/SimCity 4 Deluxe/Sim City 4 Deluxe Edition.app/Contents/Resources/Korean.lproj/Localizable.strings",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Protocols/HTTP/HTTP.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Protocols/HTTP/HTTP Status Code.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Protocols/HTTP/HTTP Content-Type.md",
+		"/Users/ssen/Desktop/자료 정리/그 외/complete projects/작업물 - 웹/SSen Blog/skin/SSen_paper/index.xml",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Tools/Mac/Alfred Workflow를 사용해서 스크린캡쳐하기.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Programming/Bitwise State Flag.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Programming/Category Key가 있는 Object List 를 Tree 형태로 변환.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Programming/HTTP.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Programming/Category Key 가 있는 Object List 를 Tree 형태로 변환.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Web/npm.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Tools/Mac/Finder 검색에서 원본 질의(Raw Query) 사용하기.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Tools/Eclipse/Eclipse Path Tools.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Shell/SSH Authentication/ssh-keygen.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Server/Windows Azure/Azure에 Ubuntu Server Virtual Machine 만들기.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Server/Jenkins/Jenkins에서 sudo 권한을 실행시키기.md",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Polygonal Data Structures.md",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Flex/Components/Flex Component 분류.md",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Tools/Browsers/Chrome에서 URL Protocol이 작동되지 않을때.md",
@@ -318,24 +343,7 @@
 		"/Users/ssen/Desktop/lato/lato 2.svg",
 		"/Users/ssen/Desktop/lato/lato.svg",
 		"/Users/ssen/Dropbox/Contents/Contents.sublime-project",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/dependency-injection-about-dependency.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/assets.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/dependency-injection-polymorphism.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/dependency-injection-singleton.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/dependency-injection-trouble-of-dependency-on-display-tree.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/dependency-injection-trouble-of-dependency-on-singleton-by-multi-instance.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/dependency-injection.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/eventbus-event-new-event-model.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/eventbus-event-on-display-model.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/eventbus.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.command.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.connect.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.eventbus.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.injector.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.model.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.service.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.view.display.svg",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/icon.view.input.svg"
+		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/dependency-injection-about-dependency.svg"
 	],
 	"find":
 	{
@@ -360,6 +368,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"/files",
+			"../../../files",
+			"/files/captures/",
 			"|----",
 			"Test",
 			"export",
@@ -418,6 +429,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"http://files.ssen.name",
 			"	",
 			"\\t",
 			"http://files.ssen.name",
@@ -448,8 +460,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "_contents/Programming/Category Key가 있는 Object List 를 Tree 형태로 변환.md",
+					"settings":
+					{
+						"buffer_size": 1130,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								274,
+								274
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
