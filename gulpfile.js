@@ -220,10 +220,10 @@ gulp.task('push-data-to-search-engine', function (done) {
 // runnable tasks
 // ------------------------------------
 gulp.task('make-jekyll-source', function() {
-	gulp.src('_contents/**/*.md')
+	gulp.src('./_contents/**/*.md')
 		.pipe(makePrimaryKeys())
 		.pipe(tagging())
-		.pipe(gulp.dest('_source'))
+		.pipe(gulp.dest('./_source'))
 })
 //gulp.task('make-jekyll-source', ['add-primary-key-to-markdown-if-not-exists', 'copy-markdown-to-jekyll-source-directory-with-tagging'])
 gulp.task('config-site', ['push-data-to-search-engine', 'build-mustache-templates', 'symlink-nginx-config'])
@@ -232,14 +232,14 @@ gulp.task('config-site', ['push-data-to-search-engine', 'build-mustache-template
 // develop tasks
 // ------------------------------------
 gulp.task('copy-assets', function () {
-	gulp.src('_contents/assets/**/*')
-		.pipe(gulp.dest('_site/assets/'))
+	gulp.src('./_contents/assets/**/*')
+		.pipe(gulp.dest('./_site/assets/'))
 })
 
 gulp.task('copy-scss', function () {
-	gulp.src('_contents/assets/*.scss')
-		.pipe(sass({ loadPath: '_contents/assets/' }))
-		.pipe(gulp.dest('_site/assets/'))
+	gulp.src('./_contents/assets/*.scss')
+		.pipe(sass({ loadPath: './_contents/assets/' }))
+		.pipe(gulp.dest('./_site/assets/'))
 })
 
 gulp.task('compile', function (done) {
@@ -247,7 +247,7 @@ gulp.task('compile', function (done) {
 })
 
 gulp.task('watch', function () {
-	gulp.watch('_contents/**/*', ['compile'])
+	gulp.watch('./_contents/**/*', ['compile'])
 })
 
 gulp.task('test', ['push-to-elasticsearch', 'timeout-test'])
