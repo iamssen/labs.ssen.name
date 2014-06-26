@@ -139,6 +139,8 @@ function makePrimaryKeys() {
 			frontmatter = {}
 		}
 
+		console.log('[makePrimaryKeys]', file.path)
+
 		if (!frontmatter['primary'] || !frontmatter['date']) {
 			if (!frontmatter['primary']) {
 				frontmatter['primary'] = makePrimaryHex(10)
