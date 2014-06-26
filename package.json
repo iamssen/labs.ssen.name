@@ -1,20 +1,24 @@
 {
-  "name": "labs.ssen.name",
-  "homepage": "https://github.com/iamssen/labs.ssen.name",
-  "dependencies": {
-    "async": "0.9.*",
-    "done-exec": "0.*",
-    "elasticsearch": "2.2.*",
-    "event-stream": "3.*",
-    "gulp": "3.*",
-    "gulp-ruby-sass": "0.5.*",
-    "gulp-util": "2.2.*",
-    "hogan.js": "2.*",
-    "moment": "2.*",
-    "redis": "0.10.*",
-    "string": "1.8.*",
-    "unorm": "1.*",
-    "xml2js": "0.4.*",
-    "yamljs": "0.*"
-  }
+	"name": "labs.ssen.name",
+	"homepage": "https://github.com/iamssen/labs.ssen.name",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/iamssen/labs.ssen.name.git"
+	},
+	"dependencies": {
+		"async": "0.9.*",
+		"done-exec": "0.*",
+		"elasticsearch": "2.2.*",
+		"event-stream": "3.*",
+		"gulp": "3.7.*",
+		"gulp-ruby-sass": "0.5.*",
+		"gulp-util": "2.*",
+		"hogan.js": "2.*",
+		"moment": "2.*",
+		"redis": "0.10.*",
+		"string": "1.8.*",
+		"unorm": "1.*",
+		"xml2js": "0.4.*",
+		"yamljs": "0.*"
+	}
 }
