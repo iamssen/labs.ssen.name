@@ -13,4 +13,10 @@ $(document).ready(function () {
 			$.fancybox.open(args)
 		}
 	})
+
+	$('#article-content img').load(function() {
+		if ($(this).width() > 250) {
+			$(this).addClass('center')
+		}
+	})
 })

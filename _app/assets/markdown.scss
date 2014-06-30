@@ -79,16 +79,21 @@
 	}
 
 	/* Custom */
-	.center {
-		text-align: center;
-		margin-bottom: 0.3em;
-	}
-
-	.center > embed {
-		border: 1px solid #000000;
-	}
+//	.center {
+//		text-align: center;
+//		margin-bottom: 0.3em;
+//	}
+//
+//	.center > embed {
+//		border: 1px solid #000000;
+//	}
 
 	em {
 		color: #bbbbbb;
+	}
+
+	.center {
+		display: block;
+		margin: 1em auto 1em auto;
 	}
 }
