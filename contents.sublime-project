@@ -10,6 +10,7 @@
 			[
 				"_*"
 			],
+			"follow_symlinks": true,
 			"path": "_contents"
 		}
 	]

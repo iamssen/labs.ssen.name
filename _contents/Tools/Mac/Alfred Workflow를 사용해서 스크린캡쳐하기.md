@@ -1,16 +1,22 @@
 ---
 primary: 63b87a2004
 date: '2014-01-14 17:13:39'
+tags:
+- 'Alfred'
+- 'OSX'
 
 ---
 
-# 문제점 : Mac의 기본 스크린캡쳐는 이름 바꾸기가 더럽게 힘들다
+문제점 : Mac의 기본 스크린캡쳐는 이름 바꾸기가 더럽게 힘들다
+====================================
 
 Mac의 스크린캡쳐 이름 지정은 `/System/Library/CoreServices/SystemUIServer.app/Contents/Resources/ko.lproj/ScreenCapture.strings`을 수정해서 바꿀 수 있지만 문제는 이 스크린캡쳐 이름 이라는게 `%@ %@ %@` 뭐 이딴 식으로 지정되어 있고, 이 인자들이 기본 Locale에 영향을 받기 때문에 사용자가 원하는대로 컨트롤을 하기가 힘들다.
 
 그래서 왠만하면 비활성 시키고 `screencapture` 명령어를 사용하는 것이 더 좋다.
 
-# 해결 방법 : Alfred Workflow로 `screencapture` 사용하기
+
+해결 방법 : Alfred Workflow로 `screencapture` 사용하기
+====================================
 
 > Alfred Workflow 기능은 Alfred 2.0 + Powerpack 유저만 사용 가능하다. (유료) 
 >
@@ -19,13 +25,13 @@ Mac의 스크린캡쳐 이름 지정은 `/System/Library/CoreServices/SystemUISe
 > 
 > Alfred Workflow에서는 **Hot Key Trigger**와 **Script Action** 기능을 사용하는 것 뿐이고, 이는 Automator 등 여러가지 우회할 수 있는 방법이 있긴 할듯 싶다.
 
-## 기본 기능들 비활성 
+### 기본 기능들 비활성 
 
 ![스크린샷 단축키 비활성화][disable-screencapture-hotkey]
 
 우선 환경설정에서 스크린샷 단축키를 빼준다. (뭐 겹치지 않는 다른 단축키를 사용할 예정이라면 딱히 뺄 필요는 없다)
 
-## Alfred Workflow 제작
+### Alfred Workflow 제작
 
 ![Alfred 환경설정에서 워크플로우 탭 선택][alfred-preferences-workflows]
 
@@ -53,13 +59,15 @@ Workflow 이름은 아무렇게나 지정하면 되고...
 
 다시 우측 상단에 있는 + 버튼을 눌러서 Script Action을 만들어준다.
 
-	export ymd=$(date +%Y%m%d)
-	export hms=$(date +%H%M%S)
-	export content_home=/Users/ssen/Dropbox/Contents/
-	export screen_home=/Users/ssen/Dropbox/Contents/files/captures
-	mkdir -p $screen_home/$ymd
-	screencapture -i $screen_home/$ymd/$hms.png
-	python -c "import os.path; print os.path.relpath('$screen_home/$ymd/$hms.png', '$content_home')" | pbcopy
+```sh
+export ymd=$(date +%Y%m%d)
+export hms=$(date +%H%M%S)
+export content_home=/Users/ssen/Dropbox/Contents/
+export screen_home=/Users/ssen/Dropbox/Contents/files/captures
+mkdir -p $screen_home/$ymd
+screencapture -i $screen_home/$ymd/$hms.png
+python -c "import os.path; print os.path.relpath('$screen_home/$ymd/$hms.png', '$content_home')" | pbcopy
+```
 
 대충 설명하자면 뭐 이런 의미를 가진 Script이다.
 

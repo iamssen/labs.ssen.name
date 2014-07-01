@@ -1,10 +1,15 @@
 ---
 primary: 952fab070f
 date: '2014-06-19 14:25:48'
+tags:
+- 'OSX'
+- 'Tomcat'
+- 'Java'
 
 ---
 
-# OSX에 Tomcat 설치
+OSX에 Tomcat 설치
+====================================
 
 ```sh
 brew install tomcat

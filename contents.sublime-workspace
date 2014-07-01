@@ -84,10 +84,18 @@
 	"buffers":
 	[
 		{
-			"file": "_contents/Programming/Category Key가 있는 Object List 를 Tree 형태로 변환.md",
+			"file": "_contents/Flash/Flex/Components/Data Grid/MX Advanced DataGrid Custom.md",
 			"settings":
 			{
-				"buffer_size": 1130,
+				"buffer_size": 95,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_contents/Server/Jenkins/Jenkins 자동 백업하기.md",
+			"settings":
+			{
+				"buffer_size": 2629,
 				"line_ending": "Unix"
 			}
 		}
@@ -216,6 +224,14 @@
 	},
 	"file_history":
 	[
+		"/Users/ssen/data/workspace/ssen.name/ssen.name/node_modules/markdown-binder/template/asset/content.less",
+		"/Users/ssen/data/workspace/ssen.name/ssen.name/node_modules/markdown-binder/template/asset/ref/markdown.less",
+		"/Users/ssen/data/workspace/ssen.name/ssen.name/node_modules/markdown-binder/template/asset/content.css",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Flex/Components/Data Grid/Spark DataGrid Custom.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Flex/Components/Data Grid/DataGrid.md",
+		"/Users/ssen/Workspace/files/package.json",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Flex/Components/Data Grid/MX Advanced DataGrid Custom.md",
+		"/Users/ssen/Workspace/labs.ssen.name/_contents/Programming/Category Key가 있는 Object List 를 Tree 형태로 변환.md",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Programming/Regular Expressions.md",
 		"/Users/ssen/Library/Application Support/Steam/SteamApps/common/SimCity 4 Deluxe/Sim City 4 Deluxe Edition.app/Contents/Resources/Korean.lproj/Localizable.strings",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Protocols/HTTP/HTTP.md",
@@ -224,7 +240,6 @@
 		"/Users/ssen/Desktop/자료 정리/그 외/complete projects/작업물 - 웹/SSen Blog/skin/SSen_paper/index.xml",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Tools/Mac/Alfred Workflow를 사용해서 스크린캡쳐하기.md",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Programming/Bitwise State Flag.md",
-		"/Users/ssen/Workspace/labs.ssen.name/_contents/Programming/Category Key가 있는 Object List 를 Tree 형태로 변환.md",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Programming/HTTP.md",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Programming/Category Key 가 있는 Object List 를 Tree 형태로 변환.md",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Web/npm.md",
@@ -250,8 +265,6 @@
 		"/Users/ssen/Workspace/reflow.gh-pages/_config.yml",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Flex/IFactory 형태의 Property가 해석되는 방식.md",
 		"/Users/ssen/data/workspace/ssen.name/ssen.name/node_modules/markdown-binder/template/asset/layout.css",
-		"/Users/ssen/data/workspace/ssen.name/ssen.name/node_modules/markdown-binder/template/asset/content.less",
-		"/Users/ssen/data/workspace/ssen.name/ssen.name/node_modules/markdown-binder/template/asset/content.css",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Environments/mxmlc, compc.md",
 		"/Users/ssen/Workspace/labs.ssen.name/_contents/Flash/Environments/fibuild.md",
 		"/Users/ssen/Workspace/labs.ssen.name/contents.sublime-project",
@@ -338,12 +351,7 @@
 		"/Users/ssen/Desktop/Untitled.svg",
 		"/Users/ssen/Desktop/omni.svg",
 		"/Users/ssen/Desktop/omni-svgedit-test/output/omni.svg",
-		"/Users/ssen/Desktop/omni-svgedit-test/test.svg",
-		"/Users/ssen/Desktop/lato/test.js",
-		"/Users/ssen/Desktop/lato/lato 2.svg",
-		"/Users/ssen/Desktop/lato/lato.svg",
-		"/Users/ssen/Dropbox/Contents/Contents.sublime-project",
-		"/Users/ssen/Workspace/ssenkit.mvc/docs/assets/dependency-injection-about-dependency.svg"
+		"/Users/ssen/Desktop/omni-svgedit-test/test.svg"
 	],
 	"find":
 	{
@@ -351,7 +359,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 95.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Users/ssen/Workspace/labs.ssen.name/_contents",
@@ -368,6 +376,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"grid.editable",
+			".swf.swf",
 			"/files",
 			"../../../files",
 			"/files/captures/",
@@ -429,6 +439,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"grid.custom.spark",
+			".swf",
 			"http://files.ssen.name",
 			"	",
 			"\\t",
@@ -465,28 +477,54 @@
 			[
 				{
 					"buffer": 0,
-					"file": "_contents/Programming/Category Key가 있는 Object List 를 Tree 형태로 변환.md",
+					"file": "_contents/Flash/Flex/Components/Data Grid/MX Advanced DataGrid Custom.md",
 					"settings":
 					{
-						"buffer_size": 1130,
+						"buffer_size": 95,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								274,
-								274
+								92,
+								92
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_contents/Server/Jenkins/Jenkins 자동 백업하기.md",
+					"settings":
+					{
+						"buffer_size": 2629,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2493,
+								2493
 							]
 						],
 						"settings":
 						{
 							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 905.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

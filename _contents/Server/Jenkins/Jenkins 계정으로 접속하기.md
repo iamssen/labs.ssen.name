@@ -1,10 +1,13 @@
 ---
 primary: 26c2cffa06
 date: '2014-02-15 22:43:59'
+tags:
+- 'Jenkins'
 
 ---
 
-# `su jenkins`
+`su jenkins`
+==========================================
 
 - `sudo su`
 - `su jenkins` 

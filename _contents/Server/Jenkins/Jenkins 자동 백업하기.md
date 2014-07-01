@@ -1,6 +1,8 @@
 ---
 primary: 44e256f173
 date: '2014-06-30 22:20:13'
+tags:
+- 'Jenkins'
 
 ---
 

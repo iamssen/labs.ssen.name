@@ -12,7 +12,7 @@ module Jekyll
 			self.process(@name)
 			self.read_yaml(File.join(base, '_layouts'), 'tag-index.html')
 			self.data['tags'] = tags # hash.array
-			self.data['title'] = 'Hello Tags'
+			self.data['title'] = 'Tags'
 		end
 	end
 
