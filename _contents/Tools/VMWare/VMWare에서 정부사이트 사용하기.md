@@ -8,7 +8,7 @@ VMWare 접속을 금지하는 정부 민원 사이트에서 VMWare 감추기
 2. `.vmx` 파일을 찾아서 텍스트 에디터로 연다.
 3. 마지막 줄에 아래와 같은 내용들을 추가한다.
 
-```conf
+```properties
 isolation.tools.getPtrLocation.disable = “TRUE”
 isolation.tools.setPtrLocation.disable = “TRUE”
 isolation.tools.setVersion.disable = “TRUE”
