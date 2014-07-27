@@ -83,9 +83,13 @@
 	}
 
 	// custom
-	.center {
+	.center, .flplay {
 		display: block;
 		margin: 1em auto 1em auto;
+	}
+
+	.flplay img {
+		margin: 0 !important;
 	}
 
 	.border {
