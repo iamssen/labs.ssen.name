@@ -15,7 +15,8 @@ highlighter: pygments
 #  input: GFM
 
 redcarpet:
-  extensions: ["tables", "no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
+  extensions: ["tables", "no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "with_toc_data"]
+  # "superscript",
 
 sass:
   sass_dir: assets

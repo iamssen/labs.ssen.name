@@ -8,7 +8,7 @@ buildscript {
 		// maven { url "http://download.java.net/maven/2" }
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.1.RELEASE")
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.4.RELEASE")
 	}
 }
 
