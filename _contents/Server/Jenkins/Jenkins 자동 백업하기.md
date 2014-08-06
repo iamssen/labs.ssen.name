@@ -24,7 +24,7 @@ Git Backup Setting
 
 우선 Jenkins 백업 데이터들을 Public으로 올리는 미친짓을 할 수 없으므로, [Github] 보다는 [Bitbucket]을 사용하도록 한다.
 
-![](http://files.ssen.name/captures/20140630/2.png)
+![](/files/captures/20140630/2.png)
 
 적당한 Jenkins를 백업할 저장소를 만들어준다.
 
@@ -35,19 +35,19 @@ Git Backup Setting
 
 저장소가 준비되었으면 Git에 주기적으로 Push를 날려줄 Job을 하나 만든다.
 
-![](http://files.ssen.name/captures/20140630/225539.png)
+![](/files/captures/20140630/225539.png)
 
 Git 저장소 연결을 해주고
 
-![](http://files.ssen.name/captures/20140630/230225.png)
+![](/files/captures/20140630/230225.png)
 
 매일 22시에 Job이 실행되게 해주고
 
-![](http://files.ssen.name/captures/20140630/230316.png)
+![](/files/captures/20140630/230316.png)
 
 간단한 Shell Script를 실행해준다. (_Workspace 내에 모든 변경 사항을 적용한 다음, Commit을 한다._)
 
-![](http://files.ssen.name/captures/20140630/230429.png)
+![](/files/captures/20140630/230429.png)
 
 마지막으로 Git Publisher를 사용해서, 자동으로 Git 저장소에 Push를 날리도록 해준다.
 
@@ -61,11 +61,11 @@ Jenkins에 자동으로 Git으로 Push를 날려주도록 설정을 해두었다
 
 Jenkins Plugin Manager에서 [ThinBackup]을 설치한다.
 
-![](http://files.ssen.name/captures/20140630/1.png)
+![](/files/captures/20140630/1.png)
 
 설치가 완료되면 위와 같이 Jenkins 관리에서 [ThinBackup] 항목을 볼 수 있다.
 
-![](http://files.ssen.name/captures/20140630/230839.png)
+![](/files/captures/20140630/230839.png)
 
 설정은 그리 복잡하지 않다.
 

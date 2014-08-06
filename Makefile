@@ -2,6 +2,7 @@ CONTENTS = _contents
 APP = _app
 SOURCE = _source
 SITE = _site
+LOGS = _logs
 TEMPLATES = src/main/resources/templates
 
 # base
@@ -10,7 +11,7 @@ clean:
 	rm -rf $(SOURCE) $(SITE)
 
 create:
-	mkdir -p _logs
+	mkdir -p $(LOGS)
 	mkdir -p $(SOURCE)
 	cp -r $(CONTENTS)/* $(SOURCE)
 	cp -r $(APP)/* $(SOURCE)
@@ -51,7 +52,7 @@ test: clean create
 	#rm -rf $(SOURCE)
 
 	# build java webapp
-	sh gradlew buildAndDeployToWebapps
+	gradle buildAndDeployToWebapps
 
 	# server reload
 	nginx -s reload

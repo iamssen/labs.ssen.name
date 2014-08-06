@@ -55,8 +55,8 @@ OSX 10.9 Mavericks에 추가된 Tag는 `kMDItemUserTags`로 검색할 수 있고
 [File Metadata Search Programming Guide]: https://developer.apple.com/library/mac/documentation/Carbon/Conceptual/SpotlightQuery/Concepts/QueryFormat.html
 [File Metadata Attributes Reference]: https://developer.apple.com/library/mac/documentation/carbon/reference/metadataattributesref/reference/commonattrs.html
 
-[view-raw-query1]: http://files.ssen.name/captures/20140131/001127.png
-[view-raw-query2]: http://files.ssen.name/captures/20140131/001134.png
-[view-raw-query3]: http://files.ssen.name/captures/20140131/001141.png
-[view-raw-query4]: http://files.ssen.name/captures/20140131/001213.png
-[view-raw-query5]: http://files.ssen.name/captures/20140131/001221.png
+[view-raw-query1]: /files/captures/20140131/001127.png
+[view-raw-query2]: /files/captures/20140131/001134.png
+[view-raw-query3]: /files/captures/20140131/001141.png
+[view-raw-query4]: /files/captures/20140131/001213.png
+[view-raw-query5]: /files/captures/20140131/001221.png

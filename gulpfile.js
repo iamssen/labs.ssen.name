@@ -21,6 +21,8 @@ var envs = {
 	SITE: path.resolve(__dirname, '_site'),
 	LOG_HOME: path.join(__dirname, '_logs'),
 
+	FILES: process.env.FILES,
+
 	// using system environment variables
 	PORT: process.env.PORT || 9888,
 	WAS_PORT: process.env.WAS_PORT,

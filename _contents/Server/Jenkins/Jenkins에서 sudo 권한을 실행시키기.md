@@ -91,5 +91,5 @@ Finished: SUCCESS
 
 
 
-[execute-shell]: http://files.ssen.name/captures/20140120/154921.png
+[execute-shell]: /files/captures/20140120/154921.png
 

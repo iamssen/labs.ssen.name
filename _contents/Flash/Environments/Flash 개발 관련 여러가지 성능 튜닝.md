@@ -20,7 +20,7 @@ Eclipse에 플러그인 형태로 설치한 경우 `eclipse.ini` 파일을 수�
 
 ### 불필요한 플러그인들 끄기
 
-![](http://files.ssen.name/captures/20140622/215537.png)
+![](/files/captures/20140622/215537.png)
 
 위와 같이 Eclipse 설정에 들어가면 실행 시키지 않아도 되는 플러그인들을 해제 할 수 있다.
 
@@ -79,11 +79,11 @@ Unit Test니 어쩌니 하지만... 그건 어디까지나 데이너나 로직�
 
 코드 한 줄 고치고, 실행하고, 다시 코드 한 줄 고치고, 실행하고... 를 반복하는 상황에서 디버깅을 실행 속도가 급격하게 느린 Web Browser 통해 하는 것은 그다지 바람직하지 못하다.
 
-![](http://files.ssen.name/captures/20140623/010923.png)
+![](/files/captures/20140623/010923.png)
 
 "Debug Configuration"에서 위와 같이 "Use Default" 체크를 푼 다음, 실행할 파일의 확장자를 `.swf`로 바꿔주면 Flash Player로 실행되게 된다.
 
-![](http://files.ssen.name/captures/20140623/011222.png)
+![](/files/captures/20140623/011222.png)
 
 Flash Player 창 사이즈 조절은 위와 같이 "Project Properties"에서 `-default-size 500 400`과 같은 식으로 지정해주면 된다.
 

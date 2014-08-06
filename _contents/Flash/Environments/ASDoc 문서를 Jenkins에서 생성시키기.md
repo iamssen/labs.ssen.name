@@ -30,19 +30,19 @@ Ubuntu Server에 Flex SDK 설치
 
 CI Server에서 문서를 빌드 하기 위해서는 당연히 Server에 Flex SDK가 있어야 한다.
 
-![](http://files.ssen.name/captures/20140622/042649.png)
+![](/files/captures/20140622/042649.png)
 
 <http://flex.apache.org>에 접속해서 최신 버전의 SDK를 일단 컴퓨터에 설치하도록 한다.
 
-![](http://files.ssen.name/captures/20140622/042904.png)
+![](/files/captures/20140622/042904.png)
 
-![](http://files.ssen.name/captures/20140622/043100.png)
+![](/files/captures/20140622/043100.png)
 
-![](http://files.ssen.name/captures/20140622/043118.png)
+![](/files/captures/20140622/043118.png)
 
 Adobe 시절 Flex SDK는 zip 파일로 제공이 되어서 Shell 상에서 `wget`이나 `curl`을 사용해서 다운받은 다음에 압축만 풀면 되었었지만... Apache 부터는 설치 과정이 이렇게 바뀌었다. 고로... Installer를 통해서 설치한 다음 Server에 올리는 이중 작업이 필요하다. (_귀찮긴 하지만 별 수 없다. 더 편한 방법없나 찾아 헤매지 마라. 피곤해진다._)
 
-![](http://files.ssen.name/captures/20140622/043522.png)
+![](/files/captures/20140622/043522.png)
 
 설치한 SDK를 이렇게 zip 파일로 압축해 놓는다. (_뭐 `scp` 등을 통해서 디렉토리로 올리는 방식도 있지만... Flex SDK의 구성 파일들이 징그러울 정도로 많은지라 zip으로 압축해서 올린 다음 압축을 풀어주는게 더 효과적이다._)
 
@@ -69,7 +69,7 @@ $ sudo unzip 4.12.1.zip
 
 압축을 다 풀었다면 Jenkins 에서 환경 변수 설정을 해주면 된다.
 
-![](http://files.ssen.name/captures/20140622/045220.png)
+![](/files/captures/20140622/045220.png)
 
 이와 같이 설정하면 Jenkins와 Jenkins에서 실행되는 빌드 내에서 `$FLEX_HOME` 환경 변수를 사용할 수 있다.
 
@@ -78,7 +78,7 @@ $ sudo unzip 4.12.1.zip
 Jenkins에 Job 생성하기
 ===================================
 
-![](http://files.ssen.name/captures/20140622/210851.png)
+![](/files/captures/20140622/210851.png)
 
 개인적으로 사용하는 구성은 아래와 같다.
 
