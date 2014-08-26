@@ -12,6 +12,10 @@
 			],
 			"follow_symlinks": true,
 			"path": "_contents"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/ssen/Workspace/reflow.gh-pages/_posts"
 		}
 	]
 }
