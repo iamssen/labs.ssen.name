@@ -1,3 +1,9 @@
+---
+primary: 8d1b29d57f
+date: '2014-08-27 00:25:34'
+
+---
+
 <h1>
 	<p align="center">
 		<img src="images/eventbus.mono.svg"/>

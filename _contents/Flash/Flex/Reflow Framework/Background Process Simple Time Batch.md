@@ -1,3 +1,9 @@
+---
+primary: e60b346ae5
+date: '2014-08-27 00:25:34'
+
+---
+
 <div class="center">
 	<embed src="swfs/bg-process.simple-time-batch.swf" width="500" height="300"/>
 	<div>
