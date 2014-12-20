@@ -1,0 +1,154 @@
+# Java API
+
+## 저수준
+- Object
+	- protected Object clone()
+	- protected void finalize()
+	- Class getClass()
+	- boolean equals(Object obj)
+	- int hashCode() // equals와 같이 구현되어야 한단다...
+	- String toString()
+- Class
+	- static Class forName(String className)
+	- String getName()
+	- Object newInstance()
+- SystemUtils
+	- static File getJavaHome()
+	- static File getJavaIoTempDic()
+	- static File getUserDir()
+	- static File getUserHome()
+- Random
+	- int nextInt(int max)
+	- float nextFloat() // 0 ~ 1
+	- double nextDouble() // 0 ~ 1
+	- boolean nextBoolean()
+
+## 문자열
+- String
+	- int length
+	- char charAt(int index)
+	- boolean equals(Object obj)
+	- String substring(int begin) // 이거 end나 length가 없나?
+	- String replace(char targetChar, chart newChar)
+	- String toLowerCase()
+	- String toUpperCase()
+- StringUtils
+	- static boolean isBlank(CharSequence) // 문자열의 whitespace, empty, null 체크
+	- static boolean isEmpty(CharSequence) // 문자열의 empty, null 체크
+	- static String defaultString(String source, String default) // source가 empty, null 이면 defaultString 리턴
+- StringEscapeUtils
+	- static String escapeHtml4(String)
+	- static String unescapeHtml4(String)
+	- static String escapeXml(String)
+	- static String unescapeXml(String)
+- CharUtils
+	- static boolean isAscii(char)
+	- static boolean isAsciiAlphaLower(char)
+	- static boolean isAsciiAlphaUpper(char)
+	- static boolean isAsciiAlphanumeric(char)
+
+## 날짜
+- Calendar <-- Date가 deprecated 되어서 대체로 사용됨 (API 괴랄함)
+	- void add(int field, int amount)
+	- boolean after(Object when) // this > when
+	- boolean before(Object when) // this < when
+	- long getTimeInMillis() // get unix time
+	- int get(int field)
+	- Calendar.ERA
+	- Calendar.YEAR
+	- Calendar.MONTH
+	- Calendar.WEEK_OF_YEAR
+	- Calendar.WEEK_OF_MONTH
+	- Calendar.DATE
+	- Calendar.DAY_OF_MONTH
+	- Calendar.DAY_OF_YEAR
+	- Calendar.DAY_OF_WEEK
+	- Calendar.DAY_OF_WEEK_IN_MONTH
+	- Calendar.AM_PM
+	- Calendar.HOUR
+	- Calendar.HOUR_OF_DAY
+	- Calendar.MINUTE
+	- Calendar.SECOND
+	- Calendar.MILLISECOND
+	- Calendar.ZONE_OFFSET
+	- Calendar.DST_OFFSET
+
+## Collection
+- JCF (Java Collection Framework) Interface
+	- Collection
+	- Set // 중복을 허용하지 않음. 단순 집합
+	- SortedSet // ?
+	- NavigableSet // 찾고자 하는 값의 가장 근접값을 알려준다
+	- List // index를 가진 배열 집합
+	- Queue // 선입선출 구조
+	- Deque // 양방향 입출
+	- Buffer
+	- Map // Key, Value 구조
+	- SortedMap // ?
+	- NavigableMap // 찾고자 하는 값의 가장 근접값을 알려준다?
+- Collection<T>
+	- boolean add(T obj)
+	- boolean addAll(Collection<T> objs)
+	- void clear()
+	- boolean contains(T obj) // find
+	- boolean containsAll(Collection<T> objs)
+	- boolean equals(T obj)
+	- boolean isEmpty()
+	- iterator<T> iterator()
+	- boolean remove(T obj)
+	- boolean removeAll(Collection<T> objs)
+	- boolean retainAll(Collection<T> objs) // 지정된 요소들만 남기고 모두 삭제
+	- int size()
+	- T[] toArray()
+- Map<K,V>
+	- void clear()
+	- boolean containsKey(K key) // key가 있을때 true
+	- boolean containsValue(K value)
+	- Set entryset() // iterator?
+	- V get(K key)
+	- boolean isEmpty()
+	- Set<K> keySet()
+	- V put(K key, V value)
+	- void putAll(Map<K, V> map)
+	- V remove(K key)
+	- int size()
+	- Collection<V> values()
+- Enumeration<T>
+	- boolean hasMoreElements()
+	- T nextElement()
+	- Iterator<T>
+	- boolean hasNext()
+	- T next()
+	- void remove()
+- ListIterator<T>
+	- void add(T obj)
+	- void set(T obj)
+	- boolean hasNext()
+	- boolean hasPrevious()
+	- T next()
+	- T previous()
+	- int nextIndex()
+	- int previousIndex()
+	- remove()
+- Comparable<T>
+	- int compareTo(T obj)
+	- Compareator<T>
+	- int compare(T a, T b)
+	- boolean equals(T obj)
+- Collections
+	- sort(Collection<Comparable>, Compareator<T> = null)
+	- binarySearch(List, Object)
+	- reverse(List)
+	- shuffle(List) // 무작위
+	- fill(List, Object) // List를 Object로 모두 덮어씌움
+	- copy(List source, List to) // source의 리스트를 to로 복사
+	- min(Collection) // 가장 작은 객체
+	- max(Collection)
+	- rotate(List list, int distance) // List를 distance만큼 돌린다. 아마도 순서를 미루는 것일듯?
+	- replaceAll(List list, Object target, Object new) // target을 모두 new로 바꾼다
+	- swap(List list, int x, int y) // x 와 y의 위치를 바꾼다
+
+## JSP
+- <%! // script %> // method 선언?
+- <% %> //
+- <%= %>
