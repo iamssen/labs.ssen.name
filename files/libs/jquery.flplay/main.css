@@ -1,0 +1,58 @@
+flplay {
+	display: none;
+}
+
+div.flplay {
+	border: 1px solid #000000;
+	background-color: #ffffff;
+	position: relative;
+	padding: 0px;
+	margin: 0px;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+div.flplay img.flplay-screen {
+	position: absolute;
+	/*cursor: pointer;*/
+	/*opacity: 0.8;*/
+	/*filter: alpha(opacity=80);*/
+}
+
+div.flplay div.flplay-play {
+	position: absolute;
+	height: 55px;
+	margin: 0px;
+	padding: 0px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+}
+
+div.flplay div.flplay-play svg {
+	cursor: pointer;
+}
+
+div.flplay div.flplay-play svg rect {
+	fill: rgba(0, 0, 0, 0.5);
+}
+
+div.flplay div.flplay-play svg:hover rect {
+	fill: rgba(243, 168, 106, 1);
+}
+
+div.flplay div.flplay-play p {
+	position: absolute;
+	font-size: 12px;
+	margin: 0px;
+	left: 100px;
+	top: 0px;
+	line-height: 210%;
+}
+
+div.flplay div.flplay-play p span {
+	padding: 4px 4px 3px 4px;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: rgba(255, 255, 255, 1);
+}

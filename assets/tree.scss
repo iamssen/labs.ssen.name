@@ -1,0 +1,51 @@
+@mixin icon-list-item($icon) {
+	list-style: none;
+
+	padding: 4px 0px 3px 26px;
+
+	background-size: 21px 26px;
+	background-repeat: no-repeat;
+
+	background-image: url($icon);
+}
+
+@mixin tree() {
+
+	li {
+		// label
+		margin: 3px 0px 3px -30px;
+
+		&.tree-node {
+			@include icon-list-item('book-closed.svg');
+
+			> ul {
+				display: none;
+			}
+		}
+
+		&.tree-node-open {
+			@include icon-list-item('book-opened.svg');
+
+			> ul {
+				display: block;
+			}
+		}
+
+		&.tree-leaf {
+			@include icon-list-item('page.svg');
+		}
+
+		> a {
+			color: #000000;
+			cursor: pointer;
+		}
+
+		&.highlighted {
+			@include icon-list-item('page-selected.svg');
+
+			> a {
+				color: #5484FF;
+			}
+		}
+	}
+}

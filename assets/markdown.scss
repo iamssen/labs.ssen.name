@@ -1,0 +1,102 @@
+@mixin markdown() {
+	/* Override Bootstrap Markdown */
+	line-height: 150%;
+
+	word-wrap: break-word;
+	word-break: break-all;
+
+	img, embed {
+		max-width: 100%;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+
+		padding: 15px 0 0 0;
+		margin: 0;
+		line-height: 36px;
+
+		code {
+			font-family: inherit;
+			padding: 0 0.3em 0 0.3em;
+		}
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	h1, h2 {
+		margin-top: 0.2em;
+		margin-bottom: 0.4em;
+	}
+
+	h1 {
+		margin-bottom: 0.4em;
+		padding-bottom: 10px;
+		font-size: 2.3em;
+		border-bottom: 2px solid #000000;
+	}
+
+	h2 {
+		margin-bottom: 0.3em;
+		font-size: 1.9em;
+	}
+
+	h3 {
+		font-size: 1.6em;
+	}
+
+	h4 {
+		font-size: 1.4em;
+	}
+
+	h5 {
+		font-size: 1.2em;
+	}
+
+	h6 {
+		font-size: 1.1em;
+	}
+
+	pre {
+		overflow: auto;
+		word-wrap: normal;
+		white-space: pre;
+	}
+
+	pre code {
+		overflow-wrap: normal;
+		white-space: pre;
+	}
+
+	table th {
+		word-break: keep-all;
+		white-space: nowrap;
+	}
+
+	blockquote {
+		font-size: 1em;
+	}
+
+	em {
+		color: #999999;
+	}
+
+	// custom
+	.center, .flplay {
+		display: block;
+		margin: 1em auto 1em auto;
+	}
+
+	.flplay img {
+		margin: 0 !important;
+	}
+
+	.border {
+		border: 1px solid #000000;
+	}
+
+	.MathJax {
+		font-size: 300%;
+	}
+}

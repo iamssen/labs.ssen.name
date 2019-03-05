@@ -1,0 +1,96 @@
+<hr>
+
+<p>primary: cdf0901e6d
+date: &#39;2014-01-14 17:14:44&#39;
+tags:
+    - Eclipse
+title: &#39;Eclipse Path Tools&#39;
+layout: article
+categories:
+    - Tools
+    - Eclipse</p>
+
+<hr>
+
+<h1 id="주의">주의</h1>
+
+<p>Linux와 Mac에서만 작동한다.</p>
+
+<h1 id="eclipse-plug-in">Eclipse Plug-in</h1>
+
+<p>이클립스에서 여러가지 방식으로 프로젝트 내의 Path(경로)에 접근하고 싶을 때 사용될 수 있다.</p>
+
+<p>지원되는 기능들은 아래와 같다.</p>
+
+<ul>
+<li>Path 복사</li>
+<li>Path 열기</li>
+<li>Path를 Terminal(or iTerm)으로 열기 </li>
+<li>Path를 Text 편집기로 열기</li>
+</ul>
+
+<p><img src="/files/captures/20140114/163605.png" alt="사용예"></p>
+
+<p>Eclipse에서 위와 같이 사용된다.</p>
+
+<h1 id="install">Install</h1>
+
+<p><a href="https://code.google.com/p/pathtools/">https://code.google.com/p/pathtools/</a>에 들어가면 Update Site를 발견할 수 있다.</p>
+
+<p>해당 Update Site를 등록해서 설치하도록 한다.</p>
+
+<h1 id="config">Config</h1>
+
+<p><img src="/files/captures/20140114/161722.png" alt="설정창 보기"></p>
+
+<p>설정은 Eclipse Perferences 화면에서 볼 수 있으며, 위와 같이 단순하다.</p>
+
+<p>기본 구성 그대로 사용해도 큰 무리는 없지만, 필요한 경우 수정을 해서 사용할 수 있다.</p>
+
+<h1 id="terminal-대신-iterm2를-사용하기">Terminal 대신 iTerm2를 사용하기</h1>
+
+<p><a href="http://yamkazu.hatenablog.com/entry/20100303/1267619468">http://yamkazu.hatenablog.com/entry/20100303/1267619468</a>에서 참고한 자료임</p>
+
+<p>아래의 Script를 &quot;Apple Script 편집기&quot;를 사용해서 저장한다.</p>
+<div class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">on</span> <span class="nb">run</span> <span class="nv">argv</span>
+    <span class="k">set</span> <span class="nv">cdTo</span> <span class="k">to</span> <span class="nb">item</span> <span class="mi">1</span> <span class="k">of</span> <span class="nv">argv</span>
+    <span class="k">tell</span> <span class="nb">application</span> <span class="s2">&quot;iTerm&quot;</span>
+        <span class="nb">activate</span>
+        <span class="nb">make</span> <span class="nb">new</span> <span class="nv">terminal</span>
+        <span class="k">tell</span> <span class="nb">the</span> <span class="nb">first</span> <span class="nv">terminal</span>
+            <span class="k">try</span>
+                <span class="nb">launch</span> <span class="nv">session</span> <span class="s2">&quot;Default Session&quot;</span>
+            <span class="nb">on</span> <span class="k">error</span>
+                <span class="nb">display dialog</span> <span class="s2">&quot;There was an error creating a new tab in iTerm.&quot;</span> <span class="nb">buttons</span> <span class="p">{</span><span class="s2">&quot;OK&quot;</span><span class="p">}</span>
+            <span class="k">end</span> <span class="k">try</span>
+            <span class="k">tell</span> <span class="nb">the</span> <span class="nb">last</span> <span class="nv">session</span>
+                <span class="k">try</span>
+                    <span class="nb">write</span> <span class="nb">text</span> <span class="s2">&quot;cd &quot;</span> <span class="o">&amp;</span> <span class="nv">cdTo</span>
+                <span class="nb">on</span> <span class="k">error</span>
+                    <span class="nb">display dialog</span> <span class="s2">&quot;There was an error cding to the requested path.&quot;</span> <span class="nb">buttons</span> <span class="p">{</span><span class="s2">&quot;OK&quot;</span><span class="p">}</span>
+                <span class="k">end</span> <span class="k">try</span>
+            <span class="k">end</span> <span class="k">tell</span>
+        <span class="k">end</span> <span class="k">tell</span>
+    <span class="k">end</span> <span class="k">tell</span>
+    <span class="no">return</span>
+<span class="k">end</span> <span class="nb">run</span>
+</code></pre></div>
+<p>설정창을 열고 항목을 아래와 같이 바꿔준다. (<code>/Script/Location.scpt</code>는 저장한 Apple Script의 파일 경로)</p>
+
+<ul>
+<li>Shell at Folder : <code>/usr/bin/osascript &quot;/Script/Location.scpt&quot; &quot;{path}&quot;</code></li>
+<li>Shell at File : <code>/usr/bin/osascript &quot;/Script/Location.scpt&quot; &quot;{parent-path}&quot;</code></li>
+</ul>
+
+<p>Shell 열기 기능을 사용해보면 Terminal 대신 iTerm2로 열리는 것을 확인할 수 있다.</p>
+
+<h1 id="기본-text-editor-대신-sublime-text를-사용해서-열기-">기본 Text Editor 대신 Sublime Text를 사용해서 열기 </h1>
+
+<p>기본 Sublime Text2가 설치되어 있다는 전제하에 설정창을 열고 항목을 아래와 같이 바꿔준다</p>
+
+<ul>
+<li>Edit Folder : <code>&quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&quot; &quot;{path}&quot;</code></li>
+<li>Edit File : <code>&quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&quot; &quot;{path}&quot;</code></li>
+</ul>
+
+<p>External Editor 열기 기능을 사용해보면 Sublime Text2로 열리는 것을 확인할 수 있다.</p>

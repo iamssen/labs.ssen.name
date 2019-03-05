@@ -1,0 +1,70 @@
+#article {
+  padding-top: 10px;
+  padding-bottom: 20px; }
+  #article #article-title h1 small {
+    font-size: 0.45em; }
+  #article #article-content {
+    font-size: 13px;
+    /* Override Bootstrap Markdown */
+    line-height: 150%;
+    word-wrap: break-word;
+    word-break: break-all; }
+    #article #article-content img, #article #article-content embed {
+      max-width: 100%; }
+    #article #article-content h1, #article #article-content h2, #article #article-content h3, #article #article-content h4, #article #article-content h5, #article #article-content h6 {
+      padding: 15px 0 0 0;
+      margin: 0;
+      line-height: 36px; }
+      #article #article-content h1 code, #article #article-content h2 code, #article #article-content h3 code, #article #article-content h4 code, #article #article-content h5 code, #article #article-content h6 code {
+        font-family: inherit;
+        padding: 0 0.3em 0 0.3em; }
+      #article #article-content h1 a, #article #article-content h2 a, #article #article-content h3 a, #article #article-content h4 a, #article #article-content h5 a, #article #article-content h6 a {
+        text-decoration: none; }
+    #article #article-content h1, #article #article-content h2 {
+      margin-top: 0.2em;
+      margin-bottom: 0.4em; }
+    #article #article-content h1 {
+      margin-bottom: 0.4em;
+      padding-bottom: 10px;
+      font-size: 2.3em;
+      border-bottom: 2px solid #000000; }
+    #article #article-content h2 {
+      margin-bottom: 0.3em;
+      font-size: 1.9em; }
+    #article #article-content h3 {
+      font-size: 1.6em; }
+    #article #article-content h4 {
+      font-size: 1.4em; }
+    #article #article-content h5 {
+      font-size: 1.2em; }
+    #article #article-content h6 {
+      font-size: 1.1em; }
+    #article #article-content pre {
+      overflow: auto;
+      word-wrap: normal;
+      white-space: pre; }
+    #article #article-content pre code {
+      overflow-wrap: normal;
+      white-space: pre; }
+    #article #article-content table th {
+      word-break: keep-all;
+      white-space: nowrap; }
+    #article #article-content blockquote {
+      font-size: 1em; }
+    #article #article-content em {
+      color: #999999; }
+    #article #article-content .center, #article #article-content .flplay {
+      display: block;
+      margin: 1em auto 1em auto; }
+    #article #article-content .flplay img {
+      margin: 0 !important; }
+    #article #article-content .border {
+      border: 1px solid #000000; }
+    #article #article-content .MathJax {
+      font-size: 300%; }
+  #article #article-tags {
+    margin-top: 30px; }
+    #article #article-tags p {
+      line-height: 300%; }
+  #article #article-disqus {
+    margin-top: 50px; }
